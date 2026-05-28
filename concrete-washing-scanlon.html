@@ -847,6 +847,9 @@ function showQuoteSuccess(form){
     if(note)note.innerHTML='We\'ve received your request and will reach out within one business day. Need a faster reply? <a href="tel:+12185768610" style="color:#2e8b57;font-weight:700">Call 218-576-8610</a>.';
   }
 }
+function resetQuoteBtn(btn,prevLabel){
+  if(btn){btn.disabled=false;btn.textContent=prevLabel||'Request My Free Quote →';}
+}
 async function submitForm(e){
   if(e)e.preventDefault();
   const fn=(document.getElementById('fn')?.value||'').trim();
@@ -864,13 +867,43 @@ async function submitForm(e){
   const svc=(document.getElementById('svc')?.value||'').trim();
   const msg=(document.getElementById('msg')?.value||'').trim();
   const page=location.pathname.replace(/^\//,'')||'index.html';
-  let sent=false;
+  const subject='Quote Request — '+fn+(city?' ('+city+')':'');
+  const w3fKey='';
+  if(w3fKey){
+    try{
+      const res=await fetch('https://api.web3forms.com/submit',{
+        method:'POST',
+        headers:{'Content-Type':'application/json','Accept':'application/json'},
+        body:JSON.stringify({
+          access_key:w3fKey,
+          subject:subject,
+          from_name:'Up North Website',
+          name:(fn+' '+ln).trim(),
+          email:em,
+          phone:ph||'Not provided',
+          city:city||'Not provided',
+          service:svc||'Not specified',
+          message:msg||'(No message)',
+          page:page
+        })
+      });
+      const data=await res.json().catch(()=>({}));
+      if(data.success){showQuoteSuccess(form);return false;}
+      alert(data.message||('Could not send. Email Upnorthpressurewash@gmail.com or call 218-576-8610.'));
+      resetQuoteBtn(btn,prevLabel);
+      return false;
+    }catch(_){
+      alert('Network error. Please call 218-576-8610 or email Upnorthpressurewash@gmail.com.');
+      resetQuoteBtn(btn,prevLabel);
+      return false;
+    }
+  }
   try{
     const fsRes=await fetch('https://formsubmit.co/ajax/Upnorthpressurewash@gmail.com',{
       method:'POST',
       headers:{'Content-Type':'application/json','Accept':'application/json'},
       body:JSON.stringify({
-        _subject:'Quote Request — '+fn+(city?' ('+city+')':''),
+        _subject:subject,
         _captcha:'false',
         _template:'table',
         name:(fn+' '+ln).trim(),
@@ -883,29 +916,17 @@ async function submitForm(e){
       })
     });
     const fsData=await fsRes.json().catch(()=>({}));
-    if(fsRes.ok&&(fsData.success===true||fsData.success==='true'))sent=true;
-    else if(fsData.message){
-      const note=String(fsData.message);
-      if(/activ/i.test(note)){
-        alert('One-time setup: check Upnorthpressurewash@gmail.com (including spam) for an email from FormSubmit. Click Activate Form, then submit again.');
-        if(btn){btn.disabled=false;btn.textContent=prevLabel||'Request My Free Quote →';}
-        return false;
-      }
+    if(fsData.success===true||fsData.success==='true'){showQuoteSuccess(form);return false;}
+    const note=fsData.message?String(fsData.message):'';
+    if(/activ/i.test(note)){
+      alert('Check Upnorthpressurewash@gmail.com (including spam) for an email from FormSubmit. Click Activate Form, then submit again.');
+    }else{
+      alert(note||('Could not send. Email Upnorthpressurewash@gmail.com or call 218-576-8610.'));
     }
-  }catch(_){}
-  if(!sent){
-    try{
-      const res=await fetch('/api/quote',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({first_name:fn,last_name:ln,email:em,phone:ph,city:city,service:svc,message:msg,page:page})});
-      const data=await res.json().catch(()=>({}));
-      if(res.ok)sent=true;
-      else throw new Error(data.error||('Request failed ('+res.status+')'));
-    }catch(err){
-      alert(err&&err.message?err.message:'Something went wrong. Please call 218-576-8610.');
-      if(btn){btn.disabled=false;btn.textContent=prevLabel||'Request My Free Quote →';}
-      return false;
-    }
+  }catch(_){
+    alert('Network error. Please call 218-576-8610 or email Upnorthpressurewash@gmail.com.');
   }
-  showQuoteSuccess(form);
+  resetQuoteBtn(btn,prevLabel);
   return false;
 }
 document.getElementById('quoteForm')?.addEventListener('submit',submitForm);
