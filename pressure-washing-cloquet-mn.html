@@ -732,9 +732,9 @@ async function submitForm(e){
   if(e)e.preventDefault();
   const fn=(document.getElementById('fn')?.value||'').trim();
   const em=(document.getElementById('em')?.value||'').trim();
-  if(!fn||!em){alert('Please enter at least your first name and email.');return;}
+  if(!fn||!em){alert('Please enter at least your first name and email.');return false;}
   const form=document.getElementById('quoteForm');
-  if(!form)return;
+  if(!form)return false;
   const btn=form.querySelector('.submit');
   const prevLabel=btn?.textContent||'';
   if(btn){btn.disabled=true;btn.textContent='Sending…';}
@@ -752,7 +752,7 @@ async function submitForm(e){
   try{
     const res=await fetch('/api/quote',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(payload)});
     const data=await res.json().catch(()=>({}));
-    if(!res.ok)throw new Error(data.error||'submit failed');
+    if(!res.ok)throw new Error(data.error||('Request failed ('+res.status+')'));
     form.style.display='none';
     const okView=document.getElementById('okView');
     if(okView){
@@ -761,9 +761,10 @@ async function submitForm(e){
       if(note)note.innerHTML='We\'ve received your request and will reach out within one business day. Need a faster reply? <a href="tel:+12185768610" style="color:#2e8b57;font-weight:700">Call 218-576-8610</a>.';
     }
   }catch(err){
-    alert(err.message||'Something went wrong. Please call 218-576-8610.');
+    alert((err&&err.message?err.message:'Something went wrong.')+' Please call 218-576-8610.');
     if(btn){btn.disabled=false;btn.textContent=prevLabel||'Request My Free Quote →';}
   }
+  return false;
 }
 document.getElementById('quoteForm')?.addEventListener('submit',submitForm);
 </script>

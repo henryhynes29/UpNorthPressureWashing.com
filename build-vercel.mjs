@@ -80,7 +80,6 @@ function patchFormTag(html) {
 
 function injectSubmitScript(html) {
   if (!html.includes('id="quoteForm"')) return html;
-  if (html.includes("fetch('/api/quote'")) return html;
   let out = replaceSubmitScript(html);
   if (out.includes('</body>')) {
     out = out.replace('</body>', `${FORM_SCRIPT_BLOCK}\n</body>`);
