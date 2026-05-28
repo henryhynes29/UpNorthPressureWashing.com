@@ -28,12 +28,20 @@ const NEW_SUBMIT = `async function submitForm(e){
   const btn=form.querySelector('.submit');
   const prevLabel=btn?.textContent||'';
   if(btn){btn.disabled=true;btn.textContent='Sending…';}
-  const data=new FormData(form);
-  data.set('form-name','quote-request');
-  if(!data.get('page'))data.set('page',location.pathname.replace(/^\\//,'')||'index.html');
   try{
-    const res=await fetch('/',{method:'POST',headers:{'Content-Type':'application/x-www-form-urlencoded'},body:new URLSearchParams(data).toString()});
-    if(!res.ok)throw new Error('submit failed');
+    const res=await fetch('/api/quote',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({
+      first_name:fn,
+      last_name:(document.getElementById('ln')?.value||'').trim(),
+      email:em,
+      phone:(document.getElementById('ph')?.value||'').trim(),
+      city:(document.getElementById('city')?.value||'').trim(),
+      service:(document.getElementById('svc')?.value||'').trim(),
+      message:(document.getElementById('msg')?.value||'').trim(),
+      page:location.pathname.replace(/^\\//,'')||'index.html',
+      'bot-field':(document.querySelector('[name="bot-field"]')?.value||'').trim()
+    })});
+    const data=await res.json().catch(()=>({}));
+    if(!res.ok)throw new Error(data.error||'submit failed');
     form.style.display='none';
     const okView=document.getElementById('okView');
     if(okView){
@@ -253,7 +261,7 @@ for (const file of fs.readdirSync(SITE).filter(f => f.endsWith('.html'))) {
 console.log('Site polish complete:');
 console.log(`  Pages patched: ${stats.patched}`);
 console.log(`  Index HTML structure fixed: ${stats.indexFixed}`);
-console.log(`  Quote forms upgraded (Netlify): ${stats.formsUpgraded}`);
+console.log(`  Quote forms upgraded (Vercel API): ${stats.formsUpgraded}`);
 console.log(`  Service slider/menu scripts upgraded: ${stats.slidersUpgraded}`);
 console.log(`  Window hero deduped: ${stats.hubDeduped}`);
 console.log(`  Geo string fixes: ${stats.geoFixed}`);

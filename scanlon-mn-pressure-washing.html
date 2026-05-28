@@ -256,7 +256,7 @@
 <script type="application/ld+json">
 {"@context":"https://schema.org","@graph":[{"@type":"WebSite","@id":"https://www.upnorthpressurewashing.com/#website","url":"https://www.upnorthpressurewashing.com/","name":"Up North Pressure Washing","inLanguage":"en-US","publisher":{"@id":"https://www.upnorthpressurewashing.com/#organization"}},{"@type":"Organization","@id":"https://www.upnorthpressurewashing.com/#organization","name":"Up North Pressure Washing","url":"https://www.upnorthpressurewashing.com/","logo":{"@type":"ImageObject","url":"https://www.upnorthpressurewashing.com/images/hero-bg.jpg"},"telephone":"+12185768610","sameAs":["https://g.page/r/CSCaz34lDtneEBE/review"]},{"@type":["LocalBusiness","HomeAndConstructionBusiness"],"@id":"https://www.upnorthpressurewashing.com/#business","name":"Up North Pressure Washing","url":"https://www.upnorthpressurewashing.com/","telephone":"+12185768610","priceRange":"$$","image":"https://www.upnorthpressurewashing.com/images/hero-bg.jpg","geo":{"@type":"GeoCoordinates","latitude":46.70719,"longitude":-92.39186},"address":{"@type":"PostalAddress","addressLocality":"Scanlon","addressRegion":"MN","postalCode":"55720","addressCountry":"US"},"areaServed":[{"@type":"City","name":"Scanlon, MN"},{"@type":"City","name":"Cloquet, MN"},{"@type":"City","name":"Esko, MN"},{"@type":"City","name":"Carlton, MN"},{"@type":"City","name":"Duluth, MN"}],"aggregateRating":{"@type":"AggregateRating","ratingValue":"5","reviewCount":"20","bestRating":"5"},"sameAs":["https://g.page/r/CSCaz34lDtneEBE/review"]},{"@type":"WebPage","@id":"https://www.upnorthpressurewashing.com/scanlon-mn-pressure-washing.html#webpage","url":"https://www.upnorthpressurewashing.com/scanlon-mn-pressure-washing.html","name":"Professional Soft Washing, Roof Cleaning &amp; Window Cleaning Scanlon MN | Up North Pressure Washing","description":"Scanlon's highest-rated soft washing, roof cleaning &amp; window cleaning. Veteran-founded, fully insured with $1M liability. Free estimates. 1-year growth-free guarantee on soft washes.","isPartOf":{"@id":"https://www.upnorthpressurewashing.com/#website"},"about":{"@id":"https://www.upnorthpressurewashing.com/#business"},"inLanguage":"en-US","primaryImageOfPage":{"@type":"ImageObject","url":"https://www.upnorthpressurewashing.com/images/hero-bg.jpg"}}]}
 </script>
-<style id="netlify-form-css">
+<style id="quote-form-css">
 .quote-sec{padding:48px 0}
 .qbox{max-width:780px;margin:0 auto;background:#f4f0e8;border-radius:26px;padding:48px 44px;color:#1a2630;box-shadow:0 30px 80px rgba(0,0,0,.5);text-align:left}
 .qbox h2{color:#13212c;font-size:clamp(2rem,5vw,3rem);text-align:center}
@@ -531,12 +531,11 @@
   </div>
 </section>
 
-<!-- NETLIFY-QUOTE -->
+<!-- QUOTE-FORM -->
 <section class="quote-sec block alt center" id="quote">
   <div class="wrap">
     <div class="qbox reveal">
-      <form id="quoteForm" name="quote-request" method="POST" data-netlify="true" netlify-honeypot="bot-field" action="/thank-you.html">
-        <input type="hidden" name="form-name" value="quote-request">
+      <form id="quoteForm" method="post" action="#" onsubmit="submitForm(event);return false;" novalidate>
         <input type="hidden" name="page" value="">
         <p hidden><label>Don't fill this out: <input name="bot-field"></label></p>
         <h2>Get Your Free Quote</h2>
@@ -748,6 +747,46 @@ document.querySelectorAll('img[src^="images/"]').forEach(img=>{
     this.style.minHeight=this.style.minHeight||'120px';
   },{once:true});
 });
+</script>
+<script id="quote-form-handler">
+async function submitForm(e){
+  if(e)e.preventDefault();
+  const fn=(document.getElementById('fn')?.value||'').trim();
+  const em=(document.getElementById('em')?.value||'').trim();
+  if(!fn||!em){alert('Please enter at least your first name and email.');return;}
+  const form=document.getElementById('quoteForm');
+  if(!form)return;
+  const btn=form.querySelector('.submit');
+  const prevLabel=btn?.textContent||'';
+  if(btn){btn.disabled=true;btn.textContent='Sending…';}
+  const payload={
+    first_name:fn,
+    last_name:(document.getElementById('ln')?.value||'').trim(),
+    email:em,
+    phone:(document.getElementById('ph')?.value||'').trim(),
+    city:(document.getElementById('city')?.value||'').trim(),
+    service:(document.getElementById('svc')?.value||'').trim(),
+    message:(document.getElementById('msg')?.value||'').trim(),
+    page:location.pathname.replace(/^\//,'')||'index.html',
+    'bot-field':(document.querySelector('[name="bot-field"]')?.value||'').trim()
+  };
+  try{
+    const res=await fetch('/api/quote',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(payload)});
+    const data=await res.json().catch(()=>({}));
+    if(!res.ok)throw new Error(data.error||'submit failed');
+    form.style.display='none';
+    const okView=document.getElementById('okView');
+    if(okView){
+      okView.classList.add('show');
+      const note=okView.querySelector('p');
+      if(note)note.innerHTML='We\'ve received your request and will reach out within one business day. Need a faster reply? <a href="tel:+12185768610" style="color:#2e8b57;font-weight:700">Call 218-576-8610</a>.';
+    }
+  }catch(err){
+    alert(err.message||'Something went wrong. Please call 218-576-8610.');
+    if(btn){btn.disabled=false;btn.textContent=prevLabel||'Request My Free Quote →';}
+  }
+}
+document.getElementById('quoteForm')?.addEventListener('submit',submitForm);
 </script>
 </body>
 </html>
