@@ -815,42 +815,74 @@ document.querySelectorAll('img[src^="images/"]').forEach(img=>{
 });
 </script>
 <script id="quote-form-handler">
+function showQuoteSuccess(form){
+  form.style.display='none';
+  const okView=document.getElementById('okView');
+  if(okView){
+    okView.classList.add('show');
+    const note=okView.querySelector('p');
+    if(note)note.innerHTML='We\'ve received your request and will reach out within one business day. Need a faster reply? <a href="tel:+12185768610" style="color:#2e8b57;font-weight:700">Call 218-576-8610</a>.';
+  }
+}
 async function submitForm(e){
   if(e)e.preventDefault();
   const fn=(document.getElementById('fn')?.value||'').trim();
   const em=(document.getElementById('em')?.value||'').trim();
   if(!fn||!em){alert('Please enter at least your first name and email.');return false;}
+  if((document.querySelector('[name="bot-field"]')?.value||'').trim())return false;
   const form=document.getElementById('quoteForm');
   if(!form)return false;
   const btn=form.querySelector('.submit');
   const prevLabel=btn?.textContent||'';
   if(btn){btn.disabled=true;btn.textContent='Sending…';}
-  const payload={
-    first_name:fn,
-    last_name:(document.getElementById('ln')?.value||'').trim(),
-    email:em,
-    phone:(document.getElementById('ph')?.value||'').trim(),
-    city:(document.getElementById('city')?.value||'').trim(),
-    service:(document.getElementById('svc')?.value||'').trim(),
-    message:(document.getElementById('msg')?.value||'').trim(),
-    page:location.pathname.replace(/^\//,'')||'index.html',
-    'bot-field':(document.querySelector('[name="bot-field"]')?.value||'').trim()
-  };
+  const ln=(document.getElementById('ln')?.value||'').trim();
+  const ph=(document.getElementById('ph')?.value||'').trim();
+  const city=(document.getElementById('city')?.value||'').trim();
+  const svc=(document.getElementById('svc')?.value||'').trim();
+  const msg=(document.getElementById('msg')?.value||'').trim();
+  const page=location.pathname.replace(/^\//,'')||'index.html';
+  let sent=false;
   try{
-    const res=await fetch('/api/quote',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(payload)});
-    const data=await res.json().catch(()=>({}));
-    if(!res.ok)throw new Error(data.error||('Request failed ('+res.status+')'));
-    form.style.display='none';
-    const okView=document.getElementById('okView');
-    if(okView){
-      okView.classList.add('show');
-      const note=okView.querySelector('p');
-      if(note)note.innerHTML='We\'ve received your request and will reach out within one business day. Need a faster reply? <a href="tel:+12185768610" style="color:#2e8b57;font-weight:700">Call 218-576-8610</a>.';
+    const fsRes=await fetch('https://formsubmit.co/ajax/Upnorthpressurewash@gmail.com',{
+      method:'POST',
+      headers:{'Content-Type':'application/json','Accept':'application/json'},
+      body:JSON.stringify({
+        _subject:'Quote Request — '+fn+(city?' ('+city+')':''),
+        _captcha:'false',
+        _template:'table',
+        name:(fn+' '+ln).trim(),
+        email:em,
+        phone:ph||'Not provided',
+        city:city||'Not provided',
+        service:svc||'Not specified',
+        message:msg||'(No message)',
+        page:page
+      })
+    });
+    const fsData=await fsRes.json().catch(()=>({}));
+    if(fsRes.ok&&(fsData.success===true||fsData.success==='true'))sent=true;
+    else if(fsData.message){
+      const note=String(fsData.message);
+      if(/activ/i.test(note)){
+        alert('One-time setup: check Upnorthpressurewash@gmail.com (including spam) for an email from FormSubmit. Click Activate Form, then submit again.');
+        if(btn){btn.disabled=false;btn.textContent=prevLabel||'Request My Free Quote →';}
+        return false;
+      }
     }
-  }catch(err){
-    alert(err&&err.message?err.message:'Something went wrong. Please call 218-576-8610.');
-    if(btn){btn.disabled=false;btn.textContent=prevLabel||'Request My Free Quote →';}
+  }catch(_){}
+  if(!sent){
+    try{
+      const res=await fetch('/api/quote',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({first_name:fn,last_name:ln,email:em,phone:ph,city:city,service:svc,message:msg,page:page})});
+      const data=await res.json().catch(()=>({}));
+      if(res.ok)sent=true;
+      else throw new Error(data.error||('Request failed ('+res.status+')'));
+    }catch(err){
+      alert(err&&err.message?err.message:'Something went wrong. Please call 218-576-8610.');
+      if(btn){btn.disabled=false;btn.textContent=prevLabel||'Request My Free Quote →';}
+      return false;
+    }
   }
+  showQuoteSuccess(form);
   return false;
 }
 document.getElementById('quoteForm')?.addEventListener('submit',submitForm);
