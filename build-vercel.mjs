@@ -39,7 +39,7 @@ const VERCEL_SUBMIT = `async function submitForm(e){
       if(note)note.innerHTML='We\\'ve received your request and will reach out within one business day. Need a faster reply? <a href="tel:${PHONE_TEL}" style="color:#2e8b57;font-weight:700">Call ${PHONE}</a>.';
     }
   }catch(err){
-    alert((err&&err.message?err.message:'Something went wrong.')+' Please call ${PHONE}.');
+    alert(err&&err.message?err.message:'Something went wrong. Please call ${PHONE}.');
     if(btn){btn.disabled=false;btn.textContent=prevLabel||'Request My Free Quote →';}
   }
   return false;

@@ -51,34 +51,6 @@ function buildEmail(body) {
   return { subject, text, replyTo: email || undefined };
 }
 
-async function sendViaResend({ subject, text, replyTo }) {
-  const key = process.env.RESEND_API_KEY;
-  if (!key) return { ok: false, error: 'RESEND_API_KEY not configured' };
-
-  const payload = {
-    from: FROM,
-    to: [QUOTE_TO],
-    subject,
-    text,
-  };
-  if (replyTo) payload.reply_to = replyTo;
-
-  const res = await fetch('https://api.resend.com/emails', {
-    method: 'POST',
-    headers: {
-      Authorization: `Bearer ${key}`,
-      'Content-Type': 'application/json',
-    },
-    body: JSON.stringify(payload),
-  });
-
-  if (!res.ok) {
-    const detail = await res.text();
-    return { ok: false, error: detail || res.statusText };
-  }
-  return { ok: true };
-}
-
 async function sendViaWeb3Forms(body) {
   const key = process.env.WEB3FORMS_ACCESS_KEY;
   if (!key) return { ok: false, error: 'WEB3FORMS_ACCESS_KEY not configured' };
@@ -90,15 +62,53 @@ async function sendViaWeb3Forms(body) {
       access_key: key,
       subject: `Quote Request — ${body.first_name || 'Website'}`,
       from_name: 'Up North Website',
-      ...body,
+      email: QUOTE_TO,
+      name: [body.first_name, body.last_name].filter(Boolean).join(' '),
+      phone: body.phone || '',
+      city: body.city || '',
+      service: body.service || '',
+      message: body.message || '',
+      page: body.page || '',
     }),
   });
 
-  const data = await res.json();
+  const data = await res.json().catch(() => ({}));
   if (!res.ok || !data.success) {
     return { ok: false, error: data.message || 'Web3Forms send failed' };
   }
-  return { ok: true };
+  return { ok: true, provider: 'web3forms' };
+}
+
+async function sendViaResend({ subject, text, replyTo }) {
+  const key = process.env.RESEND_API_KEY?.trim();
+  if (!key) return { ok: false, error: 'RESEND_API_KEY not configured' };
+
+  const attempts = [
+    { from: FROM, to: [QUOTE_TO], subject, text, ...(replyTo ? { reply_to: replyTo } : {}) },
+    { from: FROM, to: [QUOTE_TO], subject, text },
+  ];
+
+  let lastError = 'Resend send failed';
+  for (const payload of attempts) {
+    const res = await fetch('https://api.resend.com/emails', {
+      method: 'POST',
+      headers: {
+        Authorization: `Bearer ${key}`,
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(payload),
+    });
+
+    if (res.ok) return { ok: true, provider: 'resend' };
+
+    lastError = await res.text();
+    try {
+      const parsed = JSON.parse(lastError);
+      lastError = parsed.message || parsed.error || lastError;
+    } catch { /* keep text */ }
+  }
+
+  return { ok: false, error: lastError };
 }
 
 module.exports = async (req, res) => {
@@ -112,7 +122,13 @@ module.exports = async (req, res) => {
   }
 
   if (req.method === 'GET') {
-    return res.status(200).json({ ok: true, service: 'quote-api' });
+    return res.status(200).json({
+      ok: true,
+      service: 'quote-api',
+      email: QUOTE_TO,
+      web3forms: Boolean(process.env.WEB3FORMS_ACCESS_KEY),
+      resend: Boolean(process.env.RESEND_API_KEY),
+    });
   }
 
   if (req.method !== 'POST') {
@@ -128,19 +144,23 @@ module.exports = async (req, res) => {
     }
 
     const mail = buildEmail(body);
-    let result = await sendViaResend(mail);
-    if (!result.ok && process.env.WEB3FORMS_ACCESS_KEY) {
+    let result = null;
+
+    if (process.env.WEB3FORMS_ACCESS_KEY) {
       result = await sendViaWeb3Forms(body);
     }
-    if (!result.ok) {
+    if (!result?.ok && process.env.RESEND_API_KEY) {
+      result = await sendViaResend(mail);
+    }
+    if (!result?.ok) {
+      result = result || { ok: false, error: 'No email provider configured' };
       console.error('Quote email failed:', result.error);
       return res.status(500).json({
         error: 'Could not send quote request. Please call 218-576-8610.',
-        detail: process.env.NODE_ENV === 'development' ? result.error : undefined,
       });
     }
 
-    return res.status(200).json({ ok: true });
+    return res.status(200).json({ ok: true, provider: result.provider });
   } catch (err) {
     console.error(err);
     return res.status(500).json({ error: 'Server error' });

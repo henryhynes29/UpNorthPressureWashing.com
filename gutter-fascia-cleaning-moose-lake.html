@@ -851,7 +851,7 @@ async function submitForm(e){
       if(note)note.innerHTML='We\'ve received your request and will reach out within one business day. Need a faster reply? <a href="tel:+12185768610" style="color:#2e8b57;font-weight:700">Call 218-576-8610</a>.';
     }
   }catch(err){
-    alert((err&&err.message?err.message:'Something went wrong.')+' Please call 218-576-8610.');
+    alert(err&&err.message?err.message:'Something went wrong. Please call 218-576-8610.');
     if(btn){btn.disabled=false;btn.textContent=prevLabel||'Request My Free Quote →';}
   }
   return false;
