@@ -1,6 +1,8 @@
 {
   "cleanUrls": true,
   "trailingSlash": false,
+  "buildCommand": "",
+  "outputDirectory": ".",
   "redirects": [
     { "source": "/contact", "destination": "/", "permanent": true },
     { "source": "/window-cleaning-duluth-mn", "destination": "/window-cleaning-duluth", "permanent": true },
