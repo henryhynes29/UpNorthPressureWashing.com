@@ -419,6 +419,10 @@ footer{border-top:1px solid var(--line);padding:54px 0 40px;margin-top:20px}
 <script type="application/ld+json">
 {"@context":"https://schema.org","@graph":[{"@type":"WebPage","@id":"https://www.upnorthpressurewashing.com/residential-window-cleaning-two-harbors.html#webpage","url":"https://www.upnorthpressurewashing.com/residential-window-cleaning-two-harbors.html","name":"House Window Cleaning Two Harbors, MN | Interior & Exterior Near Me | Up North","description":"Professional residential window cleaning in Two Harbors, MN. Interior & exterior house window washing, hard-water & salt removal, multi-story & lakefront homes. North Shore harbor town. Free quotes — 218-576-8610.","isPartOf":{"@id":"https://www.upnorthpressurewashing.com/#website"},"about":{"@type":"Service","name":"Residential Window Cleaning","provider":{"@id":"https://www.upnorthpressurewashing.com/#business"},"areaServed":{"@type":"City","name":"Two Harbors, MN"}},"inLanguage":"en-US","primaryImageOfPage":{"@type":"ImageObject","url":"https://www.upnorthpressurewashing.com/images/window-res-after.jpg"}}]}
 </script>
+<script>
+  window.si = window.si || function () { (window.siq = window.siq || []).push(arguments); };
+</script>
+<script defer src="/_vercel/speed-insights/script.js"></script>
 </head>
 <body>
 <a href="#main" class="skip-link" style="position:absolute;left:-9999px;top:auto;width:1px;height:1px;overflow:hidden;z-index:100">Skip to content</a>
@@ -950,11 +954,13 @@ async function submitForm(e){
     }
   }
   try{
-    const fsRes=await fetch('https://formspree.io/f/xlgkljvo',{
+    const fsRes=await fetch('https://formsubmit.co/ajax/Upnorthpressurewash@gmail.com',{
       method:'POST',
       headers:{'Content-Type':'application/json','Accept':'application/json'},
       body:JSON.stringify({
         _subject:subject,
+        _captcha:'false',
+        _template:'table',
         name:(fn+' '+ln).trim(),
         email:em,
         phone:ph||'Not provided',
@@ -965,8 +971,13 @@ async function submitForm(e){
       })
     });
     const fsData=await fsRes.json().catch(()=>({}));
-    if(fsData.ok){showQuoteSuccess(form);return false;}
-    alert(fsData.error||('Could not send. Email Upnorthpressurewash@gmail.com or call 218-576-8610.'));
+    if(fsData.success===true||fsData.success==='true'){showQuoteSuccess(form);return false;}
+    const note=fsData.message?String(fsData.message):'';
+    if(/activ/i.test(note)){
+      alert('Check Upnorthpressurewash@gmail.com (including spam) for an email from FormSubmit. Click Activate Form, then submit again.');
+    }else{
+      alert(note||('Could not send. Email Upnorthpressurewash@gmail.com or call 218-576-8610.'));
+    }
   }catch(_){
     alert('Network error. Please call 218-576-8610 or email Upnorthpressurewash@gmail.com.');
   }

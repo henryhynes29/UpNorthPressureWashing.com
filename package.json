@@ -6,5 +6,8 @@
   },
   "scripts": {
     "build": "node build-vercel.mjs"
+  },
+  "dependencies": {
+    "@vercel/speed-insights": "^2.0.0"
   }
 }
