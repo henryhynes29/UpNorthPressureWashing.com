@@ -6,7 +6,7 @@ const PHONE_TEL = '+12185768610';
 const PHONE = '218-576-8610';
 const QUOTE_EMAIL = 'Upnorthpressurewash@gmail.com';
 const WEB3FORMS_KEY = (process.env.WEB3FORMS_ACCESS_KEY || '').trim();
-const stats = { forms: 0, scripts: 0, stripped: 0 };
+const stats = { forms: 0, scripts: 0, stripped: 0, speedInsights: 0 };
 
 const VERCEL_SUBMIT = `function showQuoteSuccess(form){
   form.style.display='none';
@@ -103,6 +103,12 @@ document.getElementById('quoteForm')?.addEventListener('submit',submitForm);`;
 
 const FORM_SCRIPT_BLOCK = `<script id="quote-form-handler">\n${VERCEL_SUBMIT}\n</script>`;
 
+// Speed Insights script injection
+const SPEED_INSIGHTS_SCRIPT = `<script>
+  window.si = window.si || function () { (window.siq = window.siq || []).push(arguments); };
+</script>
+<script defer src="/_vercel/speed-insights/script.js"></script>`;
+
 function stripNetlify(html) {
   let out = html;
   const before = out.includes('data-netlify');
@@ -155,6 +161,18 @@ function patchPrivacy(html) {
   );
 }
 
+function injectSpeedInsights(html) {
+  // Skip if already injected
+  if (html.includes('/_vercel/speed-insights/script.js')) return html;
+  
+  // Inject before </head> tag for better performance
+  if (html.includes('</head>')) {
+    stats.speedInsights++;
+    return html.replace('</head>', `${SPEED_INSIGHTS_SCRIPT}\n</head>`);
+  }
+  return html;
+}
+
 for (const file of fs.readdirSync(SITE).filter(f => f.endsWith('.html'))) {
   const fp = path.join(SITE, file);
   let html = fs.readFileSync(fp, 'utf8');
@@ -165,6 +183,7 @@ for (const file of fs.readdirSync(SITE).filter(f => f.endsWith('.html'))) {
     html = injectSubmitScript(html);
   }
   if (file === 'privacy.html') html = patchPrivacy(html);
+  html = injectSpeedInsights(html);
   if (html !== orig) fs.writeFileSync(fp, html);
 }
 
@@ -172,6 +191,7 @@ console.log('Vercel form wiring complete:');
 console.log(`  Pages with quote forms: ${stats.forms}`);
 console.log(`  Submit handlers updated: ${stats.scripts}`);
 console.log(`  Netlify attrs removed from: ${stats.stripped} pages`);
+console.log(`  Speed Insights injected into: ${stats.speedInsights} pages`);
 if (WEB3FORMS_KEY) {
   console.log('\nWeb3Forms key baked into forms (from WEB3FORMS_ACCESS_KEY).');
 } else {

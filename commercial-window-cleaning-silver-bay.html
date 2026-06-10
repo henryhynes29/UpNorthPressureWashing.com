@@ -419,6 +419,10 @@ footer{border-top:1px solid var(--line);padding:54px 0 40px;margin-top:20px}
 <script type="application/ld+json">
 {"@context":"https://schema.org","@graph":[{"@type":"WebPage","@id":"https://www.upnorthpressurewashing.com/commercial-window-cleaning-silver-bay.html#webpage","url":"https://www.upnorthpressurewashing.com/commercial-window-cleaning-silver-bay.html","name":"Commercial Window Cleaning Silver Bay, MN | Storefront & Office Glass | Up North","description":"Commercial window cleaning in Silver Bay, MN. Storefront glass, offices, medical & restaurant entries — after-hours scheduling & recurring contracts. Insured. North Shore mining community. Call 218-576-8610.","isPartOf":{"@id":"https://www.upnorthpressurewashing.com/#website"},"about":{"@type":"Service","name":"Commercial Window Cleaning","provider":{"@id":"https://www.upnorthpressurewashing.com/#business"},"areaServed":{"@type":"City","name":"Silver Bay, MN"}},"inLanguage":"en-US","primaryImageOfPage":{"@type":"ImageObject","url":"https://www.upnorthpressurewashing.com/images/window-res-after.jpg"}}]}
 </script>
+<script>
+  window.si = window.si || function () { (window.siq = window.siq || []).push(arguments); };
+</script>
+<script defer src="/_vercel/speed-insights/script.js"></script>
 </head>
 <body>
 <a href="#main" class="skip-link" style="position:absolute;left:-9999px;top:auto;width:1px;height:1px;overflow:hidden;z-index:100">Skip to content</a>
@@ -950,11 +954,13 @@ async function submitForm(e){
     }
   }
   try{
-    const fsRes=await fetch('https://formspree.io/f/xlgkljvo',{
+    const fsRes=await fetch('https://formsubmit.co/ajax/Upnorthpressurewash@gmail.com',{
       method:'POST',
       headers:{'Content-Type':'application/json','Accept':'application/json'},
       body:JSON.stringify({
         _subject:subject,
+        _captcha:'false',
+        _template:'table',
         name:(fn+' '+ln).trim(),
         email:em,
         phone:ph||'Not provided',
@@ -965,8 +971,13 @@ async function submitForm(e){
       })
     });
     const fsData=await fsRes.json().catch(()=>({}));
-    if(fsData.ok){showQuoteSuccess(form);return false;}
-    alert(fsData.error||('Could not send. Email Upnorthpressurewash@gmail.com or call 218-576-8610.'));
+    if(fsData.success===true||fsData.success==='true'){showQuoteSuccess(form);return false;}
+    const note=fsData.message?String(fsData.message):'';
+    if(/activ/i.test(note)){
+      alert('Check Upnorthpressurewash@gmail.com (including spam) for an email from FormSubmit. Click Activate Form, then submit again.');
+    }else{
+      alert(note||('Could not send. Email Upnorthpressurewash@gmail.com or call 218-576-8610.'));
+    }
   }catch(_){
     alert('Network error. Please call 218-576-8610 or email Upnorthpressurewash@gmail.com.');
   }
