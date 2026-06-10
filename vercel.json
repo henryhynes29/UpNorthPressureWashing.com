@@ -2,27 +2,77 @@
   "cleanUrls": true,
   "trailingSlash": false,
   "redirects": [
-    { "source": "/contact", "destination": "/", "permanent": true },
-    { "source": "/window-cleaning-duluth-mn", "destination": "/window-cleaning-duluth", "permanent": true },
-    { "source": "/window-washing-duluth-mn", "destination": "/window-cleaning-duluth", "permanent": true },
-    { "source": "/soft-washing-duluth-mn", "destination": "/soft-washing-duluth", "permanent": true },
-    { "source": "/deck-restoration-duluth-mn", "destination": "/deck-restoration-duluth", "permanent": true },
-    { "source": "/hot-water-pressure-washing-duluth-mn", "destination": "/concrete-washing-duluth", "permanent": true },
-    { "source": "/duluth-mn-pressure-washing", "destination": "/", "permanent": true }
+    {
+      "source": "/contact",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/window-cleaning-duluth-mn",
+      "destination": "/window-cleaning-duluth",
+      "permanent": true
+    },
+    {
+      "source": "/window-washing-duluth-mn",
+      "destination": "/window-cleaning-duluth",
+      "permanent": true
+    },
+    {
+      "source": "/soft-washing-duluth-mn",
+      "destination": "/soft-washing-duluth",
+      "permanent": true
+    },
+    {
+      "source": "/deck-restoration-duluth-mn",
+      "destination": "/deck-restoration-duluth",
+      "permanent": true
+    },
+    {
+      "source": "/hot-water-pressure-washing-duluth-mn",
+      "destination": "/concrete-washing-duluth",
+      "permanent": true
+    },
+    {
+      "source": "/duluth-mn-pressure-washing",
+      "destination": "/",
+      "permanent": true
+    }
   ],
   "headers": [
     {
       "source": "/(.*)",
       "headers": [
-        { "key": "X-Content-Type-Options", "value": "nosniff" },
-        { "key": "X-Frame-Options", "value": "SAMEORIGIN" },
-        { "key": "X-XSS-Protection", "value": "1; mode=block" }
+        {
+          "key": "X-Content-Type-Options",
+          "value": "nosniff"
+        },
+        {
+          "key": "X-Frame-Options",
+          "value": "SAMEORIGIN"
+        },
+        {
+          "key": "X-XSS-Protection",
+          "value": "1; mode=block"
+        }
       ]
     },
     {
       "source": "/images/(.*)",
       "headers": [
-        { "key": "Cache-Control", "value": "public, max-age=31536000, immutable" }
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=31536000, immutable"
+        }
       ]
     },
     {
+      "source": "/fonts/(.*)",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=31536000, immutable"
+        }
+      ]
+    }
+  ]
+}
