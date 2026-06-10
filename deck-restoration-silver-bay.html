@@ -876,13 +876,11 @@ async function submitForm(e){
     }
   }
   try{
-    const fsRes=await fetch('https://formsubmit.co/ajax/Upnorthpressurewash@gmail.com',{
+    const fsRes=await fetch('https://formspree.io/f/xlgkljvo',{
       method:'POST',
       headers:{'Content-Type':'application/json','Accept':'application/json'},
       body:JSON.stringify({
         _subject:subject,
-        _captcha:'false',
-        _template:'table',
         name:(fn+' '+ln).trim(),
         email:em,
         phone:ph||'Not provided',
@@ -893,13 +891,8 @@ async function submitForm(e){
       })
     });
     const fsData=await fsRes.json().catch(()=>({}));
-    if(fsData.success===true||fsData.success==='true'){showQuoteSuccess(form);return false;}
-    const note=fsData.message?String(fsData.message):'';
-    if(/activ/i.test(note)){
-      alert('Check Upnorthpressurewash@gmail.com (including spam) for an email from FormSubmit. Click Activate Form, then submit again.');
-    }else{
-      alert(note||('Could not send. Email Upnorthpressurewash@gmail.com or call 218-576-8610.'));
-    }
+    if(fsData.ok){showQuoteSuccess(form);return false;}
+    alert(fsData.error||('Could not send. Email Upnorthpressurewash@gmail.com or call 218-576-8610.'));
   }catch(_){
     alert('Network error. Please call 218-576-8610 or email Upnorthpressurewash@gmail.com.');
   }
