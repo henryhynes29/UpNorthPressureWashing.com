@@ -271,7 +271,7 @@
 .qbox .req{color:#c0392b}
 .qbox .row{display:grid;grid-template-columns:1fr 1fr;gap:18px}
 .qbox input,.qbox select,.qbox textarea{width:100%;padding:13px 15px;border:1px solid #cdd5da;border-radius:11px;font-family:inherit;font-size:.96rem;background:#fff;color:#1a2630;margin-bottom:18px;box-sizing:border-box}
-.qbox input:focus,.qbox select:focus,.qbox textarea:focus{outline:none;border-color:#7fc6e8;box-shadow:0 0 0 3px rgba(127,198,232,.25)}
+.qbox input:focus,.qbox select:focus,.qbox textarea:focus{outline:none;border-color:#7fc6e8;box-shadow:0 0 0 3px rgba(127,198,232,.25)}.qbox input::placeholder,.qbox textarea::placeholder{color:#5f6b72;opacity:1}
 .qbox textarea{resize:vertical;min-height:96px}
 .qbox .submit{width:100%;background:linear-gradient(135deg,#e3b53e,#c9972a);color:#1a1305;border:none;padding:17px;border-radius:46px;font-weight:700;font-size:1rem;cursor:pointer;box-shadow:0 10px 30px rgba(227,181,62,.35)}
 .qbox .submit:hover{transform:translateY(-2px)}
@@ -291,7 +291,7 @@
 <header class="site-header" id="siteHeader">
   <div class="bar">
     <a href="index.html" aria-label="Up North Pressure Washing home">
-      <img src="images/logo.webp" width="120" height="46" decoding="async" alt="Up North Pressure Washing logo — exterior cleaning company serving Barnum, MN">
+      <img src="images/logo.webp" width="46" height="46" decoding="async" alt="Up North Pressure Washing logo — exterior cleaning company serving Barnum, MN">
     </a>
     <a class="btn btn--quote btn--sm header-cta" href="#quote">Free Quote</a>
     <button class="menu-btn" id="menuBtn" aria-label="Open menu" aria-expanded="false" aria-controls="navlist">
@@ -548,18 +548,18 @@
         <p class="sub">Tell us about your project — we'll respond within one business day.</p>
         <a class="hub-quote-phone" href="tel:+12185768610">218-576-8610</a>
         <div class="row">
-          <div><label>First Name <span class="req">*</span></label><input type="text" id="fn" name="first_name" required autocomplete="given-name"></div>
-          <div><label>Last Name</label><input type="text" id="ln" name="last_name" autocomplete="family-name"></div>
+          <div><label for="fn">First Name <span class="req">*</span></label><input type="text" id="fn" name="first_name" required autocomplete="given-name"></div>
+          <div><label for="ln">Last Name</label><input type="text" id="ln" name="last_name" autocomplete="family-name"></div>
         </div>
         <div class="row">
-          <div><label>Email <span class="req">*</span></label><input type="email" id="em" name="email" required autocomplete="email"></div>
-          <div><label>Phone</label><input type="tel" id="ph" name="phone" autocomplete="tel"></div>
+          <div><label for="em">Email <span class="req">*</span></label><input type="email" id="em" name="email" required autocomplete="email"></div>
+          <div><label for="ph">Phone</label><input type="tel" id="ph" name="phone" autocomplete="tel"></div>
         </div>
-        <label>City / Area</label>
+        <label for="city">City / Area</label>
         <select id="city" name="city"><option value="Duluth">Duluth</option><option value="Hermantown">Hermantown</option><option value="Proctor">Proctor</option><option value="Cloquet">Cloquet</option><option value="Superior">Superior</option><option value="Two Harbors">Two Harbors</option><option value="Esko">Esko</option><option value="Carlton">Carlton</option><option value="Scanlon">Scanlon</option><option value="Wrenshall">Wrenshall</option><option value="Barnum" selected>Barnum</option><option value="Moose Lake">Moose Lake</option><option value="Silver Bay">Silver Bay</option><option value="Lake Nebagamon">Lake Nebagamon</option><option value="Hibbing">Hibbing</option><option value="Virginia">Virginia</option><option value="Eveleth">Eveleth</option></select>
-        <label>Service Interested In</label>
+        <label for="svc">Service Interested In</label>
         <select id="svc" name="service"><option>Soft Washing</option><option>Roof Cleaning</option><option>Gutter Cleaning</option><option>Concrete / Driveway Cleaning</option><option>Deck & Fence Restoration</option><option>Window Cleaning</option><option>Commercial Exterior Cleaning</option><option>Other / Not Sure</option></select>
-        <label>Tell us about your project</label>
+        <label for="msg">Tell us about your project</label>
         <textarea id="msg" name="message" placeholder="Type of siding, problem areas, square footage, anything helpful…"></textarea>
         <button type="submit" class="submit">Request My Free Quote →</button>
       </form>
