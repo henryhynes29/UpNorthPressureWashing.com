@@ -405,8 +405,8 @@
     <p class="section-eyebrow">Gutter Cleaning</p>
     <h2>Gutter Cleaning Duluth, MN</h2>
     <div class="ba" aria-label="Before and after gutter cleaning slider. Drag to compare.">
-      <img class="ba__after" src="images/ba/gutter-after.jpg" alt="After gutter cleaning in Duluth, MN — spotless aluminum gutters cleared of leaves and debris | Up North Pressure Washing" loading="lazy" width="1000" height="1090">
-      <img class="ba__before" src="images/ba/gutter-before.jpg" alt="Before gutter cleaning in Duluth, MN — gutters packed with leaves, debris and organic buildup | Up North Pressure Washing" loading="lazy" width="1000" height="1090">
+      <img class="ba__after" src="images/ba/stucco-after.jpg" alt="After gutter cleaning in Duluth, MN — bright clean gutters and fascia | Up North Pressure Washing" loading="lazy" width="1000" height="750">
+      <img class="ba__before" src="images/ba/stucco-before.jpg" alt="Before gutter cleaning in Duluth, MN — black streaks on gutters | Up North Pressure Washing" loading="lazy" width="1000" height="750">
       <span class="ba__label ba__label--b">Before</span>
       <span class="ba__label ba__label--a">After</span>
       <div class="ba__handle" style="left:50%"><span class="ba__grip">&#8644;</span></div>
@@ -841,4 +841,7 @@ async function submitForm(e){
   resetQuoteBtn(btn,prevLabel);
   return false;
 }
-document.getElementById('quoteForm')?.addEventLi
+document.getElementById('quoteForm')?.addEventListener('submit',submitForm);
+</script>
+</body>
+</html>
