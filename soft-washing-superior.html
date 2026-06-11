@@ -11,47 +11,15 @@
 </script>
 <meta charset="UTF-8">
 <meta name="robots" content="index,follow,max-image-preview:large">
+<meta name="geo.region" content="US-WI">
+<meta name="geo.placename" content="Superior, Wisconsin">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Soft Washing Superior WI | Up North Pressure Washing</title>
 <meta name="description" content="Soft washing in Superior, WI — gentle low-pressure cleaning for siding & roofs across the bay city, from the East End to Billings Park. Built for Lake Superior humidity. 1-year regrowth guarantee.">
-<link rel="canonical" href="https://www.upnorthpressurewashing.com/soft-washing-superior.html">
-<meta name="geo.region" content="US-WI">
-<meta name="geo.placename" content="Superior, Wisconsin">
-<meta name="geo.position" content="46.72077;-92.10484">
-<meta name="ICBM" content="46.72077, -92.10484">
-<meta property="og:title" content="Soft Washing Superior WI | Up North Pressure Washing">
-<meta property="og:description" content="Gentle, low-pressure soft washing built for Superior's bay-side humidity, lake fog, and long snowy seasons. Backed by a 1-year guarantee.">
-<meta property="og:type" content="website">
-<script type="application/ld+json">
-{
-  "@context":"https://schema.org",
-  "@type":"LocalBusiness",
-  "@id":"https://www.upnorthpressurewashing.com/#superior",
-  "name":"Up North Pressure Washing — Superior Soft Washing",
-  "description":"Professional soft washing and exterior cleaning serving Superior, WI and the Twin Ports region.",
-  "areaServed":[
-    {"@type":"City","name":"Superior","containedInPlace":{"@type":"AdministrativeArea","name":"Douglas County, Wisconsin"}},
-    {"@type":"Place","name":"East End"},
-    {"@type":"Place","name":"Billings Park"},
-    {"@type":"Place","name":"North End"},
-    {"@type":"City","name":"Duluth"}
-  ],
-  "geo":{"@type":"GeoCoordinates","latitude":46.72077,"longitude":-92.10484},
-  "priceRange":"$$",
-  "telephone":"(715) 000-0000",
-  "address":{"@type":"PostalAddress","addressLocality":"Superior","addressRegion":"WI","postalCode":"54880","addressCountry":"US"},
-  "makesOffer":[
-    {"@type":"Offer","itemOffered":{"@type":"Service","name":"Full House Soft Wash"}},
-    {"@type":"Offer","itemOffered":{"@type":"Service","name":"Soft Wash Maintenance"}},
-    {"@type":"Offer","itemOffered":{"@type":"Service","name":"Deep Clean Soft Wash Restoration"}},
-    {"@type":"Offer","itemOffered":{"@type":"Service","name":"Roof Soft Wash"}}
-  ],
-  "aggregateRating":{"@type":"AggregateRating","ratingValue":"5.0","reviewCount":"2"}
-}
-</script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..900;1,9..144,400..700&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;0,9..144,700;1,9..144,400;1,9..144,600&family=Outfit:wght@400;500;600;700&display=swap" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;0,9..144,700;1,9..144,400;1,9..144,600&family=Outfit:wght@400;500;600;700&display=swap"></noscript>
 <style>
 :root{
   --navy-900:#0c1824;
@@ -79,7 +47,6 @@ body{
   overflow-x:hidden;
   -webkit-font-smoothing:antialiased;
 }
-/* Atmospheric background */
 .atmosphere{position:fixed;inset:0;z-index:-2;
   background:
     radial-gradient(120% 80% at 80% -10%, #1c4259 0%, transparent 55%),
@@ -96,12 +63,10 @@ body{
   animation:drift 40s linear infinite;
 }
 @keyframes drift{from{background-position:0 0}to{background-position:600px 300px}}
-
 .wrap{max-width:1180px;margin:0 auto;padding:0 22px}
 h1,h2,h3{font-family:'Fraunces',serif;font-weight:600;line-height:1.04;letter-spacing:-.01em}
 .gold{color:var(--gold)}
 .ice{color:var(--ice)}
-
 /* NAV */
 header.nav{position:sticky;top:0;z-index:50;
   backdrop-filter:blur(14px);background:rgba(11,22,34,.72);
@@ -113,7 +78,7 @@ header.nav{position:sticky;top:0;z-index:50;
 .brand .mark svg{width:21px;height:21px}
 .brand small{display:block;font-family:'Outfit';font-weight:400;font-size:.6rem;letter-spacing:.28em;color:var(--ice);text-transform:uppercase;margin-top:1px}
 .nav-links{display:flex;gap:30px;align-items:center}
-.nav-links a{color:var(--text-dim);text-decoration:none;font-size:.92rem;font-weight:500;transition:color .2s;position:relative}
+.nav-links a{color:var(--text-dim);text-decoration:none;font-size:.92rem;font-weight:500;transition:color .2s}
 .nav-links a:hover{color:#fff}
 .nav-phone{color:var(--ice);font-weight:600;font-size:.9rem;text-decoration:none;padding:11px 14px;border-radius:40px;border:1px solid var(--glass-line);white-space:nowrap}
 .nav-phone:hover{color:#fff;border-color:var(--ice)}
@@ -126,218 +91,161 @@ header.nav{position:sticky;top:0;z-index:50;
 .burger.open span:nth-child(1){transform:translateY(7px) rotate(45deg)}
 .burger.open span:nth-child(2){opacity:0}
 .burger.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
-
 /* HERO */
 .hero{padding:74px 0 60px;position:relative}
 .eyebrow{display:inline-flex;align-items:center;gap:9px;font-size:.74rem;letter-spacing:.26em;text-transform:uppercase;
   color:var(--ice);font-weight:600;margin-bottom:22px;
-  border:1px solid var(--glass-line);background:var(--glass);padding:8px 16px;border-radius:40px;backdrop-filter:blur(8px)}
-.eyebrow .dot{width:7px;height:7px;border-radius:50%;background:var(--ice);box-shadow:0 0 12px var(--ice)}
-.hero h1{font-size:clamp(2.7rem,8vw,5.1rem);font-weight:600}
-.hero h1 em{font-style:italic;color:var(--ice);font-weight:500}
-.hero .lede{font-size:1.13rem;color:var(--text-dim);max-width:560px;margin:24px 0 14px}
-.hero .serving{font-size:.95rem;color:var(--ice-soft);font-weight:500;margin-bottom:32px}
-.hero-cta-row{display:flex;gap:14px;flex-wrap:wrap;align-items:center}
-.btn-gold{display:inline-flex;align-items:center;justify-content:center;gap:10px;background:linear-gradient(135deg,var(--gold),var(--gold-deep));
-  color:#1a1305;padding:16px 32px;border-radius:46px;font-weight:700;font-size:.94rem;letter-spacing:.03em;text-decoration:none;
-  box-shadow:0 10px 34px rgba(227,181,62,.32);transition:transform .25s,box-shadow .25s}
-.btn-gold:hover{transform:translateY(-3px);box-shadow:0 16px 44px rgba(227,181,62,.46)}
-.btn-ghost{display:inline-flex;align-items:center;justify-content:center;gap:9px;color:var(--text);padding:15px 28px;border-radius:46px;
-  border:1px solid var(--glass-line);background:var(--glass);font-weight:600;font-size:.92rem;text-decoration:none;
-  backdrop-filter:blur(8px);transition:border-color .25s,transform .25s}
-.btn-ghost:hover{border-color:var(--ice);transform:translateY(-3px)}
-
-/* Trust strip */
-.trust{display:flex;gap:34px;flex-wrap:wrap;margin-top:42px;padding-top:28px;border-top:1px solid var(--line)}
-.trust .item{display:flex;flex-direction:column}
-.trust .num{font-family:'Fraunces',serif;font-size:1.9rem;font-weight:600;color:#fff;line-height:1}
-.trust .lbl{font-size:.78rem;color:var(--text-dim);letter-spacing:.04em;margin-top:5px}
-
-/* BEFORE/AFTER SLIDER */
-section{padding:78px 0}
-.sec-head{text-align:center;max-width:640px;margin:0 auto 50px}
-.sec-head .eyebrow{margin-bottom:18px}
-.sec-head h2{font-size:clamp(2rem,5vw,3.2rem)}
-.sec-head p{color:var(--text-dim);margin-top:16px;font-size:1.04rem}
-
-.ba-grid{display:grid;grid-template-columns:1fr;gap:30px;max-width:840px;margin:0 auto}
-.ba-card{background:var(--glass);border:1px solid var(--glass-line);border-radius:20px;padding:16px;
-  backdrop-filter:blur(10px);box-shadow:0 20px 60px rgba(0,0,0,.35)}
-.ba-card .cap{display:flex;justify-content:space-between;align-items:center;padding:6px 8px 14px}
-.ba-card .cap h3{font-size:1.18rem}
-.ba-card .cap span{font-size:.78rem;color:var(--ice);letter-spacing:.14em;text-transform:uppercase;font-weight:600}
-.ba{position:relative;width:100%;aspect-ratio:4/3;border-radius:13px;overflow:hidden;cursor:ew-resize;user-select:none;touch-action:pan-y pinch-zoom}
-.ba.is-dragging{touch-action:none}
-.ba img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;pointer-events:none}
+  border:1px solid var(--glass-line);background:var(--glass);padding:7px 15px;border-radius:40px}
+.dot{width:6px;height:6px;border-radius:50%;background:var(--ice);flex-shrink:0}
+.hero h1{font-size:clamp(2.8rem,7vw,5rem);margin-bottom:18px}
+.hero h1 em{font-style:italic;color:var(--ice)}
+.lede{font-size:clamp(1rem,2vw,1.2rem);color:var(--text-dim);max-width:560px;margin-bottom:10px;line-height:1.65}
+.serving{font-size:.9rem;color:var(--text-dim);margin-bottom:28px}
+.hero-cta-row{display:flex;flex-wrap:wrap;gap:14px;margin-bottom:44px}
+.btn-gold{display:inline-flex;align-items:center;gap:9px;padding:15px 28px;border-radius:50px;font-weight:700;font-size:.95rem;letter-spacing:.04em;text-transform:uppercase;
+  background:linear-gradient(135deg,var(--gold),var(--gold-deep));color:#1a1305;text-decoration:none;
+  box-shadow:0 8px 28px rgba(227,181,62,.32);transition:transform .2s,box-shadow .2s}
+.btn-gold:hover{transform:translateY(-2px);box-shadow:0 14px 36px rgba(227,181,62,.44)}
+.btn-ghost{display:inline-flex;align-items:center;padding:15px 26px;border-radius:50px;font-weight:600;font-size:.92rem;
+  border:1px solid rgba(127,198,232,.35);color:var(--ice);text-decoration:none;transition:.2s}
+.btn-ghost:hover{border-color:var(--ice);background:rgba(127,198,232,.07)}
+.trust{display:flex;flex-wrap:wrap;gap:0;border:1px solid var(--glass-line);border-radius:16px;overflow:hidden;background:var(--glass)}
+.trust .item{flex:1;min-width:140px;padding:18px 20px;text-align:center;border-right:1px solid var(--glass-line)}
+.trust .item:last-child{border-right:none}
+.trust .num{display:block;font-family:'Fraunces',serif;font-size:1.65rem;color:#fff;font-weight:700;line-height:1}
+.trust .lbl{display:block;font-size:.7rem;color:var(--text-dim);letter-spacing:.14em;text-transform:uppercase;margin-top:5px}
+/* SECTION HEAD */
+.sec-head{text-align:center;margin-bottom:44px}
+.sec-head h2{font-size:clamp(1.9rem,4.5vw,2.8rem);margin-bottom:14px}
+.sec-head p{color:var(--text-dim);max-width:580px;margin:0 auto;font-size:.97rem}
+/* BEFORE/AFTER */
+section#results,.ba-section{padding:64px 0;border-top:1px solid var(--line)}
+.ba-section{padding:56px 0;border-top:1px solid var(--line)}
+.ba-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(340px,1fr));gap:22px}
+.ba-card{background:var(--glass);border:1px solid var(--glass-line);border-radius:18px;overflow:hidden}
+.ba-card .cap{padding:16px 18px 12px;display:flex;flex-direction:column;gap:4px}
+.ba-card .cap h3{font-size:1.08rem;color:#fff}
+.ba-card .cap span{font-size:.78rem;color:var(--text-dim);letter-spacing:.08em}
+.ba{position:relative;overflow:hidden;aspect-ratio:4/3;cursor:ew-resize;user-select:none;touch-action:pan-y}
+.ba img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block}
 .ba .after-wrap{position:absolute;inset:0;overflow:hidden;width:50%}
-.ba .after-wrap img{width:auto;min-width:100%}
-.ba .handle{position:absolute;top:0;bottom:0;left:50%;width:3px;background:linear-gradient(var(--ice),var(--ice-soft));transform:translateX(-50%);
-  box-shadow:0 0 18px rgba(127,198,232,.7)}
+.ba .after-wrap img{width:100%;height:100%;object-fit:cover}
+.ba .handle{position:absolute;top:0;bottom:0;left:50%;width:2px;background:rgba(255,255,255,.85);transform:translateX(-50%)}
 .ba .knob{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:46px;height:46px;border-radius:50%;
-  background:rgba(12,24,36,.78);border:2px solid var(--ice);display:grid;place-items:center;backdrop-filter:blur(6px);
-  box-shadow:0 6px 20px rgba(0,0,0,.5)}
-.ba .knob svg{width:22px;height:22px;stroke:var(--ice)}
-.ba .tag{position:absolute;bottom:14px;padding:6px 14px;border-radius:8px;font-size:.72rem;font-weight:700;letter-spacing:.12em;
-  text-transform:uppercase;backdrop-filter:blur(6px)}
-.ba .tag.before{left:14px;background:rgba(12,24,36,.7);color:var(--ice-soft);border:1px solid var(--glass-line)}
-.ba .tag.after{right:14px;background:linear-gradient(135deg,var(--gold),var(--gold-deep));color:#1a1305}
-.fit-note{text-align:center;color:var(--text-dim);font-size:.86rem;margin-top:18px}
-.fit-note .drag{color:var(--ice)}
-
-/* SERVICES ACCORDION */
-.svc-wrap{max-width:860px;margin:0 auto}
-.acc{border-top:1px solid var(--line)}
-.acc:last-child{border-bottom:1px solid var(--line)}
-.acc-head{display:flex;align-items:center;justify-content:space-between;gap:18px;padding:26px 6px;cursor:pointer;transition:padding-left .25s}
-.acc-head:hover{padding-left:14px}
-.acc-head h3{font-size:1.42rem;font-weight:500;transition:color .25s}
-.acc-head:hover h3{color:var(--ice)}
-.acc-head .ic{width:34px;height:34px;flex-shrink:0;border-radius:50%;border:1px solid var(--glass-line);display:grid;place-items:center;
-  position:relative;transition:.3s;background:var(--glass)}
-.acc-head .ic::before,.acc-head .ic::after{content:'';position:absolute;background:var(--ice);border-radius:2px}
-.acc-head .ic::before{width:14px;height:2px}
-.acc-head .ic::after{width:2px;height:14px;transition:transform .3s}
-.acc.open .ic{background:var(--ice);transform:rotate(180deg)}
-.acc.open .ic::before,.acc.open .ic::after{background:#0c1824}
-.acc.open .ic::after{transform:scaleY(0)}
+  background:rgba(10,22,34,.85);border:2px solid rgba(255,255,255,.8);display:grid;place-items:center;box-shadow:0 4px 16px rgba(0,0,0,.4)}
+.ba .knob svg{width:22px;height:22px}
+.ba .tag{position:absolute;top:12px;font-size:.68rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;
+  padding:4px 10px;border-radius:20px;background:rgba(0,0,0,.5);backdrop-filter:blur(4px);color:#fff}
+.ba .tag.before{left:12px}
+.ba .tag.after{right:12px}
+.ba.is-dragging{cursor:grabbing}
+.fit-note{text-align:center;margin-top:16px;font-size:.82rem;color:var(--text-dim)}
+.drag{font-size:1.1rem;margin-right:6px}
+/* SERVICES */
+#services{padding:72px 0;border-top:1px solid var(--line)}
+.svc-wrap{max-width:860px}
+.acc{border:1px solid var(--glass-line);border-radius:14px;overflow:hidden;background:var(--glass);margin-bottom:10px}
+.acc-head{display:flex;justify-content:space-between;align-items:center;padding:18px 22px;cursor:pointer;transition:background .2s}
+.acc-head:hover{background:rgba(127,198,232,.05)}
+.acc-head h3{font-size:1.1rem;color:#fff}
+.ic{width:24px;height:24px;border:1px solid var(--glass-line);border-radius:50%;display:grid;place-items:center;flex-shrink:0;transition:.3s}
+.ic::before{content:'';width:8px;height:8px;border-right:1.5px solid var(--ice);border-bottom:1.5px solid var(--ice);transform:translateY(-2px) rotate(45deg);transition:.3s}
+.acc.open .ic{background:rgba(127,198,232,.12);border-color:rgba(127,198,232,.4)}
+.acc.open .ic::before{transform:translateY(2px) rotate(-135deg)}
 .acc-body{max-height:0;overflow:hidden;transition:max-height .4s ease}
-.acc-body .inner{padding:0 6px 28px;display:flex;gap:18px;align-items:flex-start}
-.acc-body .badge{flex-shrink:0;width:46px;height:46px;border-radius:13px;background:var(--glass);border:1px solid var(--glass-line);
-  display:grid;place-items:center;margin-top:2px}
-.acc-body .badge svg{width:24px;height:24px;stroke:var(--ice)}
-.acc-body p{color:var(--text-dim);font-size:1.03rem;max-width:600px}
-.acc-body .feat{display:flex;flex-wrap:wrap;gap:8px;margin-top:14px}
-.acc-body .feat span{font-size:.78rem;color:var(--ice-soft);background:var(--glass);border:1px solid var(--glass-line);
-  padding:5px 12px;border-radius:30px}
-.svc-cta{text-align:center;margin-top:44px}
-
+.acc-body .inner{display:flex;gap:18px;padding:0 22px 22px;align-items:flex-start}
+.badge{width:40px;height:40px;flex-shrink:0;border-radius:10px;background:rgba(127,198,232,.1);border:1px solid rgba(127,198,232,.2);display:grid;place-items:center}
+.badge svg{width:20px;height:20px}
+.feat{display:flex;flex-wrap:wrap;gap:8px;margin-top:12px}
+.feat span{font-size:.75rem;padding:4px 10px;border-radius:20px;border:1px solid var(--glass-line);background:rgba(255,255,255,.04);color:var(--text-dim)}
+.svc-cta{text-align:center;margin-top:32px}
 /* PROCESS */
-.proc-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:22px;margin-top:10px}
-.proc{background:var(--glass);border:1px solid var(--glass-line);border-radius:18px;padding:30px 24px;position:relative;
-  backdrop-filter:blur(8px);transition:transform .3s,border-color .3s}
-.proc:hover{transform:translateY(-6px);border-color:var(--ice)}
-.proc .step{font-family:'Fraunces',serif;font-size:.9rem;color:var(--gold);letter-spacing:.1em;font-weight:600}
-.proc .pic{width:52px;height:52px;border-radius:14px;background:linear-gradient(140deg,#1d3a4d,#102330);
-  border:1px solid var(--glass-line);display:grid;place-items:center;margin:16px 0 18px}
-.proc .pic svg{width:27px;height:27px;stroke:var(--ice)}
-.proc h3{font-size:1.18rem;font-weight:500;margin-bottom:9px}
-.proc p{color:var(--text-dim);font-size:.93rem}
-
+#process{padding:72px 0;border-top:1px solid var(--line)}
+.proc-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
+.proc{background:var(--glass);border:1px solid var(--glass-line);border-radius:16px;padding:26px 20px;text-align:center}
+.step{font-size:.65rem;letter-spacing:.22em;color:var(--ice);font-weight:700;text-transform:uppercase;margin-bottom:14px}
+.pic{width:48px;height:48px;border-radius:14px;background:rgba(127,198,232,.1);border:1px solid rgba(127,198,232,.2);display:grid;place-items:center;margin:0 auto 14px}
+.pic svg{width:24px;height:24px}
+.proc h3{font-size:1rem;margin-bottom:8px}
+.proc p{font-size:.83rem;color:var(--text-dim);line-height:1.55}
 /* WHY SOFT WASH */
-.why{max-width:760px;margin:0 auto;text-align:center}
-.why ul{list-style:none;margin-top:34px;display:grid;grid-template-columns:1fr 1fr;gap:22px;text-align:left}
-.why li{display:flex;gap:15px;align-items:flex-start;background:var(--glass);border:1px solid var(--glass-line);
-  border-radius:16px;padding:22px 22px;backdrop-filter:blur(8px)}
-.why li .ck{flex-shrink:0;width:28px;height:28px;border-radius:50%;background:rgba(127,198,232,.14);border:1px solid var(--ice);
-  display:grid;place-items:center;margin-top:2px}
-.why li .ck svg{width:15px;height:15px;stroke:var(--ice)}
-.why li b{color:#fff;font-weight:600}
-.why li span{color:var(--text-dim)}
-
+.why{padding:72px 0;border-top:1px solid var(--line)}
+.why h2{font-size:clamp(1.9rem,4.5vw,2.8rem);margin-bottom:32px}
+.why ul{list-style:none;display:flex;flex-direction:column;gap:20px}
+.why li{display:flex;gap:16px;align-items:flex-start}
+.ck{width:28px;height:28px;flex-shrink:0;border-radius:8px;background:rgba(127,198,232,.12);border:1px solid rgba(127,198,232,.25);display:grid;place-items:center;margin-top:2px}
+.ck svg{width:15px;height:15px}
+.why li b{color:var(--text);display:block;margin-bottom:2px}
+.why li span{font-size:.92rem;color:var(--text-dim)}
 /* GUARANTEE */
-.guarantee{max-width:880px;margin:0 auto;text-align:center;background:linear-gradient(140deg,rgba(127,198,232,.07),rgba(227,181,62,.05));
-  border:1px solid var(--glass-line);border-radius:26px;padding:54px 40px;backdrop-filter:blur(10px);position:relative;overflow:hidden}
-.guarantee::before{content:'';position:absolute;top:-60px;right:-60px;width:200px;height:200px;border-radius:50%;
-  background:radial-gradient(circle,rgba(227,181,62,.18),transparent 70%)}
-.guarantee .seal{width:84px;height:84px;margin:0 auto 22px;border-radius:50%;border:2px solid var(--gold);
-  display:grid;place-items:center;background:rgba(227,181,62,.08)}
-.guarantee .seal svg{width:42px;height:42px;stroke:var(--gold)}
-.guarantee h2{font-size:clamp(1.8rem,4vw,2.6rem)}
-.guarantee p{color:var(--text-dim);max-width:560px;margin:16px auto 0;font-size:1.05rem}
-
+.guarantee{background:linear-gradient(135deg,rgba(227,181,62,.08),rgba(227,181,62,.03));
+  border:1px solid rgba(227,181,62,.22);border-radius:20px;padding:44px 40px;text-align:center}
+.seal{width:56px;height:56px;border-radius:50%;background:rgba(227,181,62,.12);border:1px solid rgba(227,181,62,.3);
+  display:grid;place-items:center;margin:0 auto 20px}
+.seal svg{width:28px;height:28px}
+.guarantee h2{font-size:clamp(1.6rem,3.5vw,2.2rem);margin-bottom:14px}
+.guarantee p{color:var(--text-dim);max-width:600px;margin:0 auto;line-height:1.7;font-size:.96rem}
 /* TESTIMONIALS */
-.test-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:26px;max-width:920px;margin:0 auto}
-.test{background:var(--glass);border:1px solid var(--glass-line);border-radius:20px;padding:34px 30px;backdrop-filter:blur(8px);
-  position:relative;transition:transform .3s}
-.test:hover{transform:translateY(-5px)}
-.test .stars{color:var(--gold);letter-spacing:3px;font-size:1.05rem;margin-bottom:16px}
-.test .quote{font-family:'Fraunces',serif;font-style:italic;font-size:1.12rem;line-height:1.55;color:var(--text)}
-.test .who{margin-top:18px;font-weight:600;color:var(--ice);font-size:.92rem}
-.test .who small{display:block;color:var(--text-dim);font-weight:400;font-size:.8rem;margin-top:2px}
-
+.test-grid{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+.test{background:var(--glass);border:1px solid var(--glass-line);border-radius:16px;padding:28px 24px}
+.stars{font-size:1.15rem;color:var(--gold);letter-spacing:3px;margin-bottom:12px}
+.quote{font-size:.92rem;color:var(--text-dim);line-height:1.65;font-style:italic}
+.who{margin-top:16px;font-weight:600;font-size:.88rem;color:#fff;display:flex;flex-direction:column;gap:3px}
+.who small{font-size:.78rem;color:var(--text-dim);font-weight:400}
 /* QUOTE FORM */
-.quote-sec{background:linear-gradient(180deg,transparent,rgba(127,198,232,.04))}
-.qbox{max-width:780px;margin:0 auto;background:var(--cream);border-radius:26px;padding:48px 44px;color:#1a2630;
-  box-shadow:0 30px 80px rgba(0,0,0,.5)}
-.qbox h2{color:#13212c;font-size:clamp(2rem,5vw,3rem)}
-.qbox .sub{color:#4a5a64;margin:12px 0 30px}
-.qbox label{display:block;font-size:.82rem;font-weight:600;color:#2c3a44;margin-bottom:7px;letter-spacing:.02em}
-.qbox .req{color:#c0392b}
-.qbox .row{display:grid;grid-template-columns:1fr 1fr;gap:18px}
-.qbox input,.qbox select,.qbox textarea{width:100%;padding:13px 15px;border:1px solid #cdd5da;border-radius:11px;
-  font-family:'Outfit';font-size:.96rem;background:#fff;color:#1a2630;margin-bottom:18px;transition:border-color .2s,box-shadow .2s}
-.qbox input:focus,.qbox select:focus,.qbox textarea:focus{outline:none;border-color:var(--ice);box-shadow:0 0 0 3px rgba(127,198,232,.25)}
-.qbox textarea{resize:vertical;min-height:96px}
-.qbox .submit{width:100%;background:linear-gradient(135deg,var(--gold),var(--gold-deep));color:#1a1305;border:none;
-  padding:17px;border-radius:46px;font-family:'Outfit';font-weight:700;font-size:1rem;letter-spacing:.03em;cursor:pointer;
-  box-shadow:0 10px 30px rgba(227,181,62,.35);transition:transform .25s}
-.qbox .submit:hover{transform:translateY(-2px)}
-.qbox .ok{display:none;text-align:center;padding:30px}
-.qbox .ok.show{display:block}
-.qbox .ok svg{width:60px;height:60px;stroke:#2e8b57;margin-bottom:14px}
-.qbox .ok h3{font-size:1.6rem;color:#13212c}
-
+.quote-sec{padding:80px 0;background:linear-gradient(180deg,transparent,rgba(127,198,232,.04) 50%,transparent);border-top:1px solid var(--line)}
+.qbox{background:var(--cream);border-radius:20px;padding:44px 40px;max-width:700px;margin:0 auto}
+.qbox h2{font-family:'Fraunces',serif;color:#1a2830;font-size:clamp(1.5rem,3vw,2rem);margin-bottom:8px}
+.qbox .sub{color:#4a5a64;font-size:.93rem;margin-bottom:28px}
+.qbox label{display:block;font-size:.82rem;font-weight:600;color:#3a4a54;letter-spacing:.06em;text-transform:uppercase;margin-bottom:5px;margin-top:18px}
+.qbox label:first-of-type{margin-top:0}
+.qbox input,.qbox select,.qbox textarea{width:100%;padding:12px 14px;border:1px solid #d0dce4;border-radius:10px;font-family:'Outfit',sans-serif;font-size:.93rem;color:#1a2830;background:#fff;transition:border-color .2s}
+.qbox input:focus,.qbox select:focus,.qbox textarea:focus{outline:none;border-color:#7fc6e8}
+.qbox textarea{height:110px;resize:vertical}
+.qbox .row{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.req{color:#c0392b}
+.submit{width:100%;margin-top:22px;padding:16px;border-radius:50px;border:none;cursor:pointer;font-family:'Outfit',sans-serif;font-weight:700;font-size:1rem;letter-spacing:.06em;text-transform:uppercase;
+  background:linear-gradient(135deg,var(--gold),var(--gold-deep));color:#1a1305;box-shadow:0 6px 24px rgba(227,181,62,.3);transition:.2s}
+.submit:hover{transform:translateY(-2px)}
+.submit:disabled{opacity:.6;cursor:not-allowed}
+.ok{display:none;text-align:center;padding:40px 20px}
+.ok.show{display:block}
+.ok svg{width:60px;height:60px;margin:0 auto 16px}
+.ok h3{font-family:'Fraunces',serif;color:#1a2830;font-size:1.4rem;margin-bottom:8px}
+.ok p{color:#4a5a64}
 /* FOOTER */
-footer{border-top:1px solid var(--line);padding:54px 0 40px;margin-top:20px}
-.foot-grid{display:flex;justify-content:space-between;flex-wrap:wrap;gap:30px}
-.foot-grid .brand small{color:var(--ice)}
-.foot-links{display:flex;gap:40px;flex-wrap:wrap}
-.foot-col h4{font-size:.78rem;letter-spacing:.16em;text-transform:uppercase;color:var(--ice);margin-bottom:14px}
-.foot-col a,.foot-col p{display:block;color:var(--text-dim);text-decoration:none;font-size:.92rem;margin-bottom:9px;transition:color .2s}
+footer{padding:60px 0 0;border-top:1px solid var(--line);margin-top:0}
+.foot-grid{display:grid;grid-template-columns:240px 1fr;gap:52px;padding-bottom:40px}
+.foot-links{display:grid;grid-template-columns:repeat(4,1fr);gap:24px}
+.foot-col h4{font-size:.72rem;letter-spacing:.22em;text-transform:uppercase;color:var(--ice);margin-bottom:14px;font-weight:600}
+.foot-col a,.foot-col p{display:block;font-size:.82rem;color:var(--text-dim);text-decoration:none;margin-bottom:7px;line-height:1.4}
 .foot-col a:hover{color:#fff}
-.foot-bottom{text-align:center;color:var(--text-dim);font-size:.84rem;margin-top:40px;padding-top:26px;border-top:1px solid var(--line)}
-
-/* reveal */
-.reveal{opacity:0;transform:translateY(30px);transition:opacity .7s ease,transform .7s ease}
+.foot-bottom{border-top:1px solid var(--line);padding:18px 0;font-size:.78rem;color:var(--text-dim);text-align:center}
+/* REVEAL */
+.reveal{opacity:0;transform:translateY(22px);transition:opacity .55s ease,transform .55s ease}
 .reveal.in{opacity:1;transform:none}
-
+/* MOBILE NAV */
 @media(max-width:860px){
-  .why ul{grid-template-columns:1fr}
-  .test-grid{grid-template-columns:1fr}
-  .proc-grid{grid-template-columns:1fr 1fr}
-}
-@media(max-width:680px){
-  .nav-links{display:none}
-  .nav-links.open{display:flex;position:fixed;top:70px;left:0;right:0;flex-direction:column;align-items:center;
-    background:rgba(11,22,34,.98);padding:26px;gap:20px;border-bottom:1px solid var(--line);backdrop-filter:blur(16px);z-index:55}
-  .nav-links.open a{font-size:1.1rem}
+  .nav-links{display:none;position:fixed;inset:0;top:70px;background:rgba(11,22,34,.97);flex-direction:column;
+    align-items:center;justify-content:center;gap:28px;z-index:49}
+  .nav-links.open{display:flex}
   .burger{display:flex}
-  .proc-grid{grid-template-columns:1fr}
-  .qbox{padding:32px 20px}
+  .proc-grid{grid-template-columns:1fr 1fr}
+  .test-grid{grid-template-columns:1fr}
+  .foot-grid{grid-template-columns:1fr}
+  .foot-links{grid-template-columns:1fr 1fr}
+}
+@media(max-width:600px){
+  .qbox{padding:28px 20px}
   .qbox .row{grid-template-columns:1fr}
-  .guarantee{padding:40px 22px}
-  section{padding:54px 0}
-  .hero{padding:42px 0 36px;text-align:center}
-  /* Center the hero block on mobile */
-  .hero .eyebrow{margin-left:auto;margin-right:auto}
-  .hero .lede,.hero .serving{margin-left:auto;margin-right:auto}
-  .hero-cta-row{justify-content:center}
-  .hero-cta-row .btn-gold,.hero-cta-row .btn-ghost{width:100%;max-width:340px}
-  .trust{justify-content:center;gap:24px 30px;text-align:center}
-  .trust .item{align-items:center;flex:1 1 28%;min-width:90px}
-  .trust .num{font-size:1.6rem}
-  /* Section headers already centered; tighten */
-  .sec-head{margin-bottom:38px}
-  .sec-head p{font-size:.98rem}
-  /* Services accordion — center the heading, keep body readable */
-  .acc-head{padding:22px 2px}
-  .acc-head h3{font-size:1.15rem}
-  .acc-body .inner{flex-direction:column;gap:14px;padding:0 2px 24px}
-  .acc-body .badge{margin:0 auto}
-  .acc-body p,.acc-body .feat{text-align:center}
-  .acc-body .feat{justify-content:center}
-  /* Process cards centered */
-  .proc{text-align:center;padding:28px 22px}
-  .proc .pic{margin-left:auto;margin-right:auto}
-  /* Why list cards already styled; just center text inside on mobile */
+  .foot-links{grid-template-columns:1fr}
+}
+@media(max-width:760px){
+  .proc-grid{grid-template-columns:1fr}
   .why li{flex-direction:column;align-items:center;gap:10px;text-align:center}
-  /* Testimonials centered */
   .test{text-align:center;padding:30px 24px}
-  .test .stars{letter-spacing:4px}
-  /* Quote form centered labels feel better left, keep as-is but tighten */
   .qbox h2{text-align:center}
   .qbox .sub{text-align:center}
-  /* Before/after cards full bleed feel */
   .ba-card{padding:12px}
   .ba-card .cap{padding:4px 4px 12px}
   .ba-card .cap h3{font-size:1.05rem}
@@ -349,7 +257,7 @@ footer{border-top:1px solid var(--line);padding:54px 0 40px;margin-top:20px}
   .trust .num{font-size:1.4rem}
   .trust .lbl{font-size:.72rem}
 }
-/* EDUCATION-BLOCK */
+/* EDUCATION */
 .edu-sec{padding:56px 0 20px;border-top:1px solid var(--line)}
 .edu-sec .sec-head{text-align:center;margin-bottom:28px}
 .edu-sec .sec-head h2{font-size:clamp(1.6rem,4vw,2.2rem);margin-bottom:10px}
@@ -363,8 +271,7 @@ footer{border-top:1px solid var(--line);padding:54px 0 40px;margin-top:20px}
 .edu-more{text-align:center;margin-top:22px}
 .edu-more a{color:var(--ice);font-weight:600;text-decoration:none}
 @media(max-width:760px){.edu-grid{grid-template-columns:1fr}}
-
-/* CITY-CLUSTER */
+/* CITY CLUSTER */
 .city-cluster{padding:64px 0;border-top:1px solid var(--line);background:rgba(255,255,255,.012)}
 .cluster-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:10px;max-width:980px;margin:0 auto}
 .cluster-link{display:flex;flex-direction:column;gap:4px;padding:14px 16px;border-radius:12px;border:1px solid var(--glass-line);background:var(--glass);text-decoration:none;transition:.2s}
@@ -376,35 +283,80 @@ footer{border-top:1px solid var(--line);padding:54px 0 40px;margin-top:20px}
 .nearby-hub{color:var(--ice);font-weight:600;text-decoration:none;margin:0 6px}
 .nearby-hub:hover{text-decoration:underline}
 @media(max-width:760px){.cluster-grid{grid-template-columns:1fr 1fr}}
-
+/* WHY-DULUTH SEO SECTION */
+.seo-split{padding:72px 0;border-top:1px solid var(--line)}
+.seo-split-grid{display:grid;grid-template-columns:1fr 360px;gap:56px;align-items:start}
+.seo-split-text h2{font-size:clamp(1.7rem,4vw,2.4rem);margin-bottom:18px}
+.seo-split-text p{color:var(--text-dim);line-height:1.72;margin-bottom:16px;font-size:.96rem}
+.seo-list{list-style:none;padding:0;margin:0 0 16px;display:flex;flex-direction:column;gap:14px}
+.seo-list li{padding:14px 16px;background:var(--glass);border:1px solid var(--glass-line);border-radius:12px;font-size:.9rem;color:var(--text-dim);line-height:1.55}
+.seo-list li b{color:var(--text);display:block;margin-bottom:3px}
+.seo-stats{display:flex;flex-direction:column;gap:14px}
+.stat-card{background:var(--glass);border:1px solid var(--glass-line);border-radius:16px;padding:24px 20px}
+.stat-num{font-family:'Fraunces',serif;font-size:2.4rem;color:var(--gold);line-height:1;margin-bottom:7px}
+.stat-num span{font-size:1.1rem;color:var(--text-dim)}
+.stat-lbl{font-size:.83rem;color:var(--text-dim);line-height:1.48}
+@media(max-width:820px){.seo-split-grid{grid-template-columns:1fr;gap:36px}}
+/* RESULTS-INFO 3-CARD */
+.results-info{padding:64px 0;border-top:1px solid var(--line)}
+.ri-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.ri-card{background:var(--glass);border:1px solid var(--glass-line);border-radius:16px;padding:28px 22px}
+.ri-icon{width:44px;height:44px;border-radius:12px;background:rgba(127,198,232,.1);border:1px solid rgba(127,198,232,.2);display:grid;place-items:center;margin-bottom:16px}
+.ri-icon svg{width:22px;height:22px}
+.ri-card h3{font-size:1.1rem;margin-bottom:10px;color:#fff}
+.ri-card p{font-size:.88rem;color:var(--text-dim);line-height:1.62}
+@media(max-width:760px){.ri-grid{grid-template-columns:1fr}}
+/* PRICE CALCULATOR */
+.calc-sec{padding:72px 0;border-top:1px solid var(--line)}
+.calc-box{background:var(--glass);border:1px solid var(--glass-line);border-radius:22px;padding:40px 36px;max-width:820px;margin:0 auto}
+.calc-grid{display:grid;grid-template-columns:1fr 1fr;gap:22px 32px;margin-bottom:32px}
+.calc-row{display:flex;flex-direction:column;gap:7px}
+.calc-lbl{font-size:.78rem;font-weight:600;color:var(--text-dim);letter-spacing:.1em;text-transform:uppercase}
+.calc-sel{background:rgba(255,255,255,.06);border:1px solid var(--glass-line);border-radius:10px;color:var(--text);
+  padding:11px 34px 11px 14px;font-family:'Outfit',sans-serif;font-size:.92rem;appearance:none;cursor:pointer;transition:border-color .2s;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%237fc6e8' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");
+  background-repeat:no-repeat;background-position:right 12px center}
+.calc-sel:focus{outline:none;border-color:var(--ice)}
+.calc-sel option{background:#0e1e2d;color:var(--text)}
+.calc-result{text-align:center;padding:30px 20px;background:rgba(227,181,62,.06);border-radius:16px;border:1px solid rgba(227,181,62,.2);margin-bottom:20px}
+.calc-result-lbl{font-size:.72rem;letter-spacing:.22em;text-transform:uppercase;color:var(--text-dim);margin-bottom:8px;font-weight:600}
+.calc-price{font-family:'Fraunces',serif;font-size:clamp(2.2rem,6vw,3.4rem);color:var(--gold);font-weight:700;line-height:1}
+.calc-sub{font-size:.8rem;color:var(--text-dim);margin-top:9px}
+.calc-note{font-size:.83rem;color:var(--text-dim);line-height:1.58;margin-bottom:10px;padding:14px 16px;background:rgba(255,255,255,.03);border-radius:10px;border-left:2px solid rgba(227,181,62,.4)}
+.calc-note a{color:var(--ice);text-decoration:none;font-weight:600}
+.calc-bundle{font-size:.83rem;color:var(--text-dim);line-height:1.58;padding:12px 16px;background:rgba(127,198,232,.05);border-radius:10px;border-left:2px solid rgba(127,198,232,.3)}
+.calc-bundle a{color:var(--ice);text-decoration:none;font-weight:600}
+@media(max-width:600px){.calc-grid{grid-template-columns:1fr}.calc-box{padding:26px 18px}}
 </style>
-<link rel="dns-prefetch" href="https://fonts.googleapis.com">
-<meta property="og:image" content="https://www.upnorthpressurewashing.com/images/ba/hero-after.jpg">
+<link rel="canonical" href="https://www.upnorthpressurewashing.com/soft-washing-superior.html">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Up North Pressure Washing">
+<meta property="og:title" content="Soft Washing Superior WI | Up North Pressure Washing">
+<meta property="og:description" content="Professional soft washing in Superior, Hermantown &amp; Proctor MN. Low-pressure cleaning removes algae, mold &amp; buildup — backed by a 1-year regrowth guarantee.">
+<meta property="og:url" content="https://www.upnorthpressurewashing.com/soft-washing-duluth.html">
+<meta property="og:image" content="https://www.upnorthpressurewashing.com/images/ba/hero-after.webp">
+<meta property="og:image:alt" content="Soft Washing results in Superior, MN | Up North Pressure Washing">
 <meta name="twitter:card" content="summary_large_image">
-
+<meta name="twitter:title" content="Soft Washing Superior WI | Up North Pressure Washing">
+<meta name="twitter:description" content="Professional soft washing in Superior, Hermantown &amp; Proctor MN. Low-pressure cleaning removes algae, mold &amp; buildup — backed by a 1-year regrowth guarantee.">
+<meta name="twitter:image" content="https://www.upnorthpressurewashing.com/images/ba/hero-after.webp">
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[
-  {"@type":"ListItem","position":1,"name":"Home","item":"https://www.upnorthpressurewashing.com/superior-wi-pressure-washing.html"},
-  {"@type":"ListItem","position":2,"name":"Superior","item":"https://www.upnorthpressurewashing.com/superior-wi-pressure-washing.html"},
-  {"@type":"ListItem","position":3,"name":"Soft Washing","item":"https://www.upnorthpressurewashing.com/soft-washing-superior.html"}
-]}
+{"@context":"https://schema.org","@type":"Service","name":"Soft Washing Superior, WI","description":"Soft washing in Superior, WI — gentle low-pressure cleaning for siding & roofs across the bay city, from the East End to Billings Park. Built for Lake Superior humidity. 1-year regrowth guarantee.","provider":{"@type":"LocalBusiness","name":"Up North Pressure Washing","telephone":"+1-218-576-8610","url":"https://www.upnorthpressurewashing.com"},"areaServed":{"@type":"City","name":"Superior","addressRegion":"WI"},"serviceType":"Soft Washing"}
+</script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://www.upnorthpressurewashing.com/superior-wi-pressure-washing.html"},{"@type":"ListItem","position":2,"name":"Superior","item":"https://www.upnorthpressurewashing.com/superior-wi-pressure-washing.html"},{"@type":"ListItem","position":3,"name":"Soft Washing","item":"https://www.upnorthpressurewashing.com/soft-washing-superior.html"}]}
 </script>
 <meta name="theme-color" content="#0c1824">
 <meta name="format-detection" content="telephone=yes">
 <link rel="sitemap" type="application/xml" title="Sitemap" href="https://www.upnorthpressurewashing.com/sitemap.xml">
 <meta property="og:locale" content="en_US">
-<meta property="og:site_name" content="Up North Pressure Washing">
-<meta property="og:url" content="https://www.upnorthpressurewashing.com/soft-washing-superior.html">
-<meta name="twitter:title" content="Soft Washing Superior WI | Up North Pressure Washing">
-<meta name="twitter:description" content="Soft washing in Superior, WI — gentle low-pressure cleaning for siding & roofs across the bay city, from the East End to Billings Park. Built for Lake Superior humidity. 1-year regrowth guarantee.">
-<meta name="twitter:image" content="https://www.upnorthpressurewashing.com/images/ba/hero-after.jpg">
-<!-- SITE-SEO-GLOBAL -->
+<meta name="geo.position" content="46.72077;-92.10484">
+<meta name="ICBM" content="46.72077, -92.10484">
 <script type="application/ld+json">
-{"@context":"https://schema.org","@graph":[{"@type":"WebSite","@id":"https://www.upnorthpressurewashing.com/#website","url":"https://www.upnorthpressurewashing.com/","name":"Up North Pressure Washing","inLanguage":"en-US","publisher":{"@id":"https://www.upnorthpressurewashing.com/#organization"}},{"@type":"Organization","@id":"https://www.upnorthpressurewashing.com/#organization","name":"Up North Pressure Washing","url":"https://www.upnorthpressurewashing.com/","logo":{"@type":"ImageObject","url":"https://www.upnorthpressurewashing.com/images/hero-bg.jpg"},"telephone":"+12185768610","sameAs":["https://g.page/r/CSCaz34lDtneEBE/review"]}]}
+{"@context":"https://schema.org","@graph":[{"@type":"WebSite","@id":"https://www.upnorthpressurewashing.com/#website","url":"https://www.upnorthpressurewashing.com/","name":"Up North Pressure Washing","inLanguage":"en-US","publisher":{"@id":"https://www.upnorthpressurewashing.com/#organization"}},{"@type":"Organization","@id":"https://www.upnorthpressurewashing.com/#organization","name":"Up North Pressure Washing","url":"https://www.upnorthpressurewashing.com/","logo":{"@type":"ImageObject","url":"https://www.upnorthpressurewashing.com/images/hero-bg.webp"},"telephone":"+12185768610","sameAs":["https://g.page/r/CSCaz34lDtneEBE/review"]}]}
 </script>
-<!-- SITE-SEO-PAGE -->
 <script type="application/ld+json">
-{"@context":"https://schema.org","@graph":[{"@type":"WebPage","@id":"https://www.upnorthpressurewashing.com/soft-washing-superior.html#webpage","url":"https://www.upnorthpressurewashing.com/soft-washing-superior.html","name":"Soft Washing Superior WI | Up North Pressure Washing","description":"Soft washing in Superior, WI — gentle low-pressure cleaning for siding & roofs across the bay city, from the East End to Billings Park. Built for Lake Superior humidity. 1-year regrowth guarantee.","isPartOf":{"@id":"https://www.upnorthpressurewashing.com/#website"},"about":{"@type":"Service","name":"Soft Washing","provider":{"@id":"https://www.upnorthpressurewashing.com/#business"},"areaServed":{"@type":"City","name":"Superior, WI"}},"inLanguage":"en-US","primaryImageOfPage":{"@type":"ImageObject","url":"https://www.upnorthpressurewashing.com/images/ba/hero-after.jpg"}}]}
+{"@context":"https://schema.org","@graph":[{"@type":"WebPage","@id":"https://www.upnorthpressurewashing.com/soft-washing-duluth.html#webpage","url":"https://www.upnorthpressurewashing.com/soft-washing-duluth.html","name":"Soft Washing Superior MN | Up North Pressure Washing","description":"Professional soft washing in Superior, Hermantown & Proctor MN. Low-pressure cleaning removes algae, mold & buildup — backed by a 1-year regrowth guarantee.","isPartOf":{"@id":"https://www.upnorthpressurewashing.com/#website"},"about":{"@type":"Service","name":"Soft Washing","provider":{"@id":"https://www.upnorthpressurewashing.com/#business"},"areaServed":{"@type":"City","name":"Superior, MN"}},"inLanguage":"en-US","primaryImageOfPage":{"@type":"ImageObject","url":"https://www.upnorthpressurewashing.com/images/ba/hero-after.webp"}}]}
 </script>
 </head>
 <body>
@@ -425,7 +377,7 @@ footer{border-top:1px solid var(--line);padding:54px 0 40px;margin-top:20px}
     <nav class="nav-links">
       <a href="#results">Results</a>
       <a href="#services">Services</a>
-      <a href="#process">Process</a>
+      <a href="#calculator">Pricing</a>
       <a href="#reviews">Reviews</a>
       <a href="tel:+12185768610" class="nav-phone">218-576-8610</a>
       <a href="#quote" class="nav-cta">Free Quote</a>
@@ -448,39 +400,87 @@ footer{border-top:1px solid var(--line);padding:54px 0 40px;margin-top:20px}
         <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M3 6l9 6 9-6M3 6v12h18V6M3 6h18" stroke="#1a1305" stroke-width="1.8" stroke-linejoin="round"/></svg>
         Get a Free Quote
       </a>
-      <a href="#results" class="btn-ghost">See Before &amp; After ↓</a>
+      <a href="#results" class="btn-ghost">See Before &amp; After &darr;</a>
     </div>
     <div class="trust">
       <div class="item"><span class="num">1-Year</span><span class="lbl">Regrowth Guarantee</span></div>
       <div class="item"><span class="num">100%</span><span class="lbl">Low-Pressure Safe</span></div>
-      <div class="item"><span class="num">5.0★</span><span class="lbl">Local Homeowner Rating</span></div>
+      <div class="item"><span class="num">5.0&#9733;</span><span class="lbl">Local Homeowner Rating</span></div>
     </div>
   </div>
 </section>
 
-<!-- BEFORE / AFTER SLIDERS -->
-<section id="results">
+<!-- BA #1 — SW1 intro (single card) -->
+<section id="results" style="padding:64px 0;border-top:1px solid var(--line)">
   <div class="wrap">
     <div class="sec-head reveal">
-      <span class="eyebrow"><span class="dot"></span>Real Twin Ports Results</span>
-      <h2>Drag to reveal the <span class="gold">difference</span></h2>
-      <p>No filters, no editing — genuine soft washing results on homes across Superior and the surrounding Twin Ports communities.</p>
+      <span class="eyebrow"><span class="dot"></span>Real Superior Results</span>
+      <h2>See the <span class="gold">difference</span> for yourself</h2>
+      <p>Real homes in the Superior area &mdash; no filters, no edits. Drag the slider to compare before and after soft washing.</p>
+    </div>
+    <div class="ba-grid" style="max-width:700px;margin:0 auto">
+      <div class="ba-card reveal">
+        <div class="cap"><h3>Siding Algae &amp; Mold Removal</h3><span>Vinyl &amp; Brick Exterior &middot; Superior Area</span></div>
+        <div class="ba" data-before="SW1_BEFORE" data-after="SW1_AFTER"></div>
+      </div>
+    </div>
+    <p class="fit-note"><span class="drag">&#8596;</span> Drag the slider or tap and pull to compare.</p>
+  </div>
+</section>
+
+<!-- SEO SECTION 1: Why Superior homes -->
+<section class="seo-split">
+  <div class="wrap">
+    <div class="seo-split-grid">
+      <div class="seo-split-text reveal">
+        <span class="eyebrow"><span class="dot"></span>Superior's Unique Challenge</span>
+        <h2>Why Superior Homes Develop <span class="ice">Algae &amp; Mold</span> Faster</h2>
+        <p>Living near Lake Superior is beautiful &mdash; but the persistent moisture, heavy tree canopy, and brutal Northern Minnesota winters create near-ideal conditions for organic growth on your siding and roof. This isn&apos;t just cosmetic: unchecked algae and mold accelerate siding deterioration, trap moisture behind panels, and can cut years off your exterior&apos;s lifespan.</p>
+        <ul class="seo-list">
+          <li><b>Shoreline humidity year-round.</b> Lake Superior keeps ambient moisture elevated even in winter, feeding Gloeocapsa magma &mdash; the dark-streaking algae that colonizes siding and shingles.</li>
+          <li><b>Shaded hillside neighborhoods.</b> Superior&apos;s tree-heavy terrain blocks sunlight on north- and west-facing walls, preventing the natural die-off that slows growth in sunnier climates.</li>
+          <li><b>Freeze-thaw cycles push growth in deep.</b> Minnesota winters force organic debris into siding seams. By spring, buildup is embedded, not just surface-level &mdash; and won&apos;t rinse off with a garden hose.</li>
+          <li><b>Pressure washing accelerates the damage.</b> High-pressure washing strips paint, cracks vinyl, and forces water behind siding panels. Worse, it doesn&apos;t kill growth at the root &mdash; algae returns within months.</li>
+        </ul>
+        <p>Soft washing uses biodegradable surfactants at low pressure to kill algae and mold spores at their source. Results last 12&ndash;24 months &mdash; not a few weeks like a pressure rinse.</p>
+      </div>
+      <div class="seo-stats reveal">
+        <div class="stat-card">
+          <div class="stat-num">1&ndash;2 <span>yrs</span></div>
+          <div class="stat-lbl">Average time between cleanings for a maintained Superior home with normal shade exposure</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-num">100%</div>
+          <div class="stat-lbl">Low-pressure process &mdash; no risk of siding damage, paint stripping, or water intrusion</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-num">1-Year</div>
+          <div class="stat-lbl">Regrowth guarantee on every job we complete &mdash; if it comes back, so do we</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- BA #2 & #3 — SW2 + SW3 -->
+<section class="ba-section">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="eyebrow"><span class="dot"></span>More Results</span>
+      <h2>More Superior Homes <span class="ice">Transformed</span></h2>
+      <p>Every exterior is different &mdash; siding color, material, years of buildup. Here&apos;s what soft washing looks like on two more Superior-area homes.</p>
     </div>
     <div class="ba-grid">
       <div class="ba-card reveal">
-        <div class="cap"><h3>Faded Siding, Restored</h3><span>Vinyl Siding</span></div>
-        <div class="ba" data-before="HERO_BEFORE" data-after="HERO_AFTER"></div>
+        <div class="cap"><h3>Full House Deep Clean</h3><span>Navy Blue Siding</span></div>
+        <div class="ba" data-before="SW2_BEFORE" data-after="SW2_AFTER"></div>
       </div>
       <div class="ba-card reveal">
-        <div class="cap"><h3>Stucco Deep Clean</h3><span>Stucco &amp; Render</span></div>
-        <div class="ba" data-before="STUCCO_BEFORE" data-after="STUCCO_AFTER"></div>
-      </div>
-      <div class="ba-card reveal">
-        <div class="cap"><h3>Roof Stain Removal</h3><span>Shingle Roof</span></div>
-        <div class="ba" data-before="ROOF_BEFORE" data-after="ROOF_AFTER"></div>
+        <div class="cap"><h3>Rust &amp; Algae Removal</h3><span>Sage Green Siding</span></div>
+        <div class="ba" data-before="SW3_BEFORE" data-after="SW3_AFTER"></div>
       </div>
     </div>
-    <p class="fit-note"><span class="drag">⟷</span> Drag the slider or tap and pull to compare before &amp; after.</p>
+    <p class="fit-note"><span class="drag">&#8596;</span> Drag to compare before &amp; after.</p>
   </div>
 </section>
 
@@ -496,36 +496,64 @@ footer{border-top:1px solid var(--line);padding:54px 0 40px;margin-top:20px}
         <div class="acc-head"><h3>Soft Wash Maintenance</h3><div class="ic"></div></div>
         <div class="acc-body"><div class="inner">
           <div class="badge"><svg viewBox="0 0 24 24" fill="none"><path d="M3 12a9 9 0 0 1 9-9 9 9 0 0 1 9 9" stroke="#7fc6e8" stroke-width="1.6"/><path d="M12 12l4-4" stroke="#7fc6e8" stroke-width="1.6" stroke-linecap="round"/></svg></div>
-          <div><p>A yearly reset for Superior's <b>well-kept homes near the bay</b>. Clears the early algae film that the lake's constant moisture brings on fast — before it darkens — keeping siding bright while <span class="gold">protecting your finishes</span> season after season.</p>
-          <div class="feat"><span>Annual upkeep</span><span>Early growth</span><span>Finish-safe</span></div></div>
+          <div><p>Ideal for <b>well-maintained Superior homes</b> on a regular cleaning schedule (every 1&ndash;2 years). Removes light algae and organic growth caused by seasonal moisture and heavy shade &mdash; keeping siding fresh while <span class="gold">protecting finishes</span> for the long haul. Most cost-effective way to stay ahead of buildup.</p>
+          <div class="feat"><span>Annual upkeep</span><span>Light algae</span><span>Finish-safe</span><span>Best value</span></div></div>
         </div></div>
       </div>
       <div class="acc">
         <div class="acc-head"><h3>Full House Soft Wash</h3><div class="ic"></div></div>
         <div class="acc-body"><div class="inner">
           <div class="badge"><svg viewBox="0 0 24 24" fill="none"><path d="M3 11l9-7 9 7v9H3z" stroke="#7fc6e8" stroke-width="1.6" stroke-linejoin="round"/></svg></div>
-          <div><p><b>Our most-requested service</b> for Superior homeowners. A complete soft wash of every exterior wall to strip away <span class="ice">algae, mold, and the heavy buildup that lake humidity and fog leave behind</span> — the gentle way to bring back a clean, even finish with zero high-pressure risk.</p>
-          <div class="feat"><span>Whole-home</span><span>Algae &amp; mold</span><span>Most requested</span></div></div>
+          <div><p><b>Our most popular service</b> for Superior homeowners. A thorough soft wash of all exterior siding removes <span class="ice">algae, mold, mildew, and winter buildup</span> from harsh Northern Minnesota weather. No harsh pressure &mdash; just genuine results that last. Great for homes 1&ndash;3 years between cleanings.</p>
+          <div class="feat"><span>Whole-home</span><span>Algae &amp; mold</span><span>Most popular</span><span>1&ndash;3 yr gap</span></div></div>
         </div></div>
       </div>
       <div class="acc">
         <div class="acc-head"><h3>Deep Clean Soft Wash Restoration</h3><div class="ic"></div></div>
         <div class="acc-body"><div class="inner">
           <div class="badge"><svg viewBox="0 0 24 24" fill="none"><path d="M12 3v3M12 18v3M3 12h3M18 12h3M5.6 5.6l2.1 2.1M16.3 16.3l2.1 2.1M18.4 5.6l-2.1 2.1M7.7 16.3l-2.1 2.1" stroke="#7fc6e8" stroke-width="1.5" stroke-linecap="round"/></svg></div>
-          <div><p>For Superior's <b>older bay-side homes and lake-facing walls</b> — where years of damp air and fog leave deep green-black staining. We <span class="gold">target the worst zones</span> first for a full restoration that holds up through the next long winter.</p>
-          <div class="feat"><span>Heavy staining</span><span>North-facing walls</span><span>Full restoration</span></div></div>
+          <div><p>Designed for homes with <b>heavy staining</b>, long gaps between cleanings (3+ years), or severe organic growth. Includes <span class="gold">targeted pre-treatment</span> of problem areas &mdash; deep mold pockets, rust streaks, embedded algae &mdash; for maximum restoration and the longest-lasting results we offer.</p>
+          <div class="feat"><span>Heavy buildup</span><span>3+ yr gap</span><span>Spot treatment</span><span>Max results</span></div></div>
         </div></div>
       </div>
       <div class="acc">
         <div class="acc-head"><h3>Custom Soft Washing Solution</h3><div class="ic"></div></div>
         <div class="acc-body"><div class="inner">
           <div class="badge"><svg viewBox="0 0 24 24" fill="none"><path d="M4 7h16M4 12h16M4 17h10" stroke="#7fc6e8" stroke-width="1.6" stroke-linecap="round"/></svg></div>
-          <div><p>A plan built for Superior's <b>historic homes, multi-story builds</b>, and mixed siding, roof, and garage jobs. Whether you're in the East End or out by Billings Park, we scope it to <span class="ice">your property's exact conditions</span>.</p>
-          <div class="feat"><span>Historic homes</span><span>Mixed materials</span><span>Bundled</span></div></div>
+          <div><p>A tailored plan for <b>large homes, multi-story properties, mixed siding materials</b>, or bundled services. Many homeowners save by combining soft washing with gutter cleaning or window washing on the same visit. Built around your property and <span class="ice">Superior&apos;s specific conditions</span>.</p>
+          <div class="feat"><span>Multi-story</span><span>Mixed materials</span><span>Bundle &amp; save</span><span>Custom quote</span></div></div>
         </div></div>
       </div>
     </div>
     <div class="svc-cta"><a href="#quote" class="btn-gold">Get a Free Soft Washing Quote</a></div>
+  </div>
+</section>
+
+<!-- SEO SECTION 2: How long results last -->
+<section class="results-info">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="eyebrow"><span class="dot"></span>What to Expect</span>
+      <h2>How Long Do Results Last in <span class="gold">Northern Minnesota?</span></h2>
+      <p>Unlike pressure washing, soft washing treats the root cause &mdash; not just the surface. Here&apos;s what Superior homeowners typically see.</p>
+    </div>
+    <div class="ri-grid">
+      <div class="ri-card reveal">
+        <div class="ri-icon"><svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="9" stroke="#7fc6e8" stroke-width="1.5"/><path d="M12 7v5l3 3" stroke="#7fc6e8" stroke-width="1.5" stroke-linecap="round"/></svg></div>
+        <h3>12&ndash;24 Months Clean</h3>
+        <p>Most Superior homes stay noticeably clean for a full year to two years after treatment &mdash; dramatically longer than pressure washing, which rarely holds more than 3&ndash;6 months. Heavy shade may shorten this; south-facing walls often last even longer.</p>
+      </div>
+      <div class="ri-card reveal">
+        <div class="ri-icon"><svg viewBox="0 0 24 24" fill="none"><path d="M12 2l7 3v6c0 5-3.5 8.5-7 10-3.5-1.5-7-5-7-10V5z" stroke="#7fc6e8" stroke-width="1.5" stroke-linejoin="round"/><path d="M9 12l2 2 4-4" stroke="#7fc6e8" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+        <h3>Backed by a 1-Year Guarantee</h3>
+        <p>Every soft washing job we complete in Superior is backed by our regrowth guarantee. If algae or mold returns within 12 months of service, we come back and make it right &mdash; no charge, no questions. That&apos;s how confident we are in the process.</p>
+      </div>
+      <div class="ri-card reveal">
+        <div class="ri-icon"><svg viewBox="0 0 24 24" fill="none"><path d="M3 6l9 5 9-5M3 6v12l9 5 9-5V6" stroke="#7fc6e8" stroke-width="1.5" stroke-linejoin="round"/></svg></div>
+        <h3>Best Time to Wash in MN</h3>
+        <p>Late spring (after pollen season clears) or early fall gives the best results. Spring removes a full winter of buildup before it bakes in; fall prep protects siding through freeze-thaw cycles. Either timing keeps your home looking fresh year-round.</p>
+      </div>
+    </div>
   </div>
 </section>
 
@@ -535,22 +563,107 @@ footer{border-top:1px solid var(--line);padding:54px 0 40px;margin-top:20px}
     <div class="sec-head reveal">
       <span class="eyebrow"><span class="dot"></span>How It Works</span>
       <h2>Our <span class="gold">soft wash</span> process</h2>
-      <p>A proven four-step method engineered for Superior's bay-side humidity, lake fog, and long snowy seasons.</p>
+      <p>A proven four-step method built for Superior&apos;s moisture, shade, and seasonal buildup.</p>
     </div>
     <div class="proc-grid">
       <div class="proc reveal"><div class="step">STEP 01</div>
         <div class="pic"><svg viewBox="0 0 24 24" fill="none"><circle cx="11" cy="11" r="7" stroke="#7fc6e8" stroke-width="1.6"/><path d="M16 16l5 5" stroke="#7fc6e8" stroke-width="1.6" stroke-linecap="round"/></svg></div>
-        <h3>Inspect</h3><p>We assess your siding, roof, and the growth specific to your damp, bay-side Superior exposure.</p></div>
+        <h3>Inspect</h3><p>We assess your siding, roof, and the growth specific to your shaded, lakeside exposure before applying anything.</p></div>
       <div class="proc reveal"><div class="step">STEP 02</div>
         <div class="pic"><svg viewBox="0 0 24 24" fill="none"><path d="M7 3v6M5 9h4M17 3l-2 8h4l-2 8" stroke="#7fc6e8" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
-        <h3>Treat</h3><p>Biodegradable solutions break down algae and mold at the root — no blasting required.</p></div>
+        <h3>Treat</h3><p>Biodegradable surfactants break down algae and mold spores at the root &mdash; no blasting needed.</p></div>
       <div class="proc reveal"><div class="step">STEP 03</div>
         <div class="pic"><svg viewBox="0 0 24 24" fill="none"><path d="M12 3c3 4 5 6.5 5 9a5 5 0 0 1-10 0c0-2.5 2-5 5-9z" stroke="#7fc6e8" stroke-width="1.5" stroke-linejoin="round"/></svg></div>
-        <h3>Rinse</h3><p>A gentle, low-pressure rinse lifts every trace of buildup while protecting your finishes.</p></div>
+        <h3>Rinse</h3><p>A gentle, low-pressure rinse lifts every trace of buildup while protecting your finishes and paint.</p></div>
       <div class="proc reveal"><div class="step">STEP 04</div>
         <div class="pic"><svg viewBox="0 0 24 24" fill="none"><path d="M4 12l5 5L20 6" stroke="#7fc6e8" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
-        <h3>Guarantee</h3><p>Backed for a full year. If growth returns within that window, we make it right.</p></div>
+        <h3>Guarantee</h3><p>Backed for a full year. If growth returns within that window, we come back and make it right.</p></div>
     </div>
+  </div>
+</section>
+
+<!-- PRICE CALCULATOR -->
+<section class="calc-sec" id="calculator">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="eyebrow"><span class="dot"></span>Pricing Tool</span>
+      <h2>Estimate Your <span class="gold">Soft Wash Cost</span></h2>
+      <p>Get a rough ballpark before you call. Select your home details below &mdash; final pricing confirmed on-site.</p>
+    </div>
+    <div class="calc-box reveal">
+      <div class="calc-grid">
+        <div class="calc-row">
+          <label class="calc-lbl" for="calcSqft">Home Size</label>
+          <select class="calc-sel" id="calcSqft" onchange="calcPrice()">
+            <option value="900">Under 1,000 sq ft</option>
+            <option value="1200">1,000 &ndash; 1,400 sq ft</option>
+            <option value="1600" selected>1,400 &ndash; 1,800 sq ft</option>
+            <option value="2000">1,800 &ndash; 2,200 sq ft</option>
+            <option value="2400">2,200 &ndash; 2,600 sq ft</option>
+            <option value="2800">2,600 &ndash; 3,000 sq ft</option>
+            <option value="3500">3,000 &ndash; 4,000 sq ft</option>
+            <option value="4500">4,000+ sq ft</option>
+          </select>
+        </div>
+        <div class="calc-row">
+          <label class="calc-lbl" for="calcStories">Number of Stories</label>
+          <select class="calc-sel" id="calcStories" onchange="calcPrice()">
+            <option value="1">1 Story</option>
+            <option value="2">2 Stories</option>
+            <option value="3">3+ Stories</option>
+          </select>
+        </div>
+        <div class="calc-row">
+          <label class="calc-lbl" for="calcSiding">Siding Type</label>
+          <select class="calc-sel" id="calcSiding" onchange="calcPrice()">
+            <option value="vinyl">Vinyl / Painted Wood</option>
+            <option value="other">Fiber Cement / Painted Metal / Stucco (+15%)</option>
+          </select>
+        </div>
+        <div class="calc-row">
+          <label class="calc-lbl" for="calcBuildup">Buildup Level</label>
+          <select class="calc-sel" id="calcBuildup" onchange="calcPrice()">
+            <option value="light">Light &mdash; bi-yearly maintenance</option>
+            <option value="medium" selected>Medium &mdash; 1&ndash;3 years of growth</option>
+            <option value="heavy">Heavy &mdash; 3+ years / deep staining</option>
+          </select>
+        </div>
+        <div class="calc-row" style="grid-column:1/-1">
+          <label class="calc-lbl" for="calcRoof">Add Roof Soft Wash?</label>
+          <select class="calc-sel" id="calcRoof" onchange="calcPrice()">
+            <option value="none">No &mdash; siding only</option>
+            <option value="low">Yes &mdash; low / flat pitch</option>
+            <option value="medium">Yes &mdash; medium pitch (most homes)</option>
+            <option value="steep">Yes &mdash; steep pitch</option>
+          </select>
+        </div>
+      </div>
+      <div class="calc-result">
+        <div class="calc-result-lbl">Estimated Price Range</div>
+        <div class="calc-price" id="calcResult">$650 &ndash; $975</div>
+        <div class="calc-sub" id="calcSub">1,400&ndash;1,800 sq ft &middot; vinyl siding &middot; medium buildup</div>
+      </div>
+      <p class="calc-note">&#9888;&#65039; <strong>Rough estimates only</strong> &mdash; actual pricing depends on on-site assessment, property access, siding condition, and exact square footage. Minimum service starts at <strong>$650</strong>. <a href="#quote">Request a free, no-obligation quote &rarr;</a></p>
+      <p class="calc-bundle">&#128161; Most homeowners save by bundling with <a href="gutter-fascia-cleaning-superior.html">gutter cleaning</a> or <a href="window-cleaning-superior.html">window washing</a> on the same visit &mdash; ask about combo pricing when you call.</p>
+    </div>
+  </div>
+</section>
+
+<!-- BA #4 — Roof single -->
+<section class="ba-section">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="eyebrow"><span class="dot"></span>Roof Soft Washing</span>
+      <h2>We Clean Roofs <span class="ice">Too</span></h2>
+      <p>Soft washing is the only manufacturer-approved method for asphalt shingles. High pressure destroys granules and voids warranties &mdash; our low-pressure treatment kills moss, algae, and black streaks at the root and won&apos;t touch your shingles.</p>
+    </div>
+    <div class="ba-grid" style="max-width:700px;margin:0 auto">
+      <div class="ba-card reveal">
+        <div class="cap"><h3>Roof Stain &amp; Algae Removal</h3><span>Shingle Roof &middot; Superior Area</span></div>
+        <div class="ba" data-before="ROOF_BEFORE" data-after="ROOF_AFTER"></div>
+      </div>
+    </div>
+    <p class="fit-note"><span class="drag">&#8596;</span> Drag to compare.</p>
   </div>
 </section>
 
@@ -561,10 +674,10 @@ footer{border-top:1px solid var(--line);padding:54px 0 40px;margin-top:20px}
       <span class="eyebrow"><span class="dot"></span>Why Soft Wash</span>
       <h2 style="font-size:clamp(1.9rem,4.5vw,2.8rem)">Gentle on your home.<br><span class="ice">Brutal on buildup.</span></h2>
       <ul>
-        <li><span class="ck"><svg viewBox="0 0 24 24" fill="none"><path d="M4 12l5 5L20 6" stroke="#7fc6e8" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span><div><b>No surface damage.</b> <span>Traditional pressure washing can crack siding and strip finishes. Soft washing never does.</span></div></li>
-        <li><span class="ck"><svg viewBox="0 0 24 24" fill="none"><path d="M4 12l5 5L20 6" stroke="#7fc6e8" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span><div><b>Kills growth at the root.</b> <span>Our treatments eliminate the algae and mold spores, so results last far longer.</span></div></li>
-        <li><span class="ck"><svg viewBox="0 0 24 24" fill="none"><path d="M4 12l5 5L20 6" stroke="#7fc6e8" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span><div><b>Built for Superior.</b> <span>Tuned for our bay humidity, lake fog, and the long buildup of a Northern Wisconsin winter.</span></div></li>
-        <li><span class="ck"><svg viewBox="0 0 24 24" fill="none"><path d="M4 12l5 5L20 6" stroke="#7fc6e8" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span><div><b>Lasts past the season.</b> <span>Customers routinely see clean siding well beyond a year after treatment.</span></div></li>
+        <li><span class="ck"><svg viewBox="0 0 24 24" fill="none"><path d="M4 12l5 5L20 6" stroke="#7fc6e8" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span><div><b>No surface damage.</b> <span>Traditional pressure washing cracks siding and strips finishes. Soft washing never does &mdash; safe on every exterior material.</span></div></li>
+        <li><span class="ck"><svg viewBox="0 0 24 24" fill="none"><path d="M4 12l5 5L20 6" stroke="#7fc6e8" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span><div><b>Kills growth at the root.</b> <span>Our treatments eliminate algae and mold spores completely, so results last months or years longer than a pressure rinse.</span></div></li>
+        <li><span class="ck"><svg viewBox="0 0 24 24" fill="none"><path d="M4 12l5 5L20 6" stroke="#7fc6e8" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span><div><b>Built for Superior.</b> <span>Formulas tuned for our moisture, heavy shade, and long seasonal buildup unique to the Lake Superior shoreline.</span></div></li>
+        <li><span class="ck"><svg viewBox="0 0 24 24" fill="none"><path d="M4 12l5 5L20 6" stroke="#7fc6e8" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span><div><b>Lasts past the season.</b> <span>Customers routinely see clean siding well beyond a year after treatment &mdash; sometimes two years in lower-shade areas.</span></div></li>
       </ul>
     </div>
   </div>
@@ -576,7 +689,7 @@ footer{border-top:1px solid var(--line);padding:54px 0 40px;margin-top:20px}
     <div class="guarantee reveal">
       <div class="seal"><svg viewBox="0 0 24 24" fill="none"><path d="M12 2l7 3v6c0 5-3.5 8.5-7 10-3.5-1.5-7-5-7-10V5z" stroke="#e3b53e" stroke-width="1.5" stroke-linejoin="round"/><path d="M9 12l2 2 4-4" stroke="#e3b53e" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
       <h2>The <span class="gold">1-Year</span> Guarantee</h2>
-      <p>Every soft washing job we complete in Superior is backed by a full one-year guarantee. Our process is built for the city's bay humidity, lake fog, and long winters — delivering clean, even results without harsh pressure. <b style="color:#fff">If growth comes back within a year, we make it right.</b></p>
+      <p>Every soft washing job we complete in Superior is backed by a full one-year regrowth guarantee. Our process is built to handle Superior&apos;s moisture, shade, and seasonal buildup &mdash; delivering long-lasting results without harsh pressure. <b style="color:#fff">If growth comes back within a year, we make it right.</b></p>
     </div>
   </div>
 </section>
@@ -590,103 +703,87 @@ footer{border-top:1px solid var(--line);padding:54px 0 40px;margin-top:20px}
     </div>
     <div class="test-grid">
       <div class="test reveal">
-        <div class="stars">★★★★★</div>
-        <p class="quote">"Living near the bay, our siding was always damp and green by spring. They soft washed the whole house and it came out even and bright — no streaks, no damage. Couldn't be happier."</p>
-        <div class="who">Eric H.<small>Superior, WI</small></div>
+        <div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+        <p class="quote">&ldquo;Our siding looks brand new. The soft washing process was fast, professional, and clearly done the right way. We appreciated the attention to detail and the results lasted well past the season.&rdquo;</p>
+        <div class="who">Mike S.<small>Superior, WI</small></div>
       </div>
       <div class="test reveal">
-        <div class="stars">★★★★★</div>
-        <p class="quote">"Our older home in the East End had years of buildup on the roof and siding. The crew was professional, explained the low-pressure process, and the place looks newer than it has in a long time."</p>
-        <div class="who">Sara P.<small>Superior, WI</small></div>
+        <div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+        <p class="quote">&ldquo;Great experience from start to finish. The siding and roof were covered in buildup and now it looks fresh and clean again. Communication was solid and the results speak for themselves.&rdquo;</p>
+        <div class="who">Sarah L.<small>Superior, WI</small></div>
       </div>
     </div>
     <div class="svc-cta reveal" style="margin-top:2rem;display:flex;flex-wrap:wrap;gap:.75rem;justify-content:center">
-      <a href="tel:+12185768610" class="btn-ghost">📞 218-576-8610</a>
-      <a href="https://g.page/r/CSCaz34lDtneEBE/review" target="_blank" rel="noopener" class="btn-gold">★ Read &amp; Leave a Review on Google</a>
+      <a href="tel:+12185768610" class="btn-ghost">&#128222; 218-576-8610</a>
+      <a href="https://g.page/r/CSCaz34lDtneEBE/review" target="_blank" rel="noopener" class="btn-gold">&#9733; Read &amp; Leave a Review on Google</a>
     </div>
   </div>
 </section>
 
-<!-- LOCAL CONTEXT (city-specific) -->
-<section>
-  <div class="wrap">
-    <div class="sec-head reveal" style="max-width:720px">
-      <span class="eyebrow"><span class="dot"></span>Why Superior Homes Grow Algae</span>
-      <h2>Built for <span class="ice">Where Sail Meets Rail</span></h2>
-      <p>Superior sits at the western tip of Lake Superior, wrapped by three bays and two rivers on the Wisconsin side of the Twin Ports. It's a beautiful, water-bound setting — and that constant moisture is exactly what feeds the growth on local siding and roofs.</p>
-    </div>
-    <div class="reveal" style="max-width:720px;margin:0 auto;text-align:center;color:var(--text-dim);font-size:1.04rem;line-height:1.75">
-      <p>Surrounded by St. Louis, Superior, and Allouez Bays, homes here sit in <span class="gold">some of the dampest, foggiest air in the region</span>. That humidity clings to north-facing walls and shaded siding long after rain or snowmelt, giving algae and mold exactly what they need to spread — the green-black streaks you'll spot on homes from the East End to Billings Park.</p>
-      <p style="margin-top:18px">Add Superior's <span class="ice">long winters and roughly 60+ inches of snow a year</span>, and growth quietly builds under the snowpack until it shows up dark and streaky once things thaw. Our soft washing is tuned to those exact bay-side conditions — clearing the buildup gently and treating it at the root so your home stays clean well into the next season.</p>
-    </div>
-    <div class="svc-cta" style="margin-top:38px"><a href="#quote" class="btn-gold">Get My Superior Quote</a></div>
-  </div>
-</section>
+<!-- QUOTE FORM -->
 <section class="quote-sec" id="quote">
   <div class="wrap">
     <div class="qbox reveal">
       <form id="quoteForm" method="post" action="#" onsubmit="submitForm(event);return false;" novalidate>
         <input type="hidden" name="page" value="">
-        <p hidden><label>Don't fill this out: <input name="bot-field"></label></p>
+        <p hidden><label>Don&apos;t fill this out: <input name="bot-field"></label></p>
         <h2>Get a Free Quote</h2>
-        <p class="sub">Tell us a little about your Superior home and we'll get back to you with a no-pressure estimate.</p>
+        <p class="sub">Tell us a little about your home and we&apos;ll get back to you with a no-pressure estimate.</p>
         <div class="row">
-          <div><label>First Name <span class="req">*</span></label><input type="text" id="fn" name="first_name" required></div>
-          <div><label>Last Name <span class="req">*</span></label><input type="text" id="ln" name="last_name" required></div>
+          <div><label for="fn">First Name <span class="req">*</span></label><input type="text" id="fn" name="first_name" placeholder="Jane" style="color:#1a2830;::placeholder{color:#5f6b72}" required></div>
+          <div><label for="ln">Last Name <span class="req">*</span></label><input type="text" id="ln" name="last_name" placeholder="Smith" required></div>
         </div>
         <div class="row">
-          <div><label>Email <span class="req">*</span></label><input type="email" id="em" name="email" required></div>
-          <div><label>Phone</label><input type="tel" id="ph" name="phone"></div>
+          <div><label for="em">Email <span class="req">*</span></label><input type="email" id="em" name="email" placeholder="jane@example.com" required></div>
+          <div><label for="ph">Phone</label><input type="tel" id="ph" name="phone" placeholder="218-555-0100"></div>
         </div>
-        <label>City / Area</label>
+        <label for="city">City / Area</label>
         <select id="city" name="city">
-          <option>Superior</option><option>East End</option><option>Billings Park</option><option>North End</option><option>Surrounding area</option>
+          <option>Superior</option><option>Hermantown</option><option>Proctor</option><option>Surrounding area</option>
         </select>
-        <label>Service Interested In</label>
+        <label for="svc">Service Interested In</label>
         <select id="svc" name="service">
           <option>Full House Soft Wash</option><option>Soft Wash Maintenance</option><option>Deep Clean Restoration</option><option>Roof Soft Wash</option><option>Custom Solution</option>
         </select>
-        <label>Tell us about your project</label>
+        <label for="msg">Tell us about your project</label>
         <textarea id="msg" name="message" placeholder="Type of siding, problem areas, square footage, anything helpful..."></textarea>
-        <button type="submit" class="submit">Request My Free Quote →</button></form><div class="ok" id="okView">
+        <button type="submit" class="submit">Request My Free Quote &rarr;</button></form><div class="ok" id="okView">
         <svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="10" stroke="#2e8b57" stroke-width="1.6"/><path d="M8 12l3 3 5-6" stroke="#2e8b57" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
         <h3>Thank you!</h3>
-        <p style="color:#4a5a64;margin-top:10px">We've received your request and will reach out shortly with your free soft washing quote.</p>
+        <p style="color:#4a5a64;margin-top:10px">We&apos;ve received your request and will reach out within one business day. Need a faster reply? <a href="tel:+12185768610" style="color:#2e8b57;font-weight:700">Call 218-576-8610</a>.</p>
       </div>
     </div>
   </div>
 </section>
 
-<!-- EDUCATION-LINKS -->
+<!-- EDUCATION LINKS -->
 <section class="edu-sec" id="guides">
   <div class="wrap">
     <div class="sec-head">
       <span class="eyebrow" style="display:inline-flex;align-items:center;gap:9px;font-size:.74rem;letter-spacing:.22em;text-transform:uppercase;color:var(--ice);font-weight:600;margin-bottom:14px;border:1px solid var(--glass-line);background:var(--glass);padding:7px 15px;border-radius:40px">Learning Center</span>
       <h2>Soft Washing Guides for <span class="gold">Superior</span></h2>
-      <p>Educational articles to help you understand soft washing — written specifically for Superior properties.</p>
+      <p>Educational articles written specifically for Superior properties and Northern Minnesota homeowners.</p>
     </div>
-    <div class="edu-grid">
-      <a class="edu-card" href="blog-soft-washing-guide-superior.html"><div class="t">Complete Soft Washing Guide</div><div class="d">Local guide for Superior homeowners &amp; businesses</div><div class="go">Read article →</div></a>
+    <div class="edu-grid"><a class="edu-card" href="blog-soft-washing-guide-superior.html"><div class="t">Complete Soft Washing Guide</div><div class="d">Local guide for Superior homeowners &amp; businesses</div><div class="go">Read article →</div></a>
       <a class="edu-card" href="blog-soft-washing-home-value-superior.html"><div class="t">Soft Wash & Home Value</div><div class="d">Local guide for Superior homeowners &amp; businesses</div><div class="go">Read article →</div></a>
       <a class="edu-card" href="blog-algae-mold-siding-superior.html"><div class="t">Algae & Mold on Siding</div><div class="d">Local guide for Superior homeowners &amp; businesses</div><div class="go">Read article →</div></a>
       <a class="edu-card" href="blog-oxidation-removal-superior.html"><div class="t">Oxidation Removal</div><div class="d">Local guide for Superior homeowners &amp; businesses</div><div class="go">Read article →</div></a>
       <a class="edu-card" href="blog-pollen-spring-cleanup-superior.html"><div class="t">Spring Pollen Cleanup</div><div class="d">Local guide for Superior homeowners &amp; businesses</div><div class="go">Read article →</div></a>
       <a class="edu-card" href="blog-seasonal-maintenance-guide-superior.html"><div class="t">Seasonal Maintenance Guide</div><div class="d">Local guide for Superior homeowners &amp; businesses</div><div class="go">Read article →</div></a>
-      <a class="edu-card" href="blog-brick-stone-cleaning-superior.html"><div class="t">Brick & Stone Cleaning</div><div class="d">Local guide for Superior homeowners &amp; businesses</div><div class="go">Read article →</div></a>
-    </div>
-    <p class="edu-more"><a href="blog-index.html">Browse all Learning Center articles →</a> · <a href="gallery.html">See photo gallery</a> · <a href="reviews.html">Read reviews</a></p>
+      <a class="edu-card" href="blog-brick-stone-cleaning-superior.html"><div class="t">Brick & Stone Cleaning</div><div class="d">Local guide for Superior homeowners &amp; businesses</div><div class="go">Read article →</div></a></div>
+    <p class="edu-more"><a href="blog-index.html">Browse all Learning Center articles &rarr;</a> &middot; <a href="gallery.html">See photo gallery</a> &middot; <a href="reviews.html">Read reviews</a></p>
   </div>
 </section>
 
-<!-- CITY-CLUSTER -->
+<!-- CITY CLUSTER -->
 <section class="city-cluster" id="city-services">
   <div class="wrap">
     <div class="sec-head reveal">
-      <span class="eyebrow"><span class="dot"></span>Superior, WI · Same City</span>
+      <span class="eyebrow"><span class="dot"></span>Superior, MN &middot; Same City</span>
       <h2>All <span class="ice">Superior</span> Exterior Cleaning Pages</h2>
-      <p>Every link below stays in <strong>Superior, WI</strong> — so Google and visitors always get the right local page, not another city's service URL.</p>
+      <p>Every link below stays in <strong>Superior, WI</strong> &mdash; so Google and visitors always get the right local page.</p>
     </div>
-    <nav class="cluster-grid reveal" aria-label="Superior exterior cleaning services"><a href="superior-wi-pressure-washing.html" class="cluster-link"><span class="cluster-short">Home</span><span class="cluster-full">Superior Home</span></a><a href="soft-washing-superior.html" class="cluster-link active" aria-current="page"><span class="cluster-short">Soft Washing</span><span class="cluster-full">Soft Washing — Superior</span></a><a href="roof-soft-washing-superior.html" class="cluster-link"><span class="cluster-short">Roof Cleaning</span><span class="cluster-full">Roof Cleaning — Superior</span></a><a href="gutter-fascia-cleaning-superior.html" class="cluster-link"><span class="cluster-short">Gutter Cleaning</span><span class="cluster-full">Gutter Cleaning — Superior</span></a><a href="concrete-washing-superior.html" class="cluster-link"><span class="cluster-short">Concrete</span><span class="cluster-full">Concrete Washing — Superior</span></a><a href="deck-restoration-superior.html" class="cluster-link"><span class="cluster-short">Deck & Fence</span><span class="cluster-full">Deck Restoration — Superior</span></a><a href="window-cleaning-superior.html" class="cluster-link"><span class="cluster-short">Windows Hub</span><span class="cluster-full">Window Cleaning — Superior</span></a><a href="residential-window-cleaning-superior.html" class="cluster-link"><span class="cluster-short">Residential Windows</span><span class="cluster-full">Residential Windows — Superior</span></a><a href="commercial-window-cleaning-superior.html" class="cluster-link"><span class="cluster-short">Commercial Windows</span><span class="cluster-full">Commercial Windows — Superior</span></a><a href="commercial-soft-washing-superior.html" class="cluster-link"><span class="cluster-short">Commercial Exterior</span><span class="cluster-full">Commercial Soft Washing — Superior</span></a><a href="blog-soft-washing-home-value-superior.html" class="cluster-link"><span class="cluster-short">Local Guide</span><span class="cluster-full">Superior Exterior Care Guide</span></a></nav>
+    <nav class="cluster-grid reveal" aria-label="Superior exterior cleaning services"><a href="index.html" class="cluster-link"><span class="cluster-short">Home</span><span class="cluster-full">Duluth Home</span></a><a href="soft-washing-duluth.html" class="cluster-link active" aria-current="page"><span class="cluster-short">Soft Washing</span><span class="cluster-full">Soft Washing &mdash; Duluth</span></a><a href="roof-soft-washing-duluth.html" class="cluster-link"><span class="cluster-short">Roof Cleaning</span><span class="cluster-full">Roof Cleaning &mdash; Duluth</span></a><a href="gutter-fascia-cleaning-superior.html" class="cluster-link"><span class="cluster-short">Gutter Cleaning</span><span class="cluster-full">Gutter Cleaning &mdash; Duluth</span></a><a href="concrete-washing-duluth.html" class="cluster-link"><span class="cluster-short">Concrete</span><span class="cluster-full">Concrete Washing &mdash; Duluth</span></a><a href="deck-restoration-duluth.html" class="cluster-link"><span class="cluster-short">Deck &amp; Fence</span><span class="cluster-full">Deck Restoration &mdash; Duluth</span></a><a href="window-cleaning-superior.html" class="cluster-link"><span class="cluster-short">Windows Hub</span><span class="cluster-full">Window Cleaning &mdash; Duluth</span></a><a href="residential-window-cleaning-duluth.html" class="cluster-link"><span class="cluster-short">Residential Windows</span><span class="cluster-full">Residential Windows &mdash; Duluth</span></a><a href="commercial-window-cleaning-duluth.html" class="cluster-link"><span class="cluster-short">Commercial Windows</span><span class="cluster-full">Commercial Windows &mdash; Duluth</span></a><a href="commercial-soft-washing-duluth.html" class="cluster-link"><span class="cluster-short">Commercial</span><span class="cluster-full">Commercial Soft Washing &mdash; Duluth</span></a><a href="blog-soft-washing-home-value-duluth.html" class="cluster-link"><span class="cluster-short">Local Guide</span><span class="cluster-full">Duluth Exterior Care Guide</span></a></nav>
     <p class="cluster-nearby">Nearby towns we serve (city home pages only): <a href="index.html" class="nearby-hub">Duluth, MN services →</a> <a href="proctor-mn-pressure-washing.html" class="nearby-hub">Proctor, MN services →</a> <a href="two-harbors-mn-pressure-washing.html" class="nearby-hub">Two Harbors, MN services →</a> <a href="pressure-washing-cloquet-mn.html" class="nearby-hub">Cloquet, MN services →</a></p>
   </div>
 </section>
@@ -699,132 +796,90 @@ footer{border-top:1px solid var(--line);padding:54px 0 40px;margin-top:20px}
         <span class="mark"><svg viewBox="0 0 24 24" fill="none"><path d="M12 2L4 9v11h5v-6h6v6h5V9z" stroke="#7fc6e8" stroke-width="1.6" stroke-linejoin="round"/></svg></span>
         <span>Up North<small>Pressure Washing</small></span>
       </a>
-      <p style="color:var(--text-dim);font-size:.9rem;margin-top:16px;max-width:280px">Soft washing for Superior &amp; the Twin Ports. Gentle on your home, tough on buildup.</p>
+      <p style="color:var(--text-dim);font-size:.9rem;margin-top:16px;max-width:280px">Premium soft washing for Superior &amp; the surrounding area. Gentle on your home, tough on buildup.</p>
     </div>
     <div class="foot-links">
-    <div class="foot-col"><h4>Superior Pages</h4>
-      <a href="superior-wi-pressure-washing.html">Superior Home</a>
-      <a href="soft-washing-superior.html">Soft Washing</a>
-      <a href="roof-soft-washing-superior.html">Roof Soft Washing</a>
-      <a href="gutter-fascia-cleaning-superior.html">Gutter Cleaning</a>
-      <a href="concrete-washing-superior.html">Concrete Washing</a>
-      <a href="deck-restoration-superior.html">Deck Restoration</a>
-      <a href="window-cleaning-superior.html">Window Cleaning</a>
-      <a href="commercial-soft-washing-superior.html">Commercial</a>
-      <a href="blog-soft-washing-home-value-superior.html">Home Value Guide</a>
-      <a href="blog-index.html">Learning Center</a>
-      <a href="gallery.html">Photo Gallery</a>
-      <a href="reviews.html">Reviews</a>
-    </div>
+      <div class="foot-col"><h4>Superior Pages</h4><a href="index.html">Duluth Home</a>
+        <a href="soft-washing-duluth.html">Soft Washing</a>
+        <a href="roof-soft-washing-duluth.html">Roof Soft Washing</a>
+        <a href="gutter-fascia-cleaning-superior.html">Gutter Cleaning</a>
+        <a href="concrete-washing-duluth.html">Concrete Washing</a>
+        <a href="deck-restoration-duluth.html">Deck Restoration</a>
+        <a href="window-cleaning-superior.html">Window Cleaning</a>
+        <a href="commercial-soft-washing-duluth.html">Commercial</a>
+        <a href="blog-index.html">Learning Center</a>
+        <a href="gallery.html">Photo Gallery</a>
+        <a href="reviews.html">Reviews</a></div>
       <div class="foot-col"><h4>Service Areas</h4><p>Superior</p><p>East End</p><p>Billings Park</p><p>North End &amp; Duluth</p></div>
       <div class="foot-col"><h4>Services</h4><a href="#services">Full House Wash</a><a href="#services">Maintenance</a><a href="#services">Deep Restoration</a><a href="#services">Roof Soft Wash</a></div>
-      <div class="foot-col"><h4>Get Started</h4><a href="#quote">Free Quote</a><a href="#results">See Results</a><a href="#reviews">Reviews</a></div>
+      <div class="foot-col"><h4>Get Started</h4><a href="#quote">Free Quote</a><a href="#results">See Results</a><a href="#calculator">Pricing Tool</a><a href="#reviews">Reviews</a></div>
     </div>
   </div>
-  <div class="wrap foot-bottom">© 2026 Up North Pressure Washing · Superior, WI 54880 · 1-Year Soft Wash Guarantee</div>
+  <div class="wrap foot-bottom">&copy; 2026 Up North Pressure Washing &middot; Superior, WI &middot; 1-Year Soft Wash Guarantee</div>
 </footer></main>
 
 <script defer>
-const IMGDATA = {"HERO_BEFORE":"images/ba/hero-before.jpg","HERO_AFTER":"images/ba/hero-after.jpg","STUCCO_BEFORE":"images/ba/stucco-before.jpg","STUCCO_AFTER":"images/ba/stucco-after.jpg","ROOF_BEFORE":"images/ba/roof-before.jpg","ROOF_AFTER":"images/ba/roof-after.jpg"};
-const ALTDATA = {"HERO_BEFORE":"Before soft washing in Superior, WI — algae-streaked vinyl siding and organic growth on home exterior | Up North Pressure Washing","HERO_AFTER":"After soft washing in Superior, WI — clean bright siding after low-pressure soft wash treatment | Up North Pressure Washing","STUCCO_BEFORE":"Before soft washing in Superior, WI — stucco and masonry with green mildew and weather staining | Up North Pressure Washing","STUCCO_AFTER":"After soft washing in Superior, WI — restored stucco and masonry with even clean finish | Up North Pressure Washing","ROOF_BEFORE":"Before roof soft washing in Superior, WI — roof shingles with moss and black streak algae | Up North Pressure Washing","ROOF_AFTER":"After roof soft washing in Superior, WI — clean roof shingles after gentle soft-wash treatment | Up North Pressure Washing"};
+const IMGDATA = {"ROOF_BEFORE":"images/ba/roof-before.webp","ROOF_AFTER":"images/ba/roof-after.webp","SW1_BEFORE":"images/ba/softwash-before-1.webp","SW1_AFTER":"images/ba/softwash-after-1.webp","SW2_BEFORE":"images/ba/softwash-before-2.webp","SW2_AFTER":"images/ba/softwash-after-2.webp","SW3_BEFORE":"images/ba/softwash-before-3.webp","SW3_AFTER":"images/ba/softwash-after-3.webp"};
+const ALTDATA = {"ROOF_BEFORE":"Before roof soft washing in Superior, WI — shingles with moss and black streak algae | Up North Pressure Washing","ROOF_AFTER":"After roof soft washing in Superior, WI — clean shingles after gentle soft-wash treatment | Up North Pressure Washing","SW1_BEFORE":"Before soft washing in Superior, WI — brick and vinyl siding with heavy algae and mold growth | Up North Pressure Washing","SW1_AFTER":"After soft washing in Superior, WI — restored brick and vinyl siding, clean exterior | Up North Pressure Washing","SW2_BEFORE":"Before soft washing in Superior, WI — navy blue siding with green algae buildup | Up North Pressure Washing","SW2_AFTER":"After soft washing in Superior, WI — clean navy blue siding after professional soft wash | Up North Pressure Washing","SW3_BEFORE":"Before soft washing in Superior, WI — sage green siding with rust stains and organic buildup | Up North Pressure Washing","SW3_AFTER":"After soft washing in Superior, WI — rust stains and algae removed, clean sage green siding restored | Up North Pressure Washing"};
 
-// Build before/after sliders
+// BA sliders
 document.querySelectorAll('.ba').forEach(ba=>{
-  const before = IMGDATA[ba.dataset.before];
-  const after  = IMGDATA[ba.dataset.after];
-  ba.innerHTML = `
-    <img src="${before}" alt="${ALTDATA[ba.dataset.before]}" width="1000" height="750" decoding="async" loading="lazy">
-    <div class="after-wrap"><img src="${after}" alt="${ALTDATA[ba.dataset.after]}" width="1000" height="750" decoding="async" loading="lazy"></div>
-    <div class="tag before">Before</div>
-    <div class="tag after">After</div>
-    <div class="handle"></div>
-    <div class="knob"><svg viewBox="0 0 24 24" fill="none"><path d="M8 7l-4 5 4 5M16 7l4 5-4 5" stroke="#7fc6e8" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
-  `;
-  const wrap = ba.querySelector('.after-wrap');
-  const handle = ba.querySelector('.handle');
-  const knob = ba.querySelector('.knob');
-  const afterImg = wrap.querySelector('img');
-  function setPos(clientX){
-    const r = ba.getBoundingClientRect();
-    let p = (clientX - r.left)/r.width;
-    p = Math.max(0.02, Math.min(0.98, p));
-    const pct = p*100;
-    wrap.style.width = pct+'%';
-    afterImg.style.width = r.width+'px';
-    handle.style.left = pct+'%';
-    knob.style.left = pct+'%';
-  }
-  requestAnimationFrame(()=>{ const r=ba.getBoundingClientRect(); afterImg.style.width=r.width+'px'; });
-  let dragging=false, locked=false, startX=0, startY=0;
-  const down=e=>{
-    const pt=e.touches?e.touches[0]:e;
-    startX=pt.clientX; startY=pt.clientY;
-    dragging=false; locked=false;
-    if(!e.touches){ dragging=true; locked=true; ba.classList.add('is-dragging'); setPos(pt.clientX); }
-  };
-  const move=e=>{
-    const pt=e.touches?e.touches[0]:e;
-    if(e.touches){
-      const dx=pt.clientX-startX, dy=pt.clientY-startY;
-      if(!locked){
-        if(Math.abs(dx)<10&&Math.abs(dy)<10)return;
-        if(Math.abs(dx)<Math.abs(dy)*1.15){ locked=true; return; }
-        dragging=true; locked=true; ba.classList.add('is-dragging');
-      }
-      if(!dragging)return;
-    }else if(!dragging)return;
-    setPos(pt.clientX);
-    if(e.cancelable&&dragging)e.preventDefault();
-  };
-  const up=()=>{ dragging=false; locked=false; ba.classList.remove('is-dragging'); };
-  ba.addEventListener('mousedown',down);
-  ba.addEventListener('touchstart',down,{passive:true});
-  window.addEventListener('mousemove',move);
-  window.addEventListener('mouseup',up);
-  ba.addEventListener('touchmove',move,{passive:false});
-  ba.addEventListener('touchend',up);
-  ba.addEventListener('touchcancel',up);
+  const before=IMGDATA[ba.dataset.before],after=IMGDATA[ba.dataset.after];
+  ba.innerHTML=`<img src="${before}" alt="${ALTDATA[ba.dataset.before]}" width="1000" height="750" decoding="async" loading="lazy"><div class="after-wrap"><img src="${after}" alt="${ALTDATA[ba.dataset.after]}" width="1000" height="750" decoding="async" loading="lazy"></div><div class="tag before">Before</div><div class="tag after">After</div><div class="handle"></div><div class="knob"><svg viewBox="0 0 24 24" fill="none"><path d="M8 7l-4 5 4 5M16 7l4 5-4 5" stroke="#7fc6e8" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div>`;
+  const wrap=ba.querySelector('.after-wrap'),handle=ba.querySelector('.handle'),knob=ba.querySelector('.knob'),afterImg=wrap.querySelector('img');
+  function setPos(clientX){const r=ba.getBoundingClientRect();let p=Math.max(0.02,Math.min(0.98,(clientX-r.left)/r.width));const pct=p*100;wrap.style.width=pct+'%';afterImg.style.width=r.width+'px';handle.style.left=pct+'%';knob.style.left=pct+'%';}
+  requestAnimationFrame(()=>{const r=ba.getBoundingClientRect();afterImg.style.width=r.width+'px';});
+  let dragging=false,locked=false,startX=0,startY=0;
+  const down=e=>{const pt=e.touches?e.touches[0]:e;startX=pt.clientX;startY=pt.clientY;dragging=false;locked=false;if(!e.touches){dragging=true;locked=true;ba.classList.add('is-dragging');setPos(pt.clientX);}};
+  const move=e=>{const pt=e.touches?e.touches[0]:e;if(e.touches){const dx=pt.clientX-startX,dy=pt.clientY-startY;if(!locked){if(Math.abs(dx)<10&&Math.abs(dy)<10)return;if(Math.abs(dx)<Math.abs(dy)*1.15){locked=true;return;}dragging=true;locked=true;ba.classList.add('is-dragging');}if(!dragging)return;}else if(!dragging)return;setPos(pt.clientX);if(e.cancelable&&dragging)e.preventDefault();};
+  const up=()=>{dragging=false;locked=false;ba.classList.remove('is-dragging');};
+  ba.addEventListener('mousedown',down);ba.addEventListener('touchstart',down,{passive:true});
+  window.addEventListener('mousemove',move);window.addEventListener('mouseup',up);
+  ba.addEventListener('touchmove',move,{passive:false});ba.addEventListener('touchend',up);ba.addEventListener('touchcancel',up);
 });
-function refreshBaWidths(){
-  document.querySelectorAll('.ba').forEach(ba=>{
-    const afterImg=ba.querySelector('.after-wrap img');
-    if(afterImg)afterImg.style.width=ba.getBoundingClientRect().width+'px';
-  });
-}
+function refreshBaWidths(){document.querySelectorAll('.ba').forEach(ba=>{const ai=ba.querySelector('.after-wrap img');if(ai)ai.style.width=ba.getBoundingClientRect().width+'px';});}
 window.addEventListener('resize',refreshBaWidths,{passive:true});
 window.addEventListener('load',refreshBaWidths);
 
-
-// Resolve any <img data-img="TOKEN"> placeholders (e.g. why-img)
-document.querySelectorAll('img[data-img]').forEach(im=>{ if(IMGDATA[im.dataset.img]) im.src = IMGDATA[im.dataset.img]; });
-
 // Accordion
-document.querySelectorAll('.acc-head').forEach(h=>{
-  h.addEventListener('click',()=>{
-    const acc=h.parentElement;
-    const body=acc.querySelector('.acc-body');
-    const open=acc.classList.contains('open');
-    document.querySelectorAll('.acc').forEach(a=>{a.classList.remove('open');a.querySelector('.acc-body').style.maxHeight=null;});
-    if(!open){acc.classList.add('open'); body.style.maxHeight=body.scrollHeight+'px';}
-  });
-});
+document.querySelectorAll('.acc-head').forEach(h=>{h.addEventListener('click',()=>{const acc=h.parentElement,body=acc.querySelector('.acc-body'),open=acc.classList.contains('open');document.querySelectorAll('.acc').forEach(a=>{a.classList.remove('open');a.querySelector('.acc-body').style.maxHeight=null;});if(!open){acc.classList.add('open');body.style.maxHeight=body.scrollHeight+'px';}});});
 
-// Reveal on scroll
+// Reveal
 const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting)e.target.classList.add('in');}),{threshold:.12});
 document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
 
-// Mobile menu toggle
-const burger=document.getElementById('burger');
-const navLinks=document.querySelector('.nav-links');
-if(burger&&navLinks){
-  burger.addEventListener('click',()=>{burger.classList.toggle('open');navLinks.classList.toggle('open');});
-  navLinks.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{burger.classList.remove('open');navLinks.classList.remove('open');}));
+// Burger
+const burger=document.getElementById('burger'),navLinks=document.querySelector('.nav-links');
+if(burger&&navLinks){burger.addEventListener('click',()=>{burger.classList.toggle('open');navLinks.classList.toggle('open');});navLinks.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{burger.classList.remove('open');navLinks.classList.remove('open');}));}
+
+// Price Calculator
+function calcPrice(){
+  const sqft=parseInt(document.getElementById('calcSqft').value)||1600;
+  const siding=document.getElementById('calcSiding').value;
+  const buildup=document.getElementById('calcBuildup').value;
+  const roof=document.getElementById('calcRoof').value;
+  let lowRate,highRate;
+  if(buildup==='light'){lowRate=0.15;highRate=0.15;}
+  else if(buildup==='medium'){lowRate=0.15;highRate=0.30;}
+  else{lowRate=0.40;highRate=0.60;}
+  let low=sqft*lowRate,high=sqft*highRate;
+  if(siding==='other'){low*=1.15;high*=1.15;}
+  if(roof!=='none'){
+    const slopePct=roof==='low'?0.25:roof==='medium'?0.35:0.45;
+    low+=low*slopePct;high+=high*slopePct;
+  }
+  low=Math.max(650,Math.round(low/25)*25);
+  high=Math.max(650,Math.round(high/25)*25);
+  const labels={900:'Under 1,000',1200:'1,000–1,400',1600:'1,400–1,800',2000:'1,800–2,200',2400:'2,200–2,600',2800:'2,600–3,000',3500:'3,000–4,000',4500:'4,000+'};
+  const sqftLabel=(labels[sqft]||sqft)+' sq ft';
+  const sidingLabel=siding==='vinyl'?'vinyl':'non-vinyl';
+  const bLabel=buildup==='light'?'light buildup':buildup==='medium'?'medium buildup':'heavy buildup';
+  const roofLabel=roof!=='none'?' + roof wash':'';
+  document.getElementById('calcSub').textContent=sqftLabel+' · '+sidingLabel+' · '+bLabel+roofLabel;
+  const el=document.getElementById('calcResult');
+  if(high-low<26){el.textContent='$'+low.toLocaleString()+'+';}
+  else{el.textContent='$'+low.toLocaleString()+' – $'+high.toLocaleString();}
 }
-
-// Form
-
-
-
 </script>
 <style id="mobile-cta-bar">
 .mobile-cta{display:none;position:fixed;bottom:0;left:0;right:0;z-index:90;
@@ -836,42 +891,23 @@ if(burger&&navLinks){
 @media(max-width:768px){.mobile-cta{display:flex}body{padding-bottom:72px}}
 </style>
 <div class="mobile-cta" aria-label="Quick contact">
-  <a class="call" href="tel:+12185768610">📞 218-576-8610</a>
+  <a class="call" href="tel:+12185768610">&#128222; 218-576-8610</a>
   <a class="quote" href="#quote">Free Quote</a>
 </div>
 <script id="img-fallback-init">
-document.querySelectorAll('img[src^="images/"]').forEach(img=>{
-  img.addEventListener('error',function(){
-    if(this.dataset.fallbackApplied)return;
-    this.dataset.fallbackApplied='1';
-    this.style.background='linear-gradient(145deg,#0c1824 0%,#1c4259 100%)';
-    this.style.minHeight=this.style.minHeight||'120px';
-  },{once:true});
-});
+document.querySelectorAll('img[src^="images/"]').forEach(img=>{img.addEventListener('error',function(){if(this.dataset.fallbackApplied)return;this.dataset.fallbackApplied='1';this.style.background='linear-gradient(145deg,#0c1824 0%,#1c4259 100%)';this.style.minHeight=this.style.minHeight||'120px';},{once:true});});
 </script>
 <script id="quote-form-handler">
-function showQuoteSuccess(form){
-  form.style.display='none';
-  const okView=document.getElementById('okView');
-  if(okView){
-    okView.classList.add('show');
-    const note=okView.querySelector('p');
-    if(note)note.innerHTML='We\'ve received your request and will reach out within one business day. Need a faster reply? <a href="tel:+12185768610" style="color:#2e8b57;font-weight:700">Call 218-576-8610</a>.';
-  }
-}
-function resetQuoteBtn(btn,prevLabel){
-  if(btn){btn.disabled=false;btn.textContent=prevLabel||'Request My Free Quote →';}
-}
+function showQuoteSuccess(form){form.style.display='none';const okView=document.getElementById('okView');if(okView){okView.classList.add('show');}}
+function resetQuoteBtn(btn,prevLabel){if(btn){btn.disabled=false;btn.textContent=prevLabel||'Request My Free Quote →';}}
 async function submitForm(e){
   if(e)e.preventDefault();
   const fn=(document.getElementById('fn')?.value||'').trim();
   const em=(document.getElementById('em')?.value||'').trim();
   if(!fn||!em){alert('Please enter at least your first name and email.');return false;}
   if((document.querySelector('[name="bot-field"]')?.value||'').trim())return false;
-  const form=document.getElementById('quoteForm');
-  if(!form)return false;
-  const btn=form.querySelector('.submit');
-  const prevLabel=btn?.textContent||'';
+  const form=document.getElementById('quoteForm');if(!form)return false;
+  const btn=form.querySelector('.submit');const prevLabel=btn?.textContent||'';
   if(btn){btn.disabled=true;btn.textContent='Sending…';}
   const ln=(document.getElementById('ln')?.value||'').trim();
   const ph=(document.getElementById('ph')?.value||'').trim();
@@ -880,59 +916,13 @@ async function submitForm(e){
   const msg=(document.getElementById('msg')?.value||'').trim();
   const page=location.pathname.replace(/^\//,'')||'index.html';
   const subject='Quote Request — '+fn+(city?' ('+city+')':'');
-  const w3fKey='';
-  if(w3fKey){
-    try{
-      const res=await fetch('https://api.web3forms.com/submit',{
-        method:'POST',
-        headers:{'Content-Type':'application/json','Accept':'application/json'},
-        body:JSON.stringify({
-          access_key:w3fKey,
-          subject:subject,
-          from_name:'Up North Website',
-          name:(fn+' '+ln).trim(),
-          email:em,
-          phone:ph||'Not provided',
-          city:city||'Not provided',
-          service:svc||'Not specified',
-          message:msg||'(No message)',
-          page:page
-        })
-      });
-      const data=await res.json().catch(()=>({}));
-      if(data.success){showQuoteSuccess(form);return false;}
-      alert(data.message||('Could not send. Email Upnorthpressurewash@gmail.com or call 218-576-8610.'));
-      resetQuoteBtn(btn,prevLabel);
-      return false;
-    }catch(_){
-      alert('Network error. Please call 218-576-8610 or email Upnorthpressurewash@gmail.com.');
-      resetQuoteBtn(btn,prevLabel);
-      return false;
-    }
-  }
   try{
-    const fsRes=await fetch('https://formspree.io/f/xlgkljvo',{
-      method:'POST',
-      headers:{'Content-Type':'application/json','Accept':'application/json'},
-      body:JSON.stringify({
-        _subject:subject,
-        name:(fn+' '+ln).trim(),
-        email:em,
-        phone:ph||'Not provided',
-        city:city||'Not provided',
-        service:svc||'Not specified',
-        message:msg||'(No message)',
-        page:page
-      })
-    });
+    const fsRes=await fetch('https://formspree.io/f/xlgkljvo',{method:'POST',headers:{'Content-Type':'application/json','Accept':'application/json'},body:JSON.stringify({_subject:subject,name:(fn+' '+ln).trim(),email:em,phone:ph||'Not provided',city:city||'Not provided',service:svc||'Not specified',message:msg||'(No message)',page:page})});
     const fsData=await fsRes.json().catch(()=>({}));
     if(fsData.ok){showQuoteSuccess(form);return false;}
-    alert(fsData.error||('Could not send. Email Upnorthpressurewash@gmail.com or call 218-576-8610.'));
-  }catch(_){
-    alert('Network error. Please call 218-576-8610 or email Upnorthpressurewash@gmail.com.');
-  }
-  resetQuoteBtn(btn,prevLabel);
-  return false;
+    alert(fsData.error||'Could not send. Email Upnorthpressurewash@gmail.com or call 218-576-8610.');
+  }catch(_){alert('Network error. Please call 218-576-8610 or email Upnorthpressurewash@gmail.com.');}
+  resetQuoteBtn(btn,prevLabel);return false;
 }
 document.getElementById('quoteForm')?.addEventListener('submit',submitForm);
 </script>
