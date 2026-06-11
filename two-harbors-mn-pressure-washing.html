@@ -297,12 +297,12 @@
 /* ── Service selector tiles ───────────────────────────── */
 .svc-label{display:block;font-size:.82rem;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:#7fc6e8;margin-bottom:10px}
 .svc-grid{display:grid;grid-template-columns:1fr 1fr;gap:7px;margin-bottom:12px}
-.svc-check{position:relative;display:flex;align-items:center;gap:10px;padding:11px 12px 11px 14px;border:1.5px solid rgba(160,200,225,.14);border-radius:10px;background:rgba(255,255,255,.03);cursor:pointer;transition:border-color .15s,background .15s;-webkit-user-select:none;user-select:none}
-.svc-check:hover{border-color:rgba(127,198,232,.32);background:rgba(127,198,232,.06)}
+.svc-check{position:relative;display:flex;align-items:center;gap:10px;padding:11px 12px 11px 14px;border:1.5px solid rgba(160,200,225,.28);border-radius:10px;background:rgba(255,255,255,.09);cursor:pointer;transition:border-color .15s,background .15s;-webkit-user-select:none;user-select:none}
+.svc-check:hover{border-color:rgba(127,198,232,.55);background:rgba(127,198,232,.12)}
 .svc-check input[type=checkbox]{position:absolute;opacity:0;width:0;height:0;pointer-events:none}
 /* custom circle indicator */
-.svc-check::before{content:"";flex-shrink:0;width:18px;height:18px;border-radius:50%;border:1.5px solid rgba(160,200,225,.35);background:transparent;transition:border-color .15s,background .15s;display:block}
-.svc-check.is-checked{border-color:rgba(127,198,232,.55);background:rgba(127,198,232,.09)}
+.svc-check::before{content:"";flex-shrink:0;width:18px;height:18px;border-radius:50%;border:1.5px solid rgba(160,200,225,.55);background:transparent;transition:border-color .15s,background .15s;display:block}
+.svc-check.is-checked{border-color:rgba(127,198,232,.7);background:rgba(127,198,232,.15)}
 .svc-check.is-checked::before{background:#e3b53e;border-color:#e3b53e;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 12 12' fill='none'%3E%3Cpath d='M2.5 6l2.5 2.5 4.5-5' stroke='%231a1305' stroke-width='1.6' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");background-size:12px;background-repeat:no-repeat;background-position:center}
 .svc-name{flex:1;font-size:.88rem;line-height:1.25;color:#dde8ef}
 .svc-check.is-checked .svc-name{color:#f0f8fc;font-weight:500}
