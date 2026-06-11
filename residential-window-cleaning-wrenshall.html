@@ -541,7 +541,7 @@ input::placeholder,select::placeholder,textarea::placeholder{color:#5f6b72}</sty
       <a href="#services">Services</a>
       <a href="#process">Process</a>
       <a href="#reviews">Reviews</a>
-      <a href="tel:+12185768610" class="nav-phone">218-576-8610</a>
+      <a href="tel:+12185768610" class="nav-phone" aria-label="Call Up North Pressure Washing at 218-576-8610">218-576-8610</a>
       <a href="#quote" class="nav-cta">Free Quote</a>
     </nav>
     <div class="burger" id="burger" aria-label="Menu">
@@ -673,7 +673,7 @@ input::placeholder,select::placeholder,textarea::placeholder{color:#5f6b72}</sty
       <p>Every job is quoted free — no surprise fees. These factors help homeowners understand typical Wrenshall window cleaning estimates.</p>
     </div>
     <div class="price-grid reveal"><div class="price-card"><h3>Number of panes & stories</h3><p>More glass and second-story access add time — common on Highway 61 south corridor lakefront and hillside homes.</p></div><div class="price-card"><h3>Interior + exterior scope</h3><p>Full inside-and-out visits cost more than exterior-only but deliver the brightest results for showings.</p></div><div class="price-card"><h3>Hard-water & salt treatment</h3><p>Wrenshall lake spray and mineral deposits may need extra attention beyond a standard squeegee pass.</p></div><div class="price-card"><h3>Screen & track detailing</h3><p>Included options that affect total time on older Wrenshall homes with heavy pollen buildup.</p></div><div class="price-card"><h3>Frequency & maintenance plans</h3><p>Spring/fall or quarterly schedules spread cost and keep glass clear year-round.</p></div></div>
-    <p class="price-cta reveal">Ready for a number? <a href="#quote">Request your free Wrenshall residential quote</a> or call <a href="tel:+12185768610">218-576-8610</a>.</p>
+    <p class="price-cta reveal">Ready for a number? <a href="#quote">Request your free Wrenshall residential quote</a> or call <a href="tel:+12185768610" aria-label="Call Up North Pressure Washing at 218-576-8610">218-576-8610</a>.</p>
   </div>
 </section>
 <section class="seo-compare">
@@ -721,7 +721,7 @@ input::placeholder,select::placeholder,textarea::placeholder{color:#5f6b72}</sty
     </div>
     <p class="reveal" style="text-align:center;margin-top:1.2rem"><a href="reviews.html" style="color:var(--ice);font-weight:600;text-decoration:none">Read all reviews →</a> · <a href="gallery.html" style="color:var(--ice);font-weight:600;text-decoration:none">See window photos</a></p>
     <div class="svc-cta reveal" style="margin-top:2rem;display:flex;flex-wrap:wrap;gap:.75rem;justify-content:center">
-      <a href="tel:+12185768610" class="btn-ghost">📞 218-576-8610</a>
+      <a href="tel:+12185768610" class="btn-ghost" aria-label="Call Up North Pressure Washing at 218-576-8610">📞 218-576-8610</a>
       <a href="https://g.page/r/CSCaz34lDtneEBE/review" target="_blank" rel="noopener" class="btn-gold">★ Read &amp; Leave a Review on Google</a>
     </div>
   </div>
@@ -791,7 +791,7 @@ input::placeholder,select::placeholder,textarea::placeholder{color:#5f6b72}</sty
 <section class="quote-sec" id="quote">
   <div class="wrap">
     <div class="qbox reveal">
-      <form id="quoteForm" method="post" action="#" onsubmit="submitForm(event);return false;" novalidate>
+      <form id="quoteForm" method="post" action="#" onsubmit="submitForm(event);return false;" novalidate aria-label="Request a free estimate">
         <input type="hidden" name="page" value="">
         <p hidden><label>Don't fill this out: <input name="bot-field"></label></p>
         <h2>Get a Free Quote</h2>
@@ -996,7 +996,7 @@ function showQuoteSuccess(form){
   if(okView){
     okView.classList.add('show');
     const note=okView.querySelector('p');
-    if(note)note.innerHTML='We\'ve received your request and will reach out within one business day. Need a faster reply? <a href="tel:+12185768610" style="color:#2e8b57;font-weight:700">Call 218-576-8610</a>.';
+    if(note)note.innerHTML='We\'ve received your request and will reach out within one business day. Need a faster reply? <a href="tel:+12185768610" style="color:#2e8b57;font-weight:700" aria-label="Call Up North Pressure Washing at 218-576-8610">Call 218-576-8610</a>.';
   }
 }
 function resetQuoteBtn(btn,prevLabel){
