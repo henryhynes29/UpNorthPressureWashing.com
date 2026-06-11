@@ -672,6 +672,80 @@ input::placeholder,select::placeholder,textarea::placeholder{color:#5f6b72}
     <div class="svc-cta" style="margin-top:38px"><a href="#quote" class="btn-gold">Get My Eveleth Quote</a></div>
   </div>
 </section>
+<!-- PRICE CALCULATOR -->
+<style id="calc-styles">
+.calc-sec{padding:60px 0;border-top:1px solid var(--line)}
+.calc-card{background:rgba(255,255,255,.045);border:1px solid rgba(160,200,225,.16);border-radius:20px;padding:28px;max-width:780px;margin:0 auto}
+.calc-fg{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.calc-fg .full{grid-column:1/-1}
+.calc-lbl{display:flex;flex-direction:column;gap:6px;font-size:.78rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:#b3c4cf}
+.calc-sel2{width:100%;padding:11px 14px;background:rgba(255,255,255,.06);border:1px solid rgba(160,200,225,.16);border-radius:10px;color:#e9f1f6;font-family:inherit;font-size:.94rem;appearance:none;cursor:pointer;transition:border-color .2s}
+.calc-sel2:focus{outline:none;border-color:#7fc6e8}
+.calc-sel2 option{background:#10212f;color:#e9f1f6}
+.calc-out{margin-top:22px;padding:18px 22px;background:rgba(127,198,232,.06);border:1px solid rgba(127,198,232,.18);border-radius:14px;display:flex;align-items:center;justify-content:space-between;gap:14px;flex-wrap:wrap}
+.calc-num{font-family:'Fraunces',serif;font-size:clamp(1.9rem,5vw,2.6rem);color:#e3b53e;font-weight:700;line-height:1}
+.calc-sub2{font-size:.78rem;color:#b3c4cf;margin-top:4px}
+.calc-lbl-sm{font-size:.72rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:#b3c4cf;margin-bottom:4px}
+.calc-note2{margin-top:12px;font-size:.8rem;color:#b3c4cf;line-height:1.55}
+.calc-note2 a{color:#7fc6e8;text-decoration:none}
+@media(max-width:640px){.calc-fg{grid-template-columns:1fr}.calc-out{flex-direction:column;align-items:flex-start}}
+</style>
+<section class="calc-sec" id="calculator">
+  <div class="wrap">
+    <div class="sec-head reveal" style="text-align:center;margin-bottom:28px">
+      <span class="eyebrow"><span class="dot"></span>Instant Estimate</span>
+      <h2>What will concrete washing <span class="gold">cost?</span></h2>
+      <p style="color:var(--text-dim);max-width:580px;margin:0 auto">Get a rough ballpark before you call — based on surface area and stain level. Final price confirmed on-site.</p>
+    </div>
+    <div class="calc-card reveal">
+      <div class="calc-fg">
+        <div class="calc-lbl">Total surface area (sq ft)
+          <select class="calc-sel2" id="ccSqft" onchange="calcConcretePrice()">
+            <option value="300">Under 400 sq ft (single-car driveway)</option>
+            <option value="500" selected>400 – 600 sq ft (standard driveway)</option>
+            <option value="750">600 – 900 sq ft (double driveway)</option>
+            <option value="1000">900 – 1,100 sq ft (large driveway)</option>
+            <option value="1400">1,100 – 1,600 sq ft (driveway + patio)</option>
+            <option value="2000">1,600+ sq ft</option>
+          </select>
+        </div>
+        <div class="calc-lbl">Stain / buildup level
+          <select class="calc-sel2" id="ccStain" onchange="calcConcretePrice()">
+            <option value="light">Light — general grime and weathering</option>
+            <option value="medium" selected>Medium — oil spots, algae, or moss</option>
+            <option value="heavy">Heavy — deep stains, heavy oil, or rust</option>
+          </select>
+        </div>
+      </div>
+      <div class="calc-out">
+        <div>
+          <div class="calc-lbl-sm">Estimated Price Range</div>
+          <div class="calc-num" id="ccResult">$108 &ndash; $180</div>
+          <div class="calc-sub2" id="ccSub">400–600 sq ft &middot; medium staining</div>
+        </div>
+        <a href="#quote" class="btn btn--quote" style="flex-shrink:0">Get Exact Quote &rarr;</a>
+      </div>
+      <p class="calc-note2">&#9888;&#65039; Rough estimates only — final price confirmed on-site. Minimum service <strong style="color:#fff">$150</strong>. <a href="/pricing">See full pricing calculator &rarr;</a></p>
+    </div>
+  </div>
+</section>
+<script>
+function calcConcretePrice(){
+  var sqft=parseInt(document.getElementById('ccSqft').value)||500;
+  var stain=document.getElementById('ccStain').value;
+  var lowR,highR;
+  if(stain==='light'){lowR=0.18;highR=0.24;}
+  else if(stain==='medium'){lowR=0.22;highR=0.36;}
+  else{lowR=0.30;highR=0.60;}
+  var low=Math.max(150,Math.round(sqft*lowR/10)*10);
+  var high=Math.max(150,Math.round(sqft*highR/10)*10);
+  var sqL={300:'Under 400',500:'400–600',750:'600–900',1000:'900–1,100',1400:'1,100–1,600',2000:'1,600+'};
+  document.getElementById('ccResult').innerHTML=high-low<11?'$'+low.toLocaleString()+'+':'$'+low.toLocaleString()+' – $'+high.toLocaleString();
+  document.getElementById('ccSub').textContent=(sqL[sqft]||sqft)+' sq ft · '+stain+' staining';
+}
+calcConcretePrice();
+</script>
+
 <section class="quote-sec" id="quote">
   <div class="wrap">
     <div class="qbox reveal">

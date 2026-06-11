@@ -670,6 +670,86 @@ input::placeholder,select::placeholder,textarea::placeholder{color:#5f6b72}
   </div>
 </section>
 
+<!-- PRICE CALCULATOR -->
+<style id="calc-styles">
+.calc-sec{padding:60px 0;border-top:1px solid var(--line)}
+.calc-card{background:rgba(255,255,255,.045);border:1px solid rgba(160,200,225,.16);border-radius:20px;padding:28px;max-width:780px;margin:0 auto}
+.calc-fg{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.calc-fg .full{grid-column:1/-1}
+.calc-lbl{display:flex;flex-direction:column;gap:6px;font-size:.78rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:#b3c4cf}
+.calc-sel2{width:100%;padding:11px 14px;background:rgba(255,255,255,.06);border:1px solid rgba(160,200,225,.16);border-radius:10px;color:#e9f1f6;font-family:inherit;font-size:.94rem;appearance:none;cursor:pointer;transition:border-color .2s}
+.calc-sel2:focus{outline:none;border-color:#7fc6e8}
+.calc-sel2 option{background:#10212f;color:#e9f1f6}
+.calc-out{margin-top:22px;padding:18px 22px;background:rgba(127,198,232,.06);border:1px solid rgba(127,198,232,.18);border-radius:14px;display:flex;align-items:center;justify-content:space-between;gap:14px;flex-wrap:wrap}
+.calc-num{font-family:'Fraunces',serif;font-size:clamp(1.9rem,5vw,2.6rem);color:#e3b53e;font-weight:700;line-height:1}
+.calc-sub2{font-size:.78rem;color:#b3c4cf;margin-top:4px}
+.calc-lbl-sm{font-size:.72rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:#b3c4cf;margin-bottom:4px}
+.calc-note2{margin-top:12px;font-size:.8rem;color:#b3c4cf;line-height:1.55}
+.calc-note2 a{color:#7fc6e8;text-decoration:none}
+@media(max-width:640px){.calc-fg{grid-template-columns:1fr}.calc-out{flex-direction:column;align-items:flex-start}}
+</style>
+<section class="calc-sec" id="calculator">
+  <div class="wrap">
+    <div class="sec-head reveal" style="text-align:center;margin-bottom:28px">
+      <span class="eyebrow"><span class="dot"></span>Instant Estimate</span>
+      <h2>What will roof cleaning <span class="gold">cost?</span></h2>
+      <p style="color:var(--text-dim);max-width:580px;margin:0 auto">Get a rough ballpark before you call — based on roof size, stories, and walkability. Final price confirmed on-site.</p>
+    </div>
+    <div class="calc-card reveal">
+      <div class="calc-fg">
+        <div class="calc-lbl">Roof area (sq ft)
+          <select class="calc-sel2" id="rfSqft" onchange="calcRoofPrice()">
+            <option value="800">Under 1,000 sq ft</option>
+            <option value="1200" selected>1,000 – 1,500 sq ft</option>
+            <option value="1750">1,500 – 2,000 sq ft</option>
+            <option value="2250">2,000 – 2,500 sq ft</option>
+            <option value="2750">2,500 – 3,000 sq ft</option>
+            <option value="3500">3,000 – 4,000 sq ft</option>
+            <option value="4500">4,000+ sq ft</option>
+          </select>
+        </div>
+        <div class="calc-lbl">Number of stories
+          <select class="calc-sel2" id="rfStories" onchange="calcRoofPrice()">
+            <option value="1" selected>1 story</option>
+            <option value="2">2 stories (+20%)</option>
+          </select>
+        </div>
+        <div class="calc-lbl full">Roof walkability
+          <select class="calc-sel2" id="rfWalk" onchange="calcRoofPrice()">
+            <option value="walkable" selected>Walkable — technician can safely walk it</option>
+            <option value="notwalkable">Not walkable — steep or unsafe to walk (+25%)</option>
+          </select>
+        </div>
+      </div>
+      <div class="calc-out">
+        <div>
+          <div class="calc-lbl-sm">Estimated Price Range</div>
+          <div class="calc-num" id="rfResult">$360 &ndash; $432</div>
+          <div class="calc-sub2" id="rfSub">1,000–1,500 sq ft &middot; 1 story &middot; walkable</div>
+        </div>
+        <a href="#quote" class="btn btn--quote" style="flex-shrink:0">Get Exact Quote &rarr;</a>
+      </div>
+      <p class="calc-note2">&#9888;&#65039; Rough estimates only — final price confirmed on-site. Minimum service <strong style="color:#fff">$300</strong>. <a href="/pricing">See full pricing calculator &rarr;</a></p>
+    </div>
+  </div>
+</section>
+<script>
+function calcRoofPrice(){
+  var sqft=parseInt(document.getElementById('rfSqft').value)||1200;
+  var stories=document.getElementById('rfStories').value;
+  var walk=document.getElementById('rfWalk').value;
+  var base=0.30;
+  if(stories==='2')base*=1.20;
+  if(walk==='notwalkable')base*=1.25;
+  var low=Math.max(300,Math.round(sqft*base/25)*25);
+  var high=Math.max(300,Math.round(sqft*base*1.20/25)*25);
+  var sqL={800:'Under 1,000',1200:'1,000–1,500',1750:'1,500–2,000',2250:'2,000–2,500',2750:'2,500–3,000',3500:'3,000–4,000',4500:'4,000+'};
+  document.getElementById('rfResult').innerHTML=high-low<26?'$'+low.toLocaleString()+'+':'$'+low.toLocaleString()+' – $'+high.toLocaleString();
+  document.getElementById('rfSub').textContent=(sqL[sqft]||sqft)+' sq ft · '+(stories==='2'?'2 story':'1 story')+' · '+(walk==='walkable'?'walkable':'not walkable');
+}
+calcRoofPrice();
+</script>
+
 <!-- QUOTE FORM -->
 <section class="quote-sec" id="quote">
   <div class="wrap">
