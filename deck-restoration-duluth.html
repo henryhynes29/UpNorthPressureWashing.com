@@ -361,7 +361,10 @@ footer{border-top:1px solid var(--line);padding:54px 0 40px;margin-top:20px}
   radial-gradient(120% 80% at 72% -10%, #2a3a1a 0%, transparent 55%),
   radial-gradient(100% 70% at 22% 0%, #1a2810 0%, transparent 50%),
   linear-gradient(180deg,#0e1d2a 0%,#0c1824 40%,#0b1622 100%)}
-</style>
+
+.qbox input::placeholder,.qbox select::placeholder,.qbox textarea::placeholder{color:#5f6b72}
+.calc-sel::placeholder{color:#5f6b72}
+input::placeholder,select::placeholder,textarea::placeholder{color:#5f6b72}</style>
 <link rel="canonical" href="https://www.upnorthpressurewashing.com/deck-restoration-duluth.html">
 
 <meta property="og:type" content="website">
@@ -716,8 +719,8 @@ document.querySelectorAll('.ba').forEach(ba=>{
   const before = IMGDATA[ba.dataset.before];
   const after  = IMGDATA[ba.dataset.after];
   ba.innerHTML = `
-    <img src="${before}" alt="${ALTDATA[ba.dataset.before]}" width="1000" height="750" decoding="async" loading="lazy">
-    <div class="after-wrap"><img src="${after}" alt="${ALTDATA[ba.dataset.after]}" width="1000" height="750" decoding="async" loading="lazy"></div>
+    <img src="${before}" alt="${ALTDATA[ba.dataset.before]}" decoding="async" loading="lazy">
+    <div class="after-wrap"><img src="${after}" alt="${ALTDATA[ba.dataset.after]}" decoding="async" loading="lazy"></div>
     <div class="tag before">Before</div>
     <div class="tag after">After</div>
     <div class="handle"></div>

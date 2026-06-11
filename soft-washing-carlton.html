@@ -338,7 +338,10 @@ footer{padding:60px 0 0;border-top:1px solid var(--line);margin-top:0}
   .bbl{display:flex;flex-wrap:wrap;gap:7px;justify-content:center}
   .bbl a{font-size:.8rem;color:var(--ice,#7fc6e8);text-decoration:none;padding:5px 12px;border:1px solid rgba(127,198,232,.18);border-radius:20px}
   .bbl a:hover{background:rgba(127,198,232,.08)}
-</style>
+
+.qbox input::placeholder,.qbox select::placeholder,.qbox textarea::placeholder{color:#5f6b72}
+.calc-sel::placeholder{color:#5f6b72}
+input::placeholder,select::placeholder,textarea::placeholder{color:#5f6b72}</style>
 <link rel="canonical" href="https://www.upnorthpressurewashing.com/soft-washing-carlton.html">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Up North Pressure Washing">
@@ -741,7 +744,7 @@ footer{padding:60px 0 0;border-top:1px solid var(--line);margin-top:0}
         <h2>Get a Free Quote</h2>
         <p class="sub">Tell us a little about your home and we&apos;ll get back to you with a no-pressure estimate.</p>
         <div class="row">
-          <div><label for="fn">First Name <span class="req">*</span></label><input type="text" id="fn" name="first_name" placeholder="Jane" style="color:#1a2830;::placeholder{color:#5f6b72}" required></div>
+          <div><label for="fn">First Name <span class="req">*</span></label><input type="text" id="fn" name="first_name" placeholder="Jane" style="color:#1a2830" required></div>
           <div><label for="ln">Last Name <span class="req">*</span></label><input type="text" id="ln" name="last_name" placeholder="Smith" required></div>
         </div>
         <div class="row">
@@ -836,7 +839,7 @@ const ALTDATA = {"ROOF_BEFORE":"Before roof soft washing in Carlton, MN — shin
 // BA sliders
 document.querySelectorAll('.ba').forEach(ba=>{
   const before=IMGDATA[ba.dataset.before],after=IMGDATA[ba.dataset.after];
-  ba.innerHTML=`<img src="${before}" alt="${ALTDATA[ba.dataset.before]}" width="1000" height="750" decoding="async" loading="lazy"><div class="after-wrap"><img src="${after}" alt="${ALTDATA[ba.dataset.after]}" width="1000" height="750" decoding="async" loading="lazy"></div><div class="tag before">Before</div><div class="tag after">After</div><div class="handle"></div><div class="knob"><svg viewBox="0 0 24 24" fill="none"><path d="M8 7l-4 5 4 5M16 7l4 5-4 5" stroke="#7fc6e8" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div>`;
+  ba.innerHTML=`<img src="${before}" alt="${ALTDATA[ba.dataset.before]}" decoding="async" loading="lazy"><div class="after-wrap"><img src="${after}" alt="${ALTDATA[ba.dataset.after]}" decoding="async" loading="lazy"></div><div class="tag before">Before</div><div class="tag after">After</div><div class="handle"></div><div class="knob"><svg viewBox="0 0 24 24" fill="none"><path d="M8 7l-4 5 4 5M16 7l4 5-4 5" stroke="#7fc6e8" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div>`;
   const wrap=ba.querySelector('.after-wrap'),handle=ba.querySelector('.handle'),knob=ba.querySelector('.knob'),afterImg=wrap.querySelector('img');
   function setPos(clientX){const r=ba.getBoundingClientRect();let p=Math.max(0.02,Math.min(0.98,(clientX-r.left)/r.width));const pct=p*100;wrap.style.width=pct+'%';afterImg.style.width=r.width+'px';handle.style.left=pct+'%';knob.style.left=pct+'%';}
   requestAnimationFrame(()=>{const r=ba.getBoundingClientRect();afterImg.style.width=r.width+'px';});

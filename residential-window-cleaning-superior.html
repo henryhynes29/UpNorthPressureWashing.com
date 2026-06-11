@@ -419,7 +419,10 @@ footer{border-top:1px solid var(--line);padding:54px 0 40px;margin-top:20px}
 .related-grid{display:flex;flex-wrap:wrap;gap:10px;justify-content:center;max-width:900px;margin:0 auto}
 .related-grid a{padding:10px 16px;border-radius:10px;border:1px solid var(--glass-line);color:var(--ice-soft);text-decoration:none;font-size:.86rem;transition:.2s}
 .related-grid a:hover{border-color:var(--ice);color:#fff}
-@media(max-width:760px){.included-grid,.auth-grid,.split-cards{grid-template-columns:1fr}.compare-row{grid-template-columns:1fr}.compare-row span{border-right:none;border-bottom:1px solid var(--glass-line)}.compare-head{display:none}}</style>
+@media(max-width:760px){.included-grid,.auth-grid,.split-cards{grid-template-columns:1fr}.compare-row{grid-template-columns:1fr}.compare-row span{border-right:none;border-bottom:1px solid var(--glass-line)}.compare-head{display:none}}
+.qbox input::placeholder,.qbox select::placeholder,.qbox textarea::placeholder{color:#5f6b72}
+.calc-sel::placeholder{color:#5f6b72}
+input::placeholder,select::placeholder,textarea::placeholder{color:#5f6b72}</style>
 <!-- SITE-SEO-GLOBAL -->
 <script type="application/ld+json">
 {"@context":"https://schema.org","@graph":[{"@type":"WebSite","@id":"https://www.upnorthpressurewashing.com/#website","url":"https://www.upnorthpressurewashing.com/","name":"Up North Pressure Washing","inLanguage":"en-US","publisher":{"@id":"https://www.upnorthpressurewashing.com/#organization"}},{"@type":"Organization","@id":"https://www.upnorthpressurewashing.com/#organization","name":"Up North Pressure Washing","url":"https://www.upnorthpressurewashing.com/","logo":{"@type":"ImageObject","url":"https://www.upnorthpressurewashing.com/images/hero-bg.webp"},"telephone":"+12185768610","sameAs":["https://g.page/r/CSCaz34lDtneEBE/review"]}]}
@@ -870,8 +873,8 @@ document.querySelectorAll('.ba').forEach(ba=>{
   const before = IMGDATA[ba.dataset.before];
   const after  = IMGDATA[ba.dataset.after];
   ba.innerHTML = `
-    <img src="${before}" alt="${ALTDATA[ba.dataset.before]}" width="1000" height="750" decoding="async" loading="lazy">
-    <div class="after-wrap"><img src="${after}" alt="${ALTDATA[ba.dataset.after]}" width="1000" height="750" decoding="async" loading="lazy"></div>
+    <img src="${before}" alt="${ALTDATA[ba.dataset.before]}" decoding="async" loading="lazy">
+    <div class="after-wrap"><img src="${after}" alt="${ALTDATA[ba.dataset.after]}" decoding="async" loading="lazy"></div>
     <div class="tag before">Before</div>
     <div class="tag after">After</div>
     <div class="handle"></div>
