@@ -357,6 +357,30 @@ footer{border-top:1px solid var(--line);padding:54px 0 40px;margin-top:20px}
   .bbl{display:flex;flex-wrap:wrap;gap:7px;justify-content:center}
   .bbl a{font-size:.8rem;color:var(--ice,#7fc6e8);text-decoration:none;padding:5px 12px;border:1px solid rgba(127,198,232,.18);border-radius:20px}
   .bbl a:hover{background:rgba(127,198,232,.08)}
+
+/* ── Service selector tiles ───────────────────────────── */
+.svc-label{display:block;font-size:.82rem;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:#7fc6e8;margin-bottom:10px}
+.svc-grid{display:grid;grid-template-columns:1fr 1fr;gap:7px;margin-bottom:12px}
+.svc-check{position:relative;display:flex;align-items:center;gap:10px;padding:11px 12px 11px 14px;border:1.5px solid rgba(160,200,225,.14);border-radius:10px;background:rgba(255,255,255,.03);cursor:pointer;transition:border-color .15s,background .15s;-webkit-user-select:none;user-select:none}
+.svc-check:hover{border-color:rgba(127,198,232,.32);background:rgba(127,198,232,.06)}
+.svc-check input[type=checkbox]{position:absolute;opacity:0;width:0;height:0;pointer-events:none}
+/* custom circle indicator */
+.svc-check::before{content:"";flex-shrink:0;width:18px;height:18px;border-radius:50%;border:1.5px solid rgba(160,200,225,.35);background:transparent;transition:border-color .15s,background .15s;display:block}
+.svc-check.is-checked{border-color:rgba(127,198,232,.55);background:rgba(127,198,232,.09)}
+.svc-check.is-checked::before{background:#e3b53e;border-color:#e3b53e;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 12 12' fill='none'%3E%3Cpath d='M2.5 6l2.5 2.5 4.5-5' stroke='%231a1305' stroke-width='1.6' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");background-size:12px;background-repeat:no-repeat;background-position:center}
+.svc-name{flex:1;font-size:.88rem;line-height:1.25;color:#dde8ef}
+.svc-check.is-checked .svc-name{color:#f0f8fc;font-weight:500}
+/* discount badge */
+.svc-badge{font-size:.62rem;font-weight:700;letter-spacing:.03em;padding:2px 7px;border-radius:20px;white-space:nowrap;line-height:1.5;transition:opacity .15s;opacity:0}
+.svc-badge.badge-full{opacity:1;background:rgba(46,139,87,.18);color:#5cd98c;border:1px solid rgba(46,139,87,.28)}
+.svc-badge.badge-10{opacity:1;background:rgba(227,181,62,.15);color:#e3b53e;border:1px solid rgba(227,181,62,.3)}
+.svc-badge.badge-20{opacity:1;background:rgba(227,181,62,.25);color:#f5cc50;border:1px solid rgba(227,181,62,.45)}
+/* bundle savings banner */
+.bundle-banner{display:none;align-items:center;gap:10px;padding:10px 14px;border-radius:9px;background:linear-gradient(120deg,rgba(46,139,87,.1) 0%,rgba(227,181,62,.07) 100%);border:1px solid rgba(46,139,87,.2);font-size:.83rem;color:#b3c4cf;margin-bottom:12px}
+.bundle-banner.visible{display:flex}
+.bb-icon{font-size:1rem;flex-shrink:0}
+.bundle-savings{color:#5cd98c;font-weight:700}
+@media(max-width:520px){.svc-grid{grid-template-columns:1fr}}
 </style>
 <link rel="canonical" href="https://www.upnorthpressurewashing.com/residential-window-cleaning-silver-bay">
 
