@@ -1028,7 +1028,9 @@ async function submitForm(e){
   const ln=(document.getElementById('ln')?.value||'').trim();
   const ph=(document.getElementById('ph')?.value||'').trim();
   const city=(document.getElementById('city')?.value||'').trim();
-  const svc=(document.getElementById('svc')?.value||'').trim();
+  const svcChecks=document.querySelectorAll('#svcGrid input:checked');
+  const svcItems=Array.from(svcChecks).map(cb=>{const b=cb.closest('.svc-check').querySelector('.svc-badge');return cb.value+(b&&b.textContent?' ['+b.textContent+']':'');});
+  const svc=svcItems.length?svcItems.join(', '):'Not specified';
   const msg=(document.getElementById('msg')?.value||'').trim();
   const page=location.pathname.replace(/^\//,'')||'index.html';
   const subject='Quote Request — '+fn+(city?' ('+city+')':'');
@@ -1087,6 +1089,44 @@ async function submitForm(e){
   return false;
 }
 document.getElementById('quoteForm')?.addEventListener('submit',submitForm);
+</script>
+
+<script id="bundle-upsell">
+(function(){
+  function updateBundle(){
+    var checks=document.querySelectorAll('#svcGrid .svc-check');
+    checks.forEach(function(l){l.classList.toggle('is-checked',l.querySelector('input').checked);});
+    var sel=Array.from(document.querySelectorAll('#svcGrid .svc-check input:checked')).map(function(cb){
+      return{el:cb.closest('.svc-check'),tier:parseInt(cb.closest('.svc-check').dataset.tier)||1};
+    });
+    // reset badges
+    checks.forEach(function(l){var b=l.querySelector('.svc-badge');b.textContent='';b.className='svc-badge';});
+    var banner=document.getElementById('bundleBanner');
+    var savings=document.getElementById('bundleSavings');
+    if(sel.length<2){if(banner)banner.classList.remove('visible');return;}
+    // Sort: tier 1 first (most expensive), then 2, then 3; tier 0 (other) comes last
+    sel.sort(function(a,b){
+      var ta=a.tier===0?99:a.tier, tb=b.tier===0?99:b.tier;
+      return ta-tb;
+    });
+    var labels=['Full price','Save 10%','Save 20%'];
+    var classes=['badge-full','badge-10','badge-20'];
+    sel.forEach(function(item,i){
+      var b=item.el.querySelector('.svc-badge');
+      var idx=Math.min(i,2);
+      b.textContent=labels[idx];
+      b.className='svc-badge '+classes[idx];
+    });
+    if(banner)banner.classList.add('visible');
+    if(savings){
+      if(sel.length>=3) savings.textContent='10% off + 20% off your bundled services';
+      else savings.textContent='10% off your second service';
+    }
+  }
+  document.querySelectorAll('#svcGrid input[type=checkbox]').forEach(function(cb){
+    cb.addEventListener('change',updateBundle);
+  });
+})();
 </script>
 </body>
 </html>
