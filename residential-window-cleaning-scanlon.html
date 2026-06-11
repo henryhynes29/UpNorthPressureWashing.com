@@ -359,27 +359,25 @@ footer{border-top:1px solid var(--line);padding:54px 0 40px;margin-top:20px}
   .bbl a:hover{background:rgba(127,198,232,.08)}
 
 /* ── Service selector tiles ───────────────────────────── */
-.svc-label{display:block;font-size:.82rem;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:#7fc6e8;margin-bottom:10px}
+.svc-label{display:block;font-size:.78rem;font-weight:700;letter-spacing:.07em;text-transform:uppercase;color:#3a4a54;margin-bottom:10px}
 .svc-grid{display:grid;grid-template-columns:1fr 1fr;gap:7px;margin-bottom:12px}
-.svc-check{position:relative;display:flex;align-items:center;gap:10px;padding:11px 12px 11px 14px;border:1.5px solid rgba(160,200,225,.28);border-radius:10px;background:rgba(255,255,255,.09);cursor:pointer;transition:border-color .15s,background .15s;-webkit-user-select:none;user-select:none}
-.svc-check:hover{border-color:rgba(127,198,232,.55);background:rgba(127,198,232,.12)}
+.svc-check{position:relative;display:flex;align-items:center;gap:10px;padding:11px 12px 11px 14px;border:1.5px solid #c8d8e0;border-radius:10px;background:#fff;cursor:pointer;transition:border-color .15s,background .15s,box-shadow .15s;-webkit-user-select:none;user-select:none;box-shadow:0 1px 3px rgba(0,0,0,.07)}
+.svc-check:hover{border-color:#7fc6e8;background:#f5fbff;box-shadow:0 2px 8px rgba(127,198,232,.18)}
 .svc-check input[type=checkbox]{position:absolute;opacity:0;width:0;height:0;pointer-events:none}
-/* custom circle indicator */
-.svc-check::before{content:"";flex-shrink:0;width:18px;height:18px;border-radius:50%;border:1.5px solid rgba(160,200,225,.55);background:transparent;transition:border-color .15s,background .15s;display:block}
-.svc-check.is-checked{border-color:rgba(127,198,232,.7);background:rgba(127,198,232,.15)}
+.svc-check::before{content:"";flex-shrink:0;width:18px;height:18px;border-radius:50%;border:1.5px solid #b0c4ce;background:#fff;transition:border-color .15s,background .15s;display:block}
+.svc-check.is-checked{border-color:#2a7fa8;background:#eef7fc;box-shadow:0 2px 10px rgba(42,127,168,.12)}
 .svc-check.is-checked::before{background:#e3b53e;border-color:#e3b53e;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 12 12' fill='none'%3E%3Cpath d='M2.5 6l2.5 2.5 4.5-5' stroke='%231a1305' stroke-width='1.6' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");background-size:12px;background-repeat:no-repeat;background-position:center}
-.svc-name{flex:1;font-size:.88rem;line-height:1.25;color:#dde8ef}
-.svc-check.is-checked .svc-name{color:#f0f8fc;font-weight:500}
-/* discount badge */
-.svc-badge{font-size:.62rem;font-weight:700;letter-spacing:.03em;padding:2px 7px;border-radius:20px;white-space:nowrap;line-height:1.5;transition:opacity .15s;opacity:0}
-.svc-badge.badge-full{opacity:1;background:rgba(46,139,87,.18);color:#5cd98c;border:1px solid rgba(46,139,87,.28)}
-.svc-badge.badge-10{opacity:1;background:rgba(227,181,62,.15);color:#e3b53e;border:1px solid rgba(227,181,62,.3)}
-.svc-badge.badge-20{opacity:1;background:rgba(227,181,62,.25);color:#f5cc50;border:1px solid rgba(227,181,62,.45)}
+.svc-name{flex:1;font-size:.88rem;line-height:1.25;color:#2a3a44;font-weight:500}
+.svc-check.is-checked .svc-name{color:#1a2830;font-weight:600}
+.svc-badge{font-size:.62rem;font-weight:700;letter-spacing:.03em;padding:2px 8px;border-radius:20px;white-space:nowrap;line-height:1.5;opacity:0;transition:opacity .2s}
+.svc-badge.badge-full{opacity:1;background:#d4f0e0;color:#1a6b3e;border:1px solid #a8dcc0}
+.svc-badge.badge-10{opacity:1;background:#fef3d0;color:#8a6000;border:1px solid #f0d878}
+.svc-badge.badge-20{opacity:1;background:#fde8a0;color:#7a5000;border:1px solid #e8c840}
 /* bundle savings banner */
-.bundle-banner{display:none;align-items:center;gap:10px;padding:10px 14px;border-radius:9px;background:linear-gradient(120deg,rgba(46,139,87,.1) 0%,rgba(227,181,62,.07) 100%);border:1px solid rgba(46,139,87,.2);font-size:.83rem;color:#b3c4cf;margin-bottom:12px}
+.bundle-banner{display:none;align-items:center;gap:10px;padding:11px 15px;border-radius:9px;background:linear-gradient(120deg,#dff5ea,#fef8dc);border:1px solid #a8dcc0;font-size:.83rem;color:#2a3a44;margin-bottom:12px}
 .bundle-banner.visible{display:flex}
 .bb-icon{font-size:1rem;flex-shrink:0}
-.bundle-savings{color:#5cd98c;font-weight:700}
+.bundle-savings{color:#1a6b3e;font-weight:700}
 @media(max-width:520px){.svc-grid{grid-template-columns:1fr}}
 </style>
 <link rel="canonical" href="https://www.upnorthpressurewashing.com/residential-window-cleaning-scanlon">
