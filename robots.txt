@@ -1,0 +1,11 @@
+User-agent: *
+Allow: /
+
+# Primary sitemap index (recommended for Google Search Console)
+Sitemap: https://www.upnorthpressurewashing.com/sitemap.xml
+
+# Segmented sitemaps
+Sitemap: https://www.upnorthpressurewashing.com/sitemap-pages.xml
+Sitemap: https://www.upnorthpressurewashing.com/sitemap-cities.xml
+Sitemap: https://www.upnorthpressurewashing.com/sitemap-services.xml
+Sitemap: https://www.upnorthpressurewashing.com/sitemap-blogs.xml
