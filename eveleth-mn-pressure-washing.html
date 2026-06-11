@@ -282,6 +282,17 @@
 .qbox .ok h3{font-size:1.6rem;color:#13212c}
 .hub-quote-phone{display:block;text-align:center;font-size:clamp(1.6rem,5vw,2.2rem);font-weight:700;color:#e3b53e;text-decoration:none;margin:12px 0 24px}
 @media(max-width:680px){.qbox{padding:32px 22px}.qbox .row{grid-template-columns:1fr}}
+
+/* Google review cards */
+.g-review{display:block;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.09);border-radius:16px;padding:20px 22px 18px;margin-top:20px;max-width:560px;text-decoration:none;color:inherit;transition:border-color .25s,transform .2s,box-shadow .25s;cursor:pointer;box-shadow:0 2px 16px rgba(0,0,0,.18)}
+.g-review:hover{border-color:rgba(127,198,232,.3);transform:translateY(-3px);box-shadow:0 8px 28px rgba(0,0,0,.28)}
+.g-review-top{display:flex;align-items:center;gap:9px;margin-bottom:12px}
+.g-logo{flex-shrink:0}
+.g-stars-row{color:#e3b53e;font-size:1.08rem;letter-spacing:2px;line-height:1}
+.g-via{font-size:.68rem;color:#7fc6e8;letter-spacing:.16em;text-transform:uppercase;margin-left:auto;font-weight:700;opacity:.75}
+.g-review-text{font-style:italic;color:#c8d8e2;font-size:.94rem;line-height:1.68;margin-bottom:14px}
+.g-reviewer{color:#e3b53e;font-size:.87rem;font-weight:600;font-style:normal;display:flex;align-items:center;gap:6px}
+.g-reviewer::before{content:"";display:inline-block;width:20px;height:1px;background:#e3b53e;opacity:.5}
 </style>
 </head>
 <body>
