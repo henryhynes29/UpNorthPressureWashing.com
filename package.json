@@ -1,0 +1,10 @@
+{
+  "name": "up-north-pressure-washing",
+  "private": true,
+  "engines": {
+    "node": ">=18"
+  },
+  "scripts": {
+    "build": "node build-vercel.mjs"
+  }
+}

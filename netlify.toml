@@ -1,0 +1,31 @@
+[build]
+  publish = "."
+
+# Apex + bare domain → www (matches canonical URLs in sitemap)
+[[redirects]]
+  from = "http://upnorthpressurewashing.com/*"
+  to = "https://www.upnorthpressurewashing.com/:splat"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "https://upnorthpressurewashing.com/*"
+  to = "https://www.upnorthpressurewashing.com/:splat"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "http://www.upnorthpressurewashing.com/*"
+  to = "https://www.upnorthpressurewashing.com/:splat"
+  status = 301
+  force = true
+
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Frame-Options = "SAMEORIGIN"
+    X-Content-Type-Options = "nosniff"
+    Referrer-Policy = "strict-origin-when-cross-origin"
+
+# Form notification emails are configured in Netlify dashboard:
+# Site settings → Forms → Form notifications → Add notification
