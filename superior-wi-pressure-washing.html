@@ -28,16 +28,16 @@
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700&family=Source+Sans+3:ital,wght@0,400;0,600;0,700;1,400&display=swap" onload="this.onload=null;this.rel='stylesheet'">
-  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700&family=Source+Sans+3:ital,wght@0,400;0,600;0,700;1,400&display=swap"></noscript><style>
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;0,9..144,700;1,9..144,400;1,9..144,600&family=Outfit:wght@400;500;600;700&display=swap" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;0,9..144,700;1,9..144,400;1,9..144,600&family=Outfit:wght@400;500;600;700&display=swap"></noscript><style>
   :root{
     --navy:#21384e;--navy-deep:#1a2c3e;--navy-soft:#2b4a64;--navy-glass:rgba(26,44,62,.78);
     --gold:#e0b13e;--gold-dark:#c79a2c;--gold-soft:rgba(224,177,62,.14);--ink-on-gold:#22303d;
     --glow:#5be1ff;--glow-soft:rgba(91,225,255,.12);
     --text:#f3f7fa;--text-dim:#b8c9d6;--white:#fff;
     --radius:18px;--radius-lg:22px;--maxw:680px;
-    --f-display:"Barlow Condensed","Arial Narrow",sans-serif;
-    --f-body:"Source Sans 3","Segoe UI",system-ui,sans-serif;
+    --f-display:"Fraunces",Georgia,serif;
+    --f-body:"Outfit","Segoe UI",system-ui,sans-serif;
     --space-1:.5rem;--space-2:.75rem;--space-3:1rem;--space-4:1.5rem;--space-5:2rem;--space-6:2.75rem;--space-7:3.5rem;
     --shadow-sm:0 8px 24px -16px rgba(0,0,0,.65);
     --shadow-md:0 18px 40px -22px rgba(0,0,0,.75);
@@ -291,7 +291,7 @@
 <header class="site-header" id="siteHeader">
   <div class="bar">
     <a href="index.html" aria-label="Up North Pressure Washing home">
-      <img src="images/logo.webp" width="46" height="46" decoding="async" alt="Up North Pressure Washing logo — exterior cleaning company serving Superior, WI">
+      <img src="images/logo.webp" width="46" height="46" decoding="async" alt="Up North Pressure Washing logo — exterior cleaning company serving Superior, WI" fetchpriority="high">
     </a>
     <a class="btn btn--quote btn--sm header-cta" href="#quote">Free Quote</a>
     <button class="menu-btn" id="menuBtn" aria-label="Open menu" aria-expanded="false" aria-controls="navlist">
@@ -318,7 +318,7 @@
 
 <main>
 <main id="main"><section class="hero">
-  <img class="bg" src="images/hero-bg.webp" fetchpriority="high" decoding="async" alt="" role="presentation" width="1500" height="1000">
+  <img class="bg" src="images/hero-bg.webp" fetchpriority="high" decoding="async" alt="" role="presentation" width="1500" height="1000" loading="lazy">
   <div class="hero__inner">
     <p class="hero__eyebrow">Superior&rsquo;s Exterior Cleaning Specialists</p>
     <h1>Exterior Cleaning in Superior, WI</h1>
@@ -385,8 +385,8 @@
     <p class="section-eyebrow">Roof Cleaning</p>
     <h2>Roof Cleaning Superior, WI</h2>
     <div class="ba" aria-label="Before and after roof cleaning slider. Drag to compare.">
-      <img class="ba__after" src="images/ba/roof-after.webp" alt="After roof cleaning in Superior, WI — clean shingles | Up North Pressure Washing" loading="lazy" width="1000" height="750">
-      <img class="ba__before" src="images/ba/roof-before.webp" alt="Before roof cleaning in Superior, WI — moss and black streaks on shingles | Up North Pressure Washing" loading="lazy" width="1000" height="750">
+      <img class="ba__after" src="images/ba/roof-after.webp" alt="After roof cleaning in Superior, WI — clean shingles | Up North Pressure Washing" loading="lazy" width="1000" height="750" decoding="async">
+      <img class="ba__before" src="images/ba/roof-before.webp" alt="Before roof cleaning in Superior, WI — moss and black streaks on shingles | Up North Pressure Washing" loading="lazy" width="1000" height="750" decoding="async">
       <span class="ba__label ba__label--b">Before</span>
       <span class="ba__label ba__label--a">After</span>
       <div class="ba__handle" style="left:50%"><span class="ba__grip">&#8644;</span></div>
@@ -404,8 +404,8 @@
     <p class="section-eyebrow">Gutter Cleaning</p>
     <h2>Gutter Cleaning Superior, WI</h2>
     <div class="ba" aria-label="Before and after gutter cleaning slider. Drag to compare.">
-      <img class="ba__after" src="images/ba/gutter-after.webp" alt="After gutter cleaning in Superior, WI — bright clean gutters and fascia | Up North Pressure Washing" loading="lazy" width="1000" height="1090">
-      <img class="ba__before" src="images/ba/gutter-before.webp" alt="Before gutter cleaning in Superior, WI — black streaks on gutters | Up North Pressure Washing" loading="lazy" width="1000" height="1090">
+      <img class="ba__after" src="images/ba/gutter-after.webp" alt="After gutter cleaning in Superior, WI — bright clean gutters and fascia | Up North Pressure Washing" loading="lazy" width="1000" height="1090" decoding="async">
+      <img class="ba__before" src="images/ba/gutter-before.webp" alt="Before gutter cleaning in Superior, WI — black streaks on gutters | Up North Pressure Washing" loading="lazy" width="1000" height="1090" decoding="async">
       <span class="ba__label ba__label--b">Before</span>
       <span class="ba__label ba__label--a">After</span>
       <div class="ba__handle" style="left:50%"><span class="ba__grip">&#8644;</span></div>
@@ -442,8 +442,8 @@
     <p class="section-eyebrow" id="deck-restoration">Wood Restoration</p>
     <h2>Deck &amp; Fence Restoration Superior, WI</h2>
         <div class="ba" aria-label="Before and after deck restoration slider. Drag to compare.">
-      <img class="ba__after" src="images/deck-after.webp" alt="After deck restoration in Superior, WI — restored stain-ready wood deck boards | Up North Pressure Washing" loading="lazy" width="1000" height="750">
-      <img class="ba__before" src="images/deck-before.webp" alt="Before deck restoration in Superior, WI — weathered grey wood deck with slippery algae | Up North Pressure Washing" loading="lazy" width="1000" height="750">
+      <img class="ba__after" src="images/deck-after.webp" alt="After deck restoration in Superior, WI — restored stain-ready wood deck boards | Up North Pressure Washing" loading="lazy" width="1000" height="750" decoding="async">
+      <img class="ba__before" src="images/deck-before.webp" alt="Before deck restoration in Superior, WI — weathered grey wood deck with slippery algae | Up North Pressure Washing" loading="lazy" width="1000" height="750" decoding="async">
       <span class="ba__label ba__label--b">Before</span>
       <span class="ba__label ba__label--a">After</span>
       <div class="ba__handle" style="left:50%"><span class="ba__grip">&#8644;</span></div>
@@ -463,8 +463,8 @@
     <h2>Commercial Cleaning Superior, WI</h2>
     <h3 class="block-subhead">Professional Exterior Maintenance for Northland Businesses</h3>
         <div class="ba" aria-label="Before and after commercial cleaning slider. Drag to compare.">
-      <img class="ba__after" src="images/commercial-after.webp" alt="After commercial cleaning in Superior, WI — sanitized commercial pad and building exterior | Up North Pressure Washing" loading="lazy" width="1000" height="750">
-      <img class="ba__before" src="images/commercial-before.webp" alt="Before commercial cleaning in Superior, WI — dirty commercial dumpster pad and grease buildup | Up North Pressure Washing" loading="lazy" width="1000" height="750">
+      <img class="ba__after" src="images/commercial-after.webp" alt="After commercial cleaning in Superior, WI — sanitized commercial pad and building exterior | Up North Pressure Washing" loading="lazy" width="1000" height="750" decoding="async">
+      <img class="ba__before" src="images/commercial-before.webp" alt="Before commercial cleaning in Superior, WI — dirty commercial dumpster pad and grease buildup | Up North Pressure Washing" loading="lazy" width="1000" height="750" decoding="async">
       <span class="ba__label ba__label--b">Before</span>
       <span class="ba__label ba__label--a">After</span>
       <div class="ba__handle" style="left:50%"><span class="ba__grip">&#8644;</span></div>
@@ -484,8 +484,8 @@
     <p class="section-eyebrow" id="window-cleaning">Streak-Free Glass</p>
     <h2>Window Cleaning Superior, WI</h2>
         <div class="ba" aria-label="Before and after window cleaning slider. Drag to compare.">
-      <img class="ba__after" src="images/window-res-after.webp" alt="After window cleaning in Superior, WI — crystal-clear residential glass with streak-free finish | Up North Pressure Washing" loading="lazy" width="1000" height="750">
-      <img class="ba__before" src="images/window-res-before.webp" alt="Before window cleaning in Superior, WI — filmy residential glass with hard-water spotting | Up North Pressure Washing" loading="lazy" width="1000" height="750">
+      <img class="ba__after" src="images/window-res-after.webp" alt="After window cleaning in Superior, WI — crystal-clear residential glass with streak-free finish | Up North Pressure Washing" loading="lazy" width="1000" height="750" decoding="async">
+      <img class="ba__before" src="images/window-res-before.webp" alt="Before window cleaning in Superior, WI — filmy residential glass with hard-water spotting | Up North Pressure Washing" loading="lazy" width="1000" height="750" decoding="async">
       <span class="ba__label ba__label--b">Before</span>
       <span class="ba__label ba__label--a">After</span>
       <div class="ba__handle" style="left:50%"><span class="ba__grip">&#8644;</span></div>

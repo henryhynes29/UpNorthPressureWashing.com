@@ -49,13 +49,15 @@ footer a{color:var(--ice);margin:0 8px}
 </style>
 </head>
 <body>
+<a href="#main" class="skip-link" style="position:absolute;left:-9999px;top:auto;width:1px;height:1px;overflow:hidden;z-index:100">Skip to content</a>
+<style>.skip-link:focus{left:12px;top:12px;width:auto;height:auto;padding:10px 16px;background:#e3b53e;color:#1a1305;font-weight:700;border-radius:8px;text-decoration:none}</style>
 <header class="nav"><div class="nav-in">
   <a href="index.html" class="brand"><span>Up North<small style="display:block;font-family:Outfit,sans-serif;font-size:.65rem;font-weight:400;letter-spacing:.06em;color:var(--text-dim)">Pressure Washing</small></span></a>
   <nav style="display:flex;gap:16px;margin-right:12px"><a href="gallery.html" style="color:#b3c4cf;text-decoration:none;font-size:.85rem">Gallery</a><a href="reviews.html" style="color:#b3c4cf;text-decoration:none;font-size:.85rem">Reviews</a></nav>
   <a href="index.html#quote" class="nav-cta">Free Quote</a>
 </div></header>
 
-<section class="hero wrap">
+<main id="main">
   <span class="eyebrow"><span class="dot"></span>Learning Center</span>
   <h1>Local Guides on <span class="gold">Exterior Cleaning</span><br>&amp; <span class="ice">Curb Appeal</span></h1>
   <p>Guides organized by region — find articles written for your specific city and climate.</p>
@@ -235,4 +237,5 @@ footer a{color:var(--ice);margin:0 8px}
     <a href="reviews.html">Reviews</a>
   </p>
 </footer>
+</main>
 </body></html>
