@@ -10,6 +10,7 @@
   (function(){var d=false;function l(){if(d)return;d=true;var s=document.createElement('script');s.async=true;s.src='https://www.googletagmanager.com/gtag/js?id=G-G90HPCWH1D';document.head.appendChild(s)}
   ['pointerdown','keydown','touchstart','scroll'].forEach(function(e){addEventListener(e,l,{once:true,passive:true})});
   setTimeout(l,4000)})();
+  addEventListener('click',function(e){var t=e.target;var a=t&&t.closest?t.closest('a[href^="tel:"]'):null;if(a)gtag('event','phone_call_click',{event_category:'contact',event_label:location.pathname});},true);
 </script>
 <meta charset="UTF-8">
 <meta name="robots" content="index,follow,max-image-preview:large">
@@ -48,7 +49,7 @@
     {"@type":"Offer","itemOffered":{"@type":"Service","name":"Hot Water Deep Cleaning"}},
     {"@type":"Offer","itemOffered":{"@type":"Service","name":"Commercial Pressure Washing"}}
   ],
-  "aggregateRating":{"@type":"AggregateRating","ratingValue":"5.0","reviewCount":"2"}
+  "aggregateRating":{"@type":"AggregateRating","ratingValue":"5.0","reviewCount":"30"}
 }
 </script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -1039,7 +1040,7 @@ async function submitForm(e){
         })
       });
       const data=await res.json().catch(()=>({}));
-      if(data.success){showQuoteSuccess(form);return false;}
+      if(data.success){gtag('event','generate_lead',{event_category:'quote',event_label:page});showQuoteSuccess(form);return false;}
       alert(data.message||('Could not send. Email Upnorthpressurewash@gmail.com or call 218-576-8610.'));
       resetQuoteBtn(btn,prevLabel);
       return false;
@@ -1065,7 +1066,7 @@ async function submitForm(e){
       })
     });
     const fsData=await fsRes.json().catch(()=>({}));
-    if(fsData.ok){showQuoteSuccess(form);return false;}
+    if(fsData.ok){gtag('event','generate_lead',{event_category:'quote',event_label:page});showQuoteSuccess(form);return false;}
     alert(fsData.error||('Could not send. Email Upnorthpressurewash@gmail.com or call 218-576-8610.'));
   }catch(_){
     alert('Network error. Please call 218-576-8610 or email Upnorthpressurewash@gmail.com.');

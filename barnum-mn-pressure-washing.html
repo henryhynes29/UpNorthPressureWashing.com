@@ -10,6 +10,7 @@
   (function(){var d=false;function l(){if(d)return;d=true;var s=document.createElement('script');s.async=true;s.src='https://www.googletagmanager.com/gtag/js?id=G-G90HPCWH1D';document.head.appendChild(s)}
   ['pointerdown','keydown','touchstart','scroll'].forEach(function(e){addEventListener(e,l,{once:true,passive:true})});
   setTimeout(l,4000)})();
+  addEventListener('click',function(e){var t=e.target;var a=t&&t.closest?t.closest('a[href^="tel:"]'):null;if(a)gtag('event','phone_call_click',{event_category:'contact',event_label:location.pathname});},true);
 </script>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -262,7 +263,7 @@
 <meta name="twitter:image" content="https://www.upnorthpressurewashing.com/images/hero-bg.webp">
 <!-- SITE-SEO-HUB -->
 <script type="application/ld+json">
-{"@context":"https://schema.org","@graph":[{"@type":"WebSite","@id":"https://www.upnorthpressurewashing.com/#website","url":"https://www.upnorthpressurewashing.com/","name":"Up North Pressure Washing","inLanguage":"en-US","publisher":{"@id":"https://www.upnorthpressurewashing.com/#organization"}},{"@type":"Organization","@id":"https://www.upnorthpressurewashing.com/#organization","name":"Up North Pressure Washing","url":"https://www.upnorthpressurewashing.com/","logo":{"@type":"ImageObject","url":"https://www.upnorthpressurewashing.com/images/hero-bg.webp"},"telephone":"+12185768610","sameAs":["https://g.page/r/CSCaz34lDtneEBE/review"]},{"@type":["LocalBusiness","HomeAndConstructionBusiness"],"@id":"https://www.upnorthpressurewashing.com/#business","name":"Up North Pressure Washing","url":"https://www.upnorthpressurewashing.com/","telephone":"+12185768610","priceRange":"$$","image":"https://www.upnorthpressurewashing.com/images/hero-bg.webp","geo":{"@type":"GeoCoordinates","latitude":46.50161,"longitude":-92.68879},"address":{"@type":"PostalAddress","addressLocality":"Barnum","addressRegion":"MN","postalCode":"55707","addressCountry":"US"},"areaServed":[{"@type":"City","name":"Barnum, MN"},{"@type":"City","name":"Moose Lake, MN"},{"@type":"City","name":"Carlton, MN"},{"@type":"City","name":"Wrenshall, MN"},{"@type":"City","name":"Cloquet, MN"}],"aggregateRating":{"@type":"AggregateRating","ratingValue":"5","reviewCount":"20","bestRating":"5"},"sameAs":["https://g.page/r/CSCaz34lDtneEBE/review"]},{"@type":"WebPage","@id":"https://www.upnorthpressurewashing.com/barnum-mn-pressure-washing#webpage","url":"https://www.upnorthpressurewashing.com/barnum-mn-pressure-washing","name":"Professional Soft Washing, Roof Cleaning &amp; Window Cleaning Barnum MN | Up North Pressure Washing","description":"Barnum's highest-rated soft washing, roof cleaning &amp; window cleaning. Veteran-founded, fully insured with $1M liability. Free estimates. 1-year growth-free guarantee on soft washes.","isPartOf":{"@id":"https://www.upnorthpressurewashing.com/#website"},"about":{"@id":"https://www.upnorthpressurewashing.com/#business"},"inLanguage":"en-US","primaryImageOfPage":{"@type":"ImageObject","url":"https://www.upnorthpressurewashing.com/images/hero-bg.webp"}}]}
+{"@context":"https://schema.org","@graph":[{"@type":"WebSite","@id":"https://www.upnorthpressurewashing.com/#website","url":"https://www.upnorthpressurewashing.com/","name":"Up North Pressure Washing","inLanguage":"en-US","publisher":{"@id":"https://www.upnorthpressurewashing.com/#organization"}},{"@type":"Organization","@id":"https://www.upnorthpressurewashing.com/#organization","name":"Up North Pressure Washing","url":"https://www.upnorthpressurewashing.com/","logo":{"@type":"ImageObject","url":"https://www.upnorthpressurewashing.com/images/hero-bg.webp"},"telephone":"+12185768610","sameAs":["https://g.page/r/CSCaz34lDtneEBE/review"]},{"@type":["LocalBusiness","HomeAndConstructionBusiness"],"@id":"https://www.upnorthpressurewashing.com/#business","name":"Up North Pressure Washing","url":"https://www.upnorthpressurewashing.com/","telephone":"+12185768610","priceRange":"$$","image":"https://www.upnorthpressurewashing.com/images/hero-bg.webp","geo":{"@type":"GeoCoordinates","latitude":46.50161,"longitude":-92.68879},"address":{"@type":"PostalAddress","addressLocality":"Barnum","addressRegion":"MN","postalCode":"55707","addressCountry":"US"},"areaServed":[{"@type":"City","name":"Barnum, MN"},{"@type":"City","name":"Moose Lake, MN"},{"@type":"City","name":"Carlton, MN"},{"@type":"City","name":"Wrenshall, MN"},{"@type":"City","name":"Cloquet, MN"}],"aggregateRating":{"@type":"AggregateRating","ratingValue":"5","reviewCount":"30","bestRating":"5"},"sameAs":["https://g.page/r/CSCaz34lDtneEBE/review"]},{"@type":"WebPage","@id":"https://www.upnorthpressurewashing.com/barnum-mn-pressure-washing#webpage","url":"https://www.upnorthpressurewashing.com/barnum-mn-pressure-washing","name":"Professional Soft Washing, Roof Cleaning &amp; Window Cleaning Barnum MN | Up North Pressure Washing","description":"Barnum's highest-rated soft washing, roof cleaning &amp; window cleaning. Veteran-founded, fully insured with $1M liability. Free estimates. 1-year growth-free guarantee on soft washes.","isPartOf":{"@id":"https://www.upnorthpressurewashing.com/#website"},"about":{"@id":"https://www.upnorthpressurewashing.com/#business"},"inLanguage":"en-US","primaryImageOfPage":{"@type":"ImageObject","url":"https://www.upnorthpressurewashing.com/images/hero-bg.webp"}}]}
 </script>
 <style id="quote-form-css">
 .quote-sec{padding:48px 0}
@@ -705,7 +706,7 @@
   </div>
 </footer></main>
 
-<div class="sticky-cta" id="stickyCta"><a class="btn btn--quote btn--pill" href="#quote">Get Your Free Quote</a></div>
+<div class="sticky-cta" id="stickyCta"><a class="btn btn--quote btn--pill" href="#quote">Get Your Free Quote</a><a class="btn btn--pill" href="tel:+12185768610" style="background:#16303f;color:#7fc6e8;border:1px solid #2a4a66;margin-left:8px" aria-label="Call 218-576-8610">📞 Call</a></div>
 
 <!-- Lightbox overlay -->
 <div class="lb" id="lightbox" role="dialog" aria-modal="true" aria-label="Enlarged image">
@@ -879,7 +880,7 @@ async function submitForm(e){
         })
       });
       const data=await res.json().catch(()=>({}));
-      if(data.success){showQuoteSuccess(form);return false;}
+      if(data.success){gtag('event','generate_lead',{event_category:'quote',event_label:page});showQuoteSuccess(form);return false;}
       alert(data.message||('Could not send. Email Upnorthpressurewash@gmail.com or call 218-576-8610.'));
       resetQuoteBtn(btn,prevLabel);
       return false;
@@ -905,7 +906,7 @@ async function submitForm(e){
       })
     });
     const fsData=await fsRes.json().catch(()=>({}));
-    if(fsData.ok){showQuoteSuccess(form);return false;}
+    if(fsData.ok){gtag('event','generate_lead',{event_category:'quote',event_label:page});showQuoteSuccess(form);return false;}
     alert(fsData.error||('Could not send. Email Upnorthpressurewash@gmail.com or call 218-576-8610.'));
   }catch(_){
     alert('Network error. Please call 218-576-8610 or email Upnorthpressurewash@gmail.com.');

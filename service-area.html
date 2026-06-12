@@ -10,6 +10,7 @@
   (function(){var d=false;function l(){if(d)return;d=true;var s=document.createElement('script');s.async=true;s.src='https://www.googletagmanager.com/gtag/js?id=G-G90HPCWH1D';document.head.appendChild(s)}
   ['pointerdown','keydown','touchstart','scroll'].forEach(function(e){addEventListener(e,l,{once:true,passive:true})});
   setTimeout(l,4000)})();
+  addEventListener('click',function(e){var t=e.target;var a=t&&t.closest?t.closest('a[href^="tel:"]'):null;if(a)gtag('event','phone_call_click',{event_category:'contact',event_label:location.pathname});},true);
 </script>
 <meta charset="UTF-8">
 <meta name="robots" content="index,follow,max-image-preview:large">
