@@ -716,12 +716,16 @@
   b.addEventListener('click',function(){l.classList.contains('open')?closeNav():openNav()});
   bd.addEventListener('click',closeNav);
   l.addEventListener('click',function(e){if(e.target.tagName==='A')closeNav()});
+  var applyScroll=function(){
+    var sy=window.scrollY;
+    if(hdr)hdr.classList.toggle('is-scrolled',sy>24);
+    if(sticky)sticky.classList.toggle('is-visible',sy>420);
+  };
+  var scrollTick=false;
   window.addEventListener('scroll',function(){
-    if(hdr)hdr.classList.toggle('is-scrolled',window.scrollY>24);
-    if(sticky)sticky.classList.toggle('is-visible',window.scrollY>420);
+    if(!scrollTick){scrollTick=true;requestAnimationFrame(function(){applyScroll();scrollTick=false})}
   },{passive:true});
-  if(hdr)hdr.classList.toggle('is-scrolled',window.scrollY>24);
-  if(sticky)sticky.classList.toggle('is-visible',window.scrollY>420);
+  applyScroll();
 
   // Scroll reveal — respects reduced-motion
   if(!window.matchMedia('(prefers-reduced-motion: reduce)').matches && 'IntersectionObserver' in window){
