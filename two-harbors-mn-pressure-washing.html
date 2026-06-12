@@ -1,13 +1,15 @@
 <!DOCTYPE html>
 <html lang="en-US">
 <head>
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-G90HPCWH1D"></script>
+<!-- Google tag (gtag.js) — deferred to first interaction or 4s for pagespeed -->
 <script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
   gtag('config', 'G-G90HPCWH1D');
+  (function(){var d=false;function l(){if(d)return;d=true;var s=document.createElement('script');s.async=true;s.src='https://www.googletagmanager.com/gtag/js?id=G-G90HPCWH1D';document.head.appendChild(s)}
+  ['pointerdown','keydown','touchstart','scroll'].forEach(function(e){addEventListener(e,l,{once:true,passive:true})});
+  setTimeout(l,4000)})();
 </script>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -236,7 +238,7 @@
 @media(max-width:760px){.cluster-grid{grid-template-columns:1fr 1fr}}
 
 </style>
-<link rel="preload" as="image" href="images/hero-bg.webp" fetchpriority="high">
+<link rel="preload" as="image" href="images/hero-bg.webp" imagesrcset="images/hero-bg-768.webp 768w, images/hero-bg.webp 1024w" imagesizes="100vw" fetchpriority="high">
 
 <script type="application/ld+json">
 {
@@ -355,7 +357,7 @@
 
 <main>
 <main id="main"><section class="hero">
-  <img class="bg" src="images/hero-bg.webp" fetchpriority="high" decoding="async" alt="" role="presentation" width="1024" height="1536">
+  <img class="bg" src="images/hero-bg.webp" srcset="images/hero-bg-768.webp 768w, images/hero-bg.webp 1024w" sizes="100vw" fetchpriority="high" decoding="async" alt="" role="presentation" width="1024" height="1536">
   <div class="hero__inner">
     <p class="hero__eyebrow">Two Harbors&rsquo; Exterior Cleaning Specialists</p>
     <h1>Soft Washing &amp; Pressure Washing in Two Harbors, MN</h1>
