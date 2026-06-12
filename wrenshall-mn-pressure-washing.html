@@ -65,7 +65,7 @@
   .site-header.is-scrolled{background:rgba(20,34,48,.92);box-shadow:0 10px 30px -18px rgba(0,0,0,.75);border-bottom:1px solid rgba(255,255,255,.08)}
   .site-header:not(.is-scrolled){background:linear-gradient(180deg,rgba(20,34,48,.88),rgba(20,34,48,.62));backdrop-filter:blur(14px) saturate(1.15);-webkit-backdrop-filter:blur(14px) saturate(1.15);border-bottom:1px solid rgba(255,255,255,.06)}
   .bar{display:flex;align-items:center;justify-content:space-between;gap:.75rem;padding:.65rem 1rem;min-height:var(--header-h)}
-  .bar img{height:42px;width:auto;transition:height .25s var(--ease)}
+  .bar img{height:42px;width:42px;object-fit:contain;flex-shrink:0;transition:height .25s var(--ease)}.bar>a:first-child{flex-shrink:0}
   .site-header.is-scrolled .bar img{height:38px}
   .header-cta{display:none}
   .menu-btn{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.12);cursor:pointer;padding:10px;border-radius:12px;width:46px;height:46px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:5px;transition:background .2s,border-color .2s,transform .2s}
@@ -194,7 +194,7 @@
   .flinks{list-style:none;padding:0;margin:1.5rem 0;display:flex;flex-wrap:wrap;justify-content:center;gap:.5rem 1.4rem}
   .flinks a{color:var(--text-dim);text-decoration:none;font-family:var(--f-display);text-transform:uppercase;letter-spacing:.6px;font-size:.85rem}
   .flinks a:hover{color:var(--gold)}
-  .copyright{color:#7d93a0;font-size:.8rem;margin-top:1rem}
+  .copyright{color:#93a9b6;font-size:.8rem;margin-top:1rem}
 
   .sticky-cta{position:fixed;left:0;right:0;bottom:0;z-index:60;display:flex;justify-content:center;padding:.55rem 1rem calc(.55rem + env(safe-area-inset-bottom,0px));background:linear-gradient(180deg,rgba(26,44,62,0),rgba(20,34,48,.95) 42%);pointer-events:none;transform:translateY(110%);transition:transform .35s var(--ease),opacity .35s;opacity:0}
   .sticky-cta.is-visible{transform:translateY(0);opacity:1}
@@ -355,7 +355,7 @@
 
 <main>
 <main id="main"><section class="hero">
-  <img class="bg" src="images/hero-bg.webp" fetchpriority="high" decoding="async" alt="" role="presentation" width="1024" height="1536" loading="lazy">
+  <img class="bg" src="images/hero-bg.webp" fetchpriority="high" decoding="async" alt="" role="presentation" width="1024" height="1536">
   <div class="hero__inner">
     <p class="hero__eyebrow">Wrenshall&rsquo;s Exterior Cleaning Specialists</p>
     <h1>Soft Washing &amp; Pressure Washing in Wrenshall, MN</h1>
