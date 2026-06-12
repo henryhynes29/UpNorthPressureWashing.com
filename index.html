@@ -951,4 +951,10 @@ document.getElementById('quoteForm')?.addEventListener('submit',submitForm);
     }
   }
   document.querySelectorAll('#svcGrid input[type=checkbox]').forEach(function(cb){
-    cb.addEventList
+    cb.addEventListener('change',updateBundle);
+  });
+  updateBundle();
+})();
+</script>
+</body>
+</html>
