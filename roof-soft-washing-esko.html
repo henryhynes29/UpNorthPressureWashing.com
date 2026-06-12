@@ -127,7 +127,7 @@ section{padding:78px 0}
 .sec-head h2{font-size:clamp(2rem,5vw,3.2rem)}
 .sec-head p{color:var(--text-dim);margin-top:16px;font-size:1.04rem}
 
-.ba-grid{display:grid;grid-template-columns:1fr;gap:30px;max-width:840px;margin:0 auto}
+.ba-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:24px;max-width:1100px;margin:0 auto}
 .ba-card{background:var(--glass);border:1px solid var(--glass-line);border-radius:20px;padding:16px;
   backdrop-filter:blur(10px);box-shadow:0 20px 60px rgba(0,0,0,.35)}
 .ba-card .cap{display:flex;justify-content:space-between;align-items:center;padding:6px 8px 14px}
@@ -512,6 +512,10 @@ input::placeholder,select::placeholder,textarea::placeholder{color:#5f6b72}
         <div class="cap"><h3>Algae &amp; Stain Removal</h3><span>Soft Wash Results</span></div>
         <div class="ba" data-before="BUNDLE_BEFORE" data-after="BUNDLE_AFTER"></div>
       </div>
+      <div class="ba-card reveal">
+        <div class="cap"><h3>Moss &amp; Lichen Cleared</h3><span>Soft Wash Results</span></div>
+        <div class="ba" data-before="EXTRA_BEFORE" data-after="EXTRA_AFTER"></div>
+      </div>
     </div>
     <p class="fit-note"><span class="drag">⟷</span> Drag the slider or tap and pull to compare before &amp; after.</p>
   </div>
@@ -846,8 +850,8 @@ calcRoofPrice();
 </footer></main>
 
 <script defer>
-const IMGDATA = {"HERO_BEFORE":"images/ba/roof-s-before.webp","HERO_AFTER":"images/ba/roof-s-after.webp","BUNDLE_BEFORE":"images/ba/roof-b-before.webp","BUNDLE_AFTER":"images/ba/roof-b-after.webp"};
-const ALTDATA = {"HERO_BEFORE":"Before roof soft washing in Esko, MN — asphalt shingles with black streak algae and moss | Up North Pressure Washing","HERO_AFTER":"After roof soft washing in Esko, MN — clean roof shingles after gentle soft-wash treatment | Up North Pressure Washing","BUNDLE_BEFORE":"Before roof soft washing in Esko, MN — dark stains and algae on asphalt shingles | Up North Pressure Washing","BUNDLE_AFTER":"After roof soft washing in Esko, MN — clean restored shingles after soft wash treatment | Up North Pressure Washing"};
+const IMGDATA = {"HERO_BEFORE":"images/ba/roof-before.webp","HERO_AFTER":"images/ba/roof-after.webp","BUNDLE_BEFORE":"images/ba/roof-s-before.webp","BUNDLE_AFTER":"images/ba/roof-s-after.webp","EXTRA_BEFORE":"images/ba/roof-b-before.webp","EXTRA_AFTER":"images/ba/roof-b-after.webp"};
+const ALTDATA = {"HERO_BEFORE":"Before roof soft washing in Esko, MN — asphalt shingles with black streak algae and moss | Up North Pressure Washing","HERO_AFTER":"After roof soft washing in Esko, MN — clean roof shingles after gentle soft-wash treatment | Up North Pressure Washing","BUNDLE_BEFORE":"Before roof soft washing in Esko, MN — dark stains and algae on asphalt shingles | Up North Pressure Washing","BUNDLE_AFTER":"After roof soft washing in Esko, MN — clean restored shingles after soft wash treatment | Up North Pressure Washing","EXTRA_BEFORE":"Before roof soft washing in Esko, MN — moss and staining on tan shingles | Up North Pressure Washing","EXTRA_AFTER":"After roof soft washing in Esko, MN — clean tan shingles restored after soft wash | Up North Pressure Washing"};
 
 // Build before/after sliders
 document.querySelectorAll('.ba').forEach(ba=>{
