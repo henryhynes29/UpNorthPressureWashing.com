@@ -894,7 +894,7 @@ const ALTDATA = {"ROOF_BEFORE":"Before roof soft washing in Lake Nebagamon, WI â
 // BA sliders
 document.querySelectorAll('.ba').forEach(ba=>{
   const before=IMGDATA[ba.dataset.before],after=IMGDATA[ba.dataset.after];
-  ba.innerHTML=`<img src="${before}" alt="${ALTDATA[ba.dataset.before]}" decoding="async" loading="lazy"><div class="after-wrap"><img src="${after}" alt="${ALTDATA[ba.dataset.after]}" decoding="async" loading="lazy"></div><div class="tag before">Before</div><div class="tag after">After</div><div class="handle"></div><div class="knob"><svg viewBox="0 0 24 24" fill="none"><path d="M8 7l-4 5 4 5M16 7l4 5-4 5" stroke="#7fc6e8" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div>`;
+  ba.innerHTML=`<img src="${after}" alt="${ALTDATA[ba.dataset.after]}" decoding="async" loading="lazy"><div class="after-wrap"><img src="${before}" alt="${ALTDATA[ba.dataset.before]}" decoding="async" loading="lazy"></div><div class="tag before">Before</div><div class="tag after">After</div><div class="handle"></div><div class="knob"><svg viewBox="0 0 24 24" fill="none"><path d="M8 7l-4 5 4 5M16 7l4 5-4 5" stroke="#7fc6e8" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div>`;
   const wrap=ba.querySelector('.after-wrap'),handle=ba.querySelector('.handle'),knob=ba.querySelector('.knob'),afterImg=wrap.querySelector('img');
   function setPos(clientX){const r=ba.getBoundingClientRect();let p=Math.max(0.02,Math.min(0.98,(clientX-r.left)/r.width));const pct=p*100;wrap.style.width=pct+'%';afterImg.style.width=r.width+'px';handle.style.left=pct+'%';knob.style.left=pct+'%';}
   requestAnimationFrame(()=>{const r=ba.getBoundingClientRect();afterImg.style.width=r.width+'px';});

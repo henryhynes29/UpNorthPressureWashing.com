@@ -839,8 +839,8 @@ document.querySelectorAll('.ba').forEach(ba=>{
   const before = IMGDATA[ba.dataset.before];
   const after  = IMGDATA[ba.dataset.after];
   ba.innerHTML = `
-    <img src="${before}" alt="${ALTDATA[ba.dataset.before]}" decoding="async" loading="lazy">
-    <div class="after-wrap"><img src="${after}" alt="${ALTDATA[ba.dataset.after]}" decoding="async" loading="lazy"></div>
+    <img src="${after}" alt="${ALTDATA[ba.dataset.after]}" decoding="async" loading="lazy">
+    <div class="after-wrap"><img src="${before}" alt="${ALTDATA[ba.dataset.before]}" decoding="async" loading="lazy"></div>
     <div class="tag before">Before</div>
     <div class="tag after">After</div>
     <div class="handle"></div>
