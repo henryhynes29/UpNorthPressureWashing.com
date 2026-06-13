@@ -123,10 +123,7 @@ function cards(category) {
 function slider(category) {
   const label = CATEGORY_LABELS[category] || 'Google Reviews';
   if (reviewSet(category).length === 0) {
-    return `<div class="review-cta-only reveal" role="note" aria-label="${esc(label)}">
-      <p>No category-specific Google review is published for this exact service yet. We only show reviews here when they clearly match the work on the page.</p>
-      <a href="${GBP_PROFILE}" target="_blank" rel="noopener">Read our Google reviews &rarr;</a>
-    </div>`;
+    return '';
   }
   return `<div class="review-slider" aria-label="${esc(label)}">
 ${cards(category)}
@@ -182,10 +179,6 @@ const REVIEW_CSS = `
 .review-slider-note{text-align:center;margin-top:.95rem}
 .review-slider-note a{color:var(--ice);font-weight:700;text-decoration:none}
 .review-slider-note a:hover{text-decoration:underline}
-.review-cta-only{max-width:720px;margin:0 auto;padding:28px 24px;border:1px solid var(--glass-line);border-radius:20px;background:var(--glass);text-align:center;color:var(--text-dim)}
-.review-cta-only p{margin:0 auto 14px;max-width:560px;line-height:1.65}
-.review-cta-only a{color:var(--ice);font-weight:700;text-decoration:none}
-.review-cta-only a:hover{text-decoration:underline}
 `;
 
 function ensureCss(html) {
@@ -201,6 +194,7 @@ function fixGoogleLinks(html) {
   out = out.replace(/href="https:\/\/g\.page\/r\/CSCaz34lDtneEBE\/review"([^>]*class="(?:g-review|review-card|review-slide)".*?>)/g, `href="${GBP_PROFILE}"$1`);
   out = out.replace(/(Leave a Google review[^<]*<\/a>)/g, (match) => match.replace(GBP_PROFILE, GBP_REVIEW));
   out = out.replace(/<span class="lbl">(?:Mr Blue|Sandra Bailey|Judah Bennett|Jack Stephen|Endaldren _|Michael Yuretich|Shevan Weerasinghe) Rating<\/span>/g, '<span class="lbl">Google Rating</span>');
+  out = out.replace(/<div class="review-cta-only reveal"[\s\S]*?<\/div>\s*/g, '');
   return out;
 }
 
