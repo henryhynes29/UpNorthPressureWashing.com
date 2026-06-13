@@ -8,7 +8,7 @@ const GBP_REVIEW = `${GBP_PROFILE}/review`;
 const reviews = [
   {
     id: 'bailey-siding',
-    cats: ['soft', 'gutter'],
+    cats: ['soft'],
     tag: 'Soft Washing',
     text: 'We recently had the steel siding and trim on our home and garage power washed by Up North Pressure Washing. Henry did a thorough and complete job. He was punctual, easy to work with, and paid attention to details. In addition, the pricing was favorable. The siding looks like new!',
     author: 'Sandra Bailey',
@@ -32,7 +32,7 @@ const reviews = [
   },
   {
     id: 'endaldren-windows-oxidation',
-    cats: ['window', 'soft'],
+    cats: ['window'],
     tag: 'Windows',
     text: 'They did a great job cleaning my windows, and doing oxidation removal. Highly recommend!',
     author: 'Endaldren _',
@@ -56,7 +56,7 @@ const reviews = [
   },
   {
     id: 'michael-window-softwash',
-    cats: ['window', 'soft'],
+    cats: ['hub'],
     tag: 'Windows & Soft Wash',
     text: 'Henry is a hardworking young entrepreneur. This guy is dedicated to his craft and doing things the right way. I would trust Up North Pressure washing with any window or soft washing needs!',
     author: 'Michael Yuretich',
@@ -64,7 +64,7 @@ const reviews = [
   },
   {
     id: 'shevan-general',
-    cats: ['general'],
+    cats: ['hub'],
     tag: 'Service',
     text: 'Henry was great to work with. Prompt, courteous and did an excellent job. Highly recommended for all your pressure washing needs.',
     author: 'Shevan Weerasinghe',
@@ -104,14 +104,8 @@ function classify(file) {
 }
 
 function reviewSet(category) {
-  if (category === 'commercial') {
-    return reviews.filter((r) => r.cats.includes('window') || r.cats.includes('concrete') || r.cats.includes('soft'));
-  }
-  if (category === 'deck') {
-    return reviews.filter((r) => r.cats.includes('general'));
-  }
   if (category === 'hub') {
-    return reviews.filter((r) => !r.cats.includes('general'));
+    return reviews.filter((r) => r.cats.includes('hub') || r.cats.includes('soft') || r.cats.includes('roof') || r.cats.includes('window') || r.cats.includes('concrete'));
   }
   return reviews.filter((r) => r.cats.includes(category));
 }
@@ -128,6 +122,12 @@ function cards(category) {
 
 function slider(category) {
   const label = CATEGORY_LABELS[category] || 'Google Reviews';
+  if (reviewSet(category).length === 0) {
+    return `<div class="review-cta-only reveal" role="note" aria-label="${esc(label)}">
+      <p>No category-specific Google review is published for this exact service yet. We only show reviews here when they clearly match the work on the page.</p>
+      <a href="${GBP_PROFILE}" target="_blank" rel="noopener">Read our Google reviews &rarr;</a>
+    </div>`;
+  }
   return `<div class="review-slider" aria-label="${esc(label)}">
 ${cards(category)}
     </div>
@@ -149,6 +149,10 @@ const REVIEW_CSS = `
 .review-slider-note{text-align:center;margin-top:.95rem}
 .review-slider-note a{color:var(--ice);font-weight:700;text-decoration:none}
 .review-slider-note a:hover{text-decoration:underline}
+.review-cta-only{max-width:720px;margin:0 auto;padding:28px 24px;border:1px solid var(--glass-line);border-radius:20px;background:var(--glass);text-align:center;color:var(--text-dim)}
+.review-cta-only p{margin:0 auto 14px;max-width:560px;line-height:1.65}
+.review-cta-only a{color:var(--ice);font-weight:700;text-decoration:none}
+.review-cta-only a:hover{text-decoration:underline}
 `;
 
 function ensureCss(html) {
@@ -163,6 +167,7 @@ function fixGoogleLinks(html) {
   out = out.replace(/&#9733; Read &amp; Leave a Review on Google/g, '&#9733; Read Reviews on Google');
   out = out.replace(/href="https:\/\/g\.page\/r\/CSCaz34lDtneEBE\/review"([^>]*class="(?:g-review|review-card|review-slide)".*?>)/g, `href="${GBP_PROFILE}"$1`);
   out = out.replace(/(Leave a Google review[^<]*<\/a>)/g, (match) => match.replace(GBP_PROFILE, GBP_REVIEW));
+  out = out.replace(/<span class="lbl">(?:Mr Blue|Sandra Bailey|Judah Bennett|Jack Stephen|Endaldren _|Michael Yuretich|Shevan Weerasinghe) Rating<\/span>/g, '<span class="lbl">Google Rating</span>');
   return out;
 }
 
