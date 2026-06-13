@@ -154,9 +154,12 @@ function patchHubServiceSections(html) {
         .replace(/<div class="review-cta-only reveal"[\s\S]*?<\/div>\s*/g, '')
         .replace(/<a href="https:\/\/g\.page\/r\/CSCaz34lDtneEBE" target="_blank" rel="noopener" class="g-review"[\s\S]*?<\/a>\s*/g, '');
 
+      const proof = slider(category);
+      if (!proof) return out;
+
       out = out.replace(
-        /(<a class="btn btn--secondary"[\s\S]*?<\/a>)/,
-        `$1\n    ${slider(category)}`
+        /(<div class="service-actions">[\s\S]*?<\/div>)/,
+        `$1\n    ${proof}`
       );
 
       return out;
