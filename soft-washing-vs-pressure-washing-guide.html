@@ -48,6 +48,21 @@ details p{margin:.7rem 0 .2rem;color:#c6d6e0}
 .picker-result.pressure{display:block;background:rgba(155,226,155,.08);border:1px solid #9be29b}
 .picker-result.never{display:block;background:rgba(255,156,138,.08);border:1px solid #ff9c8a}
 small{color:#9fb6c6}
+/* EDUCATION-BLOCK */
+.edu-sec{padding:56px 0 20px;border-top:1px solid var(--line)}
+.edu-sec .sec-head{text-align:center;margin-bottom:28px}
+.edu-sec .sec-head h2{font-size:clamp(1.6rem,4vw,2.2rem);margin-bottom:10px}
+.edu-sec .sec-head p{color:var(--text-dim);max-width:560px;margin:0 auto;font-size:.98rem}
+.edu-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+.edu-card{display:block;background:var(--glass);border:1px solid var(--glass-line);border-radius:14px;padding:20px 18px;text-decoration:none;transition:border-color .25s,transform .25s}
+.edu-card:hover{border-color:var(--ice);transform:translateY(-3px)}
+.edu-card .t{font-family:'Fraunces',serif;font-size:1.02rem;color:#fff;margin-bottom:6px;line-height:1.25}
+.edu-card .d{font-size:.82rem;color:var(--text-dim)}
+.edu-card .go{font-size:.78rem;color:var(--ice);margin-top:10px;font-weight:600}
+.edu-more{text-align:center;margin-top:22px}
+.edu-more a{color:var(--ice);font-weight:600;text-decoration:none}
+@media(max-width:760px){.edu-grid{grid-template-columns:1fr}}
+
 </style>
 <meta name="theme-color" content="#0c1824">
 <link rel="sitemap" type="application/xml" title="Sitemap" href="https://www.upnorthpressurewashing.com/sitemap.xml">

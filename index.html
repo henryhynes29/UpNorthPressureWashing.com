@@ -238,6 +238,20 @@
 .nearby-hub:hover{text-decoration:underline}
 @media(max-width:760px){.cluster-grid{grid-template-columns:1fr 1fr}}
 
+
+/* LIMITED-TIME-OFFER */
+.promo-banner{width:min(100% - 2rem,var(--maxw,1080px));margin:1.1rem auto 0;padding:1rem 1.05rem;border-radius:18px;background:rgba(224,177,62,.13);border:1px solid rgba(224,177,62,.48);color:var(--text,#f3f7fa);text-align:center;box-shadow:0 16px 42px -30px rgba(0,0,0,.75)}
+.promo-banner__label{display:inline-flex;align-items:center;justify-content:center;margin-bottom:.35rem;padding:.28rem .7rem;border-radius:999px;background:var(--gold,#e0b13e);color:var(--ink-on-gold,#22303d);font-size:.68rem;font-weight:800;letter-spacing:.12em;text-transform:uppercase}
+.promo-banner__title{margin:0;font-family:var(--f-display,Georgia,serif);font-size:clamp(1.08rem,3.8vw,1.42rem);line-height:1.15;color:var(--white,#fff)}
+.promo-banner__copy{margin:.35rem auto 0;max-width:620px;color:var(--text-dim,#b8c9d6);font-size:.92rem;line-height:1.5}
+.promo-banner__copy strong{color:var(--gold,#e0b13e)}
+.promo-banner__link{display:inline-flex;margin-top:.65rem;color:var(--gold,#e0b13e);font-weight:800;text-decoration:none}
+.promo-banner__link:hover{text-decoration:underline}
+.qbox .promo-banner{width:100%;margin:0 0 1.25rem;padding:.95rem;background:#fff8e8;border-color:#e3b53e;color:#1a2630;box-shadow:none}
+.qbox .promo-banner__title{color:#13212c;font-size:1.18rem}
+.qbox .promo-banner__copy{color:#4a5a64}
+.qbox .promo-banner__link{color:#9a6a00}
+
 </style>
 <link rel="preload" as="image" href="images/hero-bg.webp" imagesrcset="images/hero-bg-768.webp 768w, images/hero-bg.webp 1024w" imagesizes="100vw" fetchpriority="high">
 
@@ -375,6 +389,12 @@
       <a class="btn btn--ghost" href="tel:+12185768610">218-576-8610</a>
     </div>
     <p class="trust-bar"><span aria-hidden="true">&#10003;</span> Free Estimates &nbsp;|&nbsp; <span aria-hidden="true">&#10003;</span> $1M Liability Insurance &nbsp;|&nbsp; <span aria-hidden="true">&#10003;</span> 100% Satisfaction Guarantee</p>
+    <div class="promo-banner" role="note" aria-label="Limited-time soft wash promotion">
+      <span class="promo-banner__label">Limited-Time Offer</span>
+      <p class="promo-banner__title">Free exterior window cleaning with any full house soft wash.</p>
+      <p class="promo-banner__copy">Book by <strong>June 24</strong> and get exterior windows included for an average-home value of about <strong>$300</strong>. Residential homes only; final scope confirmed with your quote.</p>
+      <a class="promo-banner__link" href="#quote">Claim the offer →</a>
+    </div>
   </div>
 </section>
 
@@ -415,10 +435,10 @@
     </div>
     <p class="copy"><strong>Soft washing</strong> is the safest way to clean siding, roofs, and exterior surfaces in <strong>Duluth, MN</strong>. Our <strong>low-pressure method</strong> removes <strong>algae, mold, and grime</strong> without damaging your home, keeping it looking fresh through Duluth's tough weather. If you're in Duluth, Hermantown, Proctor, or Superior, our professional soft washing delivers dependable results you can see immediately.</p>
     <a class="btn btn--secondary" href="/soft-washing-duluth">See Our Work &amp; Learn More</a>
-    <a href="https://g.page/r/CSCaz34lDtneEBE/review" target="_blank" rel="noopener" class="g-review">
+    <a href="https://g.page/r/CSCaz34lDtneEBE" target="_blank" rel="noopener" class="g-review" aria-label="Read this Google review for Up North Pressure Washing">
       <div class="g-review-top"><svg class="g-logo" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="17" height="17" aria-label="Google" role="img"><path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/><path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/><path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z" fill="#FBBC05"/><path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/></svg><span class="g-stars-row">&#9733;&#9733;&#9733;&#9733;&#9733;</span><span class="g-via">Google Review</span></div>
       <p class="g-review-text">&ldquo;We recently had the steel siding and trim on our home and garage power washed by Up North Pressure Washing. Henry did a thorough and complete job. He was punctual, easy to work with, and paid attention to details. In addition, the pricing was favorable. The siding looks like new!&rdquo;</p>
-      <div class="g-reviewer">&#8212; Sandy &amp; Mike Bailey, Duluth area</div>
+      <div class="g-reviewer">&#8212; Sandra Bailey, Duluth, MN</div>
     </a>
   </div>
 </section>
@@ -437,10 +457,10 @@
       <span class="ba__hint">&#8644; Drag to compare</span>
     </div><p class="copy">Crystal-clear windows make every property look sharper and more professional. Our <strong>window cleaning services in Duluth, MN</strong> remove hard-water stains, salt film, pollen, and built-up grime from <strong>residential and commercial glass</strong> — inside and out. Using professional squeegee techniques and pure-water systems, we deliver streak-free results that hold up through <strong>Duluth's changing seasons</strong>.</p>
     <a class="btn btn--secondary" href="/residential-window-cleaning-duluth">See Our Work &amp; Learn More</a>
-    <a href="https://g.page/r/CSCaz34lDtneEBE/review" target="_blank" rel="noopener" class="g-review">
+    <a href="https://g.page/r/CSCaz34lDtneEBE" target="_blank" rel="noopener" class="g-review" aria-label="Read this Google review for Up North Pressure Washing">
       <div class="g-review-top"><svg class="g-logo" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="17" height="17" aria-label="Google" role="img"><path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/><path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/><path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z" fill="#FBBC05"/><path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/></svg><span class="g-stars-row">&#9733;&#9733;&#9733;&#9733;&#9733;</span><span class="g-via">Google Review</span></div>
-      <p class="g-review-text">&ldquo;Our storefront windows have never looked this clear. Up North was professional, on time, and the results speak for themselves — highly recommend for any Duluth business!&rdquo;</p>
-      <div class="g-reviewer">&#8212; Local Business Owner</div>
+      <p class="g-review-text">&ldquo;Great service! My windows are spotless, and the soft wash made my vinyl siding look like new again. Professional, reliable, and affordable. Highly recommend!&rdquo;</p>
+      <div class="g-reviewer">&#8212; Mr Blue, Duluth, MN</div>
     </a>
   </div>
 </section>
@@ -497,10 +517,10 @@
       <span class="ba__hint">&#8644; Drag to compare</span>
     </div><p class="copy"><strong>Hot water</strong> pressure washing delivers deeper, faster cleaning for <strong>Duluth properties</strong> — removing <strong>grease, oil stains, salt buildup</strong>, and tough grime that cold water alone can't break down. Our <strong>commercial-grade hot water system</strong> restores concrete, driveways, garages, sidewalks, and heavy-traffic surfaces with exceptional results. It's the best choice for <strong>Duluth's harsh winters</strong> and the salts and contaminants they leave behind.</p>
     <a class="btn btn--secondary" href="/concrete-washing-duluth">See Our Work &amp; Learn More</a>
-    <a href="https://g.page/r/CSCaz34lDtneEBE/review" target="_blank" rel="noopener" class="g-review">
+    <a href="https://g.page/r/CSCaz34lDtneEBE" target="_blank" rel="noopener" class="g-review" aria-label="Read this Google review for Up North Pressure Washing">
       <div class="g-review-top"><svg class="g-logo" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="17" height="17" aria-label="Google" role="img"><path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/><path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/><path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z" fill="#FBBC05"/><path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/></svg><span class="g-stars-row">&#9733;&#9733;&#9733;&#9733;&#9733;</span><span class="g-via">Google Review</span></div>
-      <p class="g-review-text">&ldquo;They're the best. Great work on my driveway, highly recommend and will be calling again soon!&rdquo;</p>
-      <div class="g-reviewer">&#8212; Jack S., Carlton County</div>
+      <p class="g-review-text">&ldquo;These guys are the best they do amazing work and are timely. Henry was a real amazing worker and made my concrete look amazing again. Will be using him more 5/5 stars&rdquo;</p>
+      <div class="g-reviewer">&#8212; Jack Stephen, Duluth, MN</div>
     </a>
   </div>
 </section>
@@ -522,7 +542,11 @@
     <p class="copy">Your property's curb appeal is your first impression; we make sure it's a dominant one. We provide high-capacity, commercial-grade pressure washing designed to strip away the heavy salt, grease, and winter grime of the Twin Ports landscape. We are <strong>fully insured with $1M+ liability coverage</strong>, Guardsman-led, and 5-star rated for reliability. Every commercial project is backed by our <strong>1-year satisfaction guarantee</strong> and a commitment to zero-disruption scheduling — we work around your business hours so your operations never skip a beat.</p>
     <a class="btn btn--secondary" href="/commercial-soft-washing-duluth">See Our Work &amp; Learn More</a>
     <a class="btn btn--quote" href="#quote">Get Your Free Quote</a>
-    <blockquote class="quote">"Up North Pressure Washing is professional, efficient, and their commercial-grade equipment easily handled our storefront's heavy winter salt and grime — highly recommend for any Duluth business!"</blockquote>
+    <a href="https://g.page/r/CSCaz34lDtneEBE" target="_blank" rel="noopener" class="g-review" aria-label="Read this Google review for Up North Pressure Washing">
+      <div class="g-review-top"><span class="g-stars-row">&#9733;&#9733;&#9733;&#9733;&#9733;</span><span class="g-via">Google Review</span></div>
+      <p class="g-review-text">&ldquo;Henry is a hardworking young entrepreneur. This guy is dedicated to his craft and doing things the right way. I would trust Up North Pressure washing with any window or soft washing needs!&rdquo;</p>
+      <div class="g-reviewer">&#8212; Michael Yuretich, Duluth, MN</div>
+    </a>
   </div>
 </section>
 
@@ -540,10 +564,10 @@
       <span class="ba__hint">&#8644; Drag to compare</span>
     </div><p class="copy">Bring your outdoor spaces back to life with <strong>professional deck and fence restoration</strong> services in <strong>Duluth</strong>. Our soft washing and wood-safe cleaning process removes <strong>algae, mold, gray weathering,</strong> and built-up grime <strong>without damaging the wood</strong>. We clean, brighten, and prep your deck or fence for staining so it lasts longer and looks its best through <strong>Duluth's changing seasons</strong>.</p>
     <a class="btn btn--secondary" href="/deck-restoration-duluth">See Our Work &amp; Learn More</a>
-    <a href="https://g.page/r/CSCaz34lDtneEBE/review" target="_blank" rel="noopener" class="g-review">
+    <a href="https://g.page/r/CSCaz34lDtneEBE" target="_blank" rel="noopener" class="g-review" aria-label="Read this Google review for Up North Pressure Washing">
       <div class="g-review-top"><svg class="g-logo" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="17" height="17" aria-label="Google" role="img"><path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/><path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/><path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z" fill="#FBBC05"/><path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/></svg><span class="g-stars-row">&#9733;&#9733;&#9733;&#9733;&#9733;</span><span class="g-via">Google Review</span></div>
-      <p class="g-review-text">&ldquo;Our weathered deck looks brand new. The soft washing removed years of grime without damaging the wood at all. Fast, professional, and worth every penny. Highly recommend!&rdquo;</p>
-      <div class="g-reviewer">&#8212; Tyler S., Hermantown</div>
+      <p class="g-review-text">&ldquo;Henry did a great and through job last summer cleaning the algee off my siding and removing the moss from my roof.He was punctual and easy to work with.&rdquo;</p>
+      <div class="g-reviewer">&#8212; Judah Bennett, Duluth, MN</div>
     </a>
   </div>
 </section>
@@ -566,8 +590,7 @@
       ============================================================
     -->
 
-    <!-- TODO: replace href with your Google Business Profile reviews link -->
-    <a class="btn btn--pill" href="https://g.page/r/CSCaz34lDtneEBE/review" target="_blank" rel="noopener" style="min-width:0;margin-top:1.4rem">★ Read &amp; Leave a Review on Google</a>
+    <a class="btn btn--pill" href="https://g.page/r/CSCaz34lDtneEBE" target="_blank" rel="noopener" style="min-width:0;margin-top:1.4rem">★ Read Reviews on Google</a>
   </div>
 </section>
 
@@ -594,6 +617,11 @@
       <form id="quoteForm" method="post" action="#" onsubmit="submitForm(event);return false;" novalidate aria-label="Request a free estimate">
         <input type="hidden" name="page" value="">
         <p hidden><label>Don't fill this out: <input name="bot-field"></label></p>
+        <div class="promo-banner" role="note" aria-label="Limited-time soft wash promotion">
+          <span class="promo-banner__label">Book by June 24</span>
+          <p class="promo-banner__title">Free exterior windows with a full house soft wash.</p>
+          <p class="promo-banner__copy">Normally about a <strong>$300 value</strong> for an average home. Mention the offer in your request and we will include it in your estimate.</p>
+        </div>
         <h2>Get Your Free Quote</h2>
         <p class="sub">Tell us about your project — we'll respond within one business day.</p>
         <a class="hub-quote-phone" href="tel:+12185768610">218-576-8610</a>
@@ -652,31 +680,17 @@
     <h2 style="font-family:'Fraunces',serif;font-size:clamp(1.5rem,4vw,2rem);margin-bottom:10px">Local Guides for <span style="color:#e3b53e">Duluth</span></h2>
     <p style="color:#b3c4cf;max-width:560px;margin:0 auto 24px">Explore educational articles matched to each service — soft washing, concrete, commercial, windows, and deck care.</p>
     <div class="edu-grid" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:14px;text-align:left;max-width:900px;margin:0 auto">
-      <a class="edu-card" href="/blog-soft-washing-guide-duluth"><div class="t">Soft Washing Guide</div><div class="d">Duluth — Soft Washing</div><div class="go">Read article →</div></a>
-      <a class="edu-card" href="/blog-roof-soft-washing-duluth"><div class="t">Roof Cleaning Guide</div><div class="d">Duluth — Roof Cleaning</div><div class="go">Read article →</div></a>
-      <a class="edu-card" href="/blog-gutter-fascia-cleaning-duluth"><div class="t">Gutter Cleaning Guide</div><div class="d">Duluth — Gutter & Fascia</div><div class="go">Read article →</div></a>
-      <a class="edu-card" href="/blog-concrete-driveway-cleaning-duluth"><div class="t">Concrete Guide</div><div class="d">Duluth — Concrete & Driveway</div><div class="go">Read article →</div></a>
-      <a class="edu-card" href="/blog-commercial-building-cleaning-duluth"><div class="t">Commercial Guide</div><div class="d">Duluth — Commercial Cleaning</div><div class="go">Read article →</div></a>
-      <a class="edu-card" href="/blog-window-cleaning-guide-duluth"><div class="t">Windows Guide</div><div class="d">Duluth — Window Cleaning</div><div class="go">Read article →</div></a>
-      <a class="edu-card" href="/blog-deck-fence-restoration-duluth"><div class="t">Deck & Fence Guide</div><div class="d">Duluth — Deck & Fence</div><div class="go">Read article →</div></a>
-      <a class="edu-card" href="/residential-window-cleaning-duluth"><div class="t">Residential Windows Guide</div><div class="d">Duluth — Residential Window</div><div class="go">Read article →</div></a>
-      <a class="edu-card" href="/commercial-window-cleaning-duluth"><div class="t">Commercial Windows Guide</div><div class="d">Duluth — Commercial Window</div><div class="go">Read article →</div></a>
+      <a class="edu-card" href="blog-soft-washing-guide-duluth.html"><div class="t">Soft Washing Guide</div><div class="d">Duluth — Soft Washing</div><div class="go">Read article →</div></a>
+      <a class="edu-card" href="blog-roof-soft-washing-duluth.html"><div class="t">Roof Soft Washing Guide</div><div class="d">Duluth — Roof Soft Washing</div><div class="go">Read article →</div></a>
+      <a class="edu-card" href="blog-gutter-fascia-cleaning-duluth.html"><div class="t">Gutter Cleaning Guide</div><div class="d">Duluth — Gutter & Fascia</div><div class="go">Read article →</div></a>
+      <a class="edu-card" href="blog-concrete-driveway-cleaning-duluth.html"><div class="t">Concrete Guide</div><div class="d">Duluth — Concrete & Driveway</div><div class="go">Read article →</div></a>
+      <a class="edu-card" href="blog-commercial-building-cleaning-duluth.html"><div class="t">Commercial Guide</div><div class="d">Duluth — Commercial Cleaning</div><div class="go">Read article →</div></a>
+      <a class="edu-card" href="blog-window-cleaning-guide-duluth.html"><div class="t">Windows Guide</div><div class="d">Duluth — Window Cleaning</div><div class="go">Read article →</div></a>
+      <a class="edu-card" href="blog-deck-fence-restoration-duluth.html"><div class="t">Deck & Fence Guide</div><div class="d">Duluth — Deck & Fence</div><div class="go">Read article →</div></a>
+      <a class="edu-card" href="residential-window-cleaning-duluth.html"><div class="t">Residential Windows Guide</div><div class="d">Duluth — Residential Window</div><div class="go">Read article →</div></a>
+      <a class="edu-card" href="commercial-window-cleaning-duluth.html"><div class="t">Commercial Windows Guide</div><div class="d">Duluth — Commercial Window</div><div class="go">Read article →</div></a>
     </div>
-    <p style="margin-top:22px"><a href="/blog-index" style="color:#7fc6e8;font-weight:600;text-decoration:none">All Learning Center articles →</a> · <a href="/gallery" style="color:#7fc6e8;font-weight:600;text-decoration:none">Photo gallery</a> · <a href="/reviews" style="color:#7fc6e8;font-weight:600;text-decoration:none">Reviews</a></p>
-  </div>
-</section>
-
-</main>
-<!-- CITY-CLUSTER -->
-<section class="city-cluster" id="city-services">
-  <div class="wrap">
-    <div class="sec-head reveal">
-      <span class="eyebrow"><span class="dot"></span>Duluth, MN · Same City</span>
-      <h2>All <span class="ice">Duluth</span> Exterior Cleaning Pages</h2>
-      <p>Every link below stays in <strong>Duluth, MN</strong> — so Google and visitors always get the right local page, not another city's service URL.</p>
-    </div>
-    <nav class="cluster-grid reveal" aria-label="Duluth exterior cleaning services"><a href="/" class="cluster-link active" aria-current="page"><span class="cluster-short">Home</span><span class="cluster-full">Duluth Home</span></a><a href="/soft-washing-duluth" class="cluster-link"><span class="cluster-short">Soft Washing</span><span class="cluster-full">Soft Washing — Duluth</span></a><a href="/roof-soft-washing-duluth" class="cluster-link"><span class="cluster-short">Roof Cleaning</span><span class="cluster-full">Roof Cleaning — Duluth</span></a><a href="/gutter-fascia-cleaning-duluth" class="cluster-link"><span class="cluster-short">Gutter Cleaning</span><span class="cluster-full">Gutter Cleaning — Duluth</span></a><a href="/concrete-washing-duluth" class="cluster-link"><span class="cluster-short">Concrete</span><span class="cluster-full">Concrete Washing — Duluth</span></a><a href="/deck-restoration-duluth" class="cluster-link"><span class="cluster-short">Deck & Fence</span><span class="cluster-full">Deck Restoration — Duluth</span></a><a href="/window-cleaning-duluth" class="cluster-link"><span class="cluster-short">Windows Hub</span><span class="cluster-full">Window Cleaning — Duluth</span></a><a href="/residential-window-cleaning-duluth" class="cluster-link"><span class="cluster-short">Residential Windows</span><span class="cluster-full">Residential Windows — Duluth</span></a><a href="/commercial-window-cleaning-duluth" class="cluster-link"><span class="cluster-short">Commercial Windows</span><span class="cluster-full">Commercial Windows — Duluth</span></a><a href="/commercial-soft-washing-duluth" class="cluster-link"><span class="cluster-short">Commercial Exterior</span><span class="cluster-full">Commercial Soft Washing — Duluth</span></a><a href="/blog-soft-washing-home-value-duluth" class="cluster-link"><span class="cluster-short">Local Guide</span><span class="cluster-full">Duluth Exterior Care Guide</span></a></nav>
-    <p class="cluster-nearby">Nearby towns we serve (city home pages only): <a href="/hermantown-mn-pressure-washing" class="nearby-hub">Hermantown, MN services →</a> <a href="/proctor-mn-pressure-washing" class="nearby-hub">Proctor, MN services →</a> <a href="/superior-wi-pressure-washing" class="nearby-hub">Superior, WI services →</a> <a href="/two-harbors-mn-pressure-washing" class="nearby-hub">Two Harbors, MN services →</a></p>
+    <p style="margin-top:22px"><a href="blog-index.html" style="color:#7fc6e8;font-weight:600;text-decoration:none">All Learning Center articles →</a> · <a href="gallery.html" style="color:#7fc6e8;font-weight:600;text-decoration:none">Photo gallery</a> · <a href="reviews.html" style="color:#7fc6e8;font-weight:600;text-decoration:none">Reviews</a></p>
   </div>
 </section>
 

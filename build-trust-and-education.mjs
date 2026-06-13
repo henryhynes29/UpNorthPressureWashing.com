@@ -4,7 +4,8 @@ import path from 'path';
 const SITE = path.dirname(new URL(import.meta.url).pathname.replace(/^\/([A-Z]:)/, '$1'));
 const DOMAIN = 'https://www.upnorthpressurewashing.com';
 const PHONE = '218-576-8610';
-const GOOGLE_REVIEW = 'https://g.page/r/CSCaz34lDtneEBE/review';
+const GBP_PROFILE = 'https://g.page/r/CSCaz34lDtneEBE';
+const GBP_REVIEW = `${GBP_PROFILE}/review`;
 
 function loadCities() {
   const code = fs.readFileSync(path.join(SITE, 'build-site.mjs'), 'utf8');
@@ -105,35 +106,56 @@ const TESTIMONIALS = [
     cat: 'Soft Washing',
     stars: 5,
     text: 'We recently had the steel siding and trim on our home and garage power washed by Up North Pressure Washing. Henry did a thorough and complete job. He was punctual, easy to work with, and paid attention to details. In addition, the pricing was favorable. The siding looks like new!',
-    author: 'Sandy & Mike Bailey',
+    author: 'Sandra Bailey',
     location: 'Duluth, MN',
   },
   {
     cat: 'Concrete',
     stars: 5,
-    text: "They're the best. Great work on my driveway, highly recommend and will be calling again soon!",
-    author: 'Jack S.',
+    text: 'These guys are the best they do amazing work and are timely. Henry was a real amazing worker and made my concrete look amazing again. Will be using him more 5/5 stars',
+    author: 'Jack Stephen',
     location: 'Duluth, MN',
   },
   {
-    cat: 'Deck Restoration',
+    cat: 'Soft Washing',
     stars: 5,
-    text: 'Our weathered deck looks brand new. The soft washing removed years of grime without damaging the wood at all. Fast, professional, and worth every penny. Highly recommend!',
-    author: 'Tyler S.',
-    location: 'Hermantown, MN',
+    text: 'Henry did a great and through job last summer cleaning the algee off my siding and removing the moss from my roof.He was punctual and easy to work with.',
+    author: 'Judah Bennett',
+    location: 'Duluth, MN',
   },
   {
-    cat: 'Commercial',
+    cat: 'Soft Washing',
     stars: 5,
-    text: "Up North Pressure Washing is professional, efficient, and their commercial-grade equipment easily handled our storefront's heavy winter salt and grime — highly recommend for any Duluth business!",
-    author: 'Local Business Owner',
+    text: 'Henry was great to work with. Prompt, courteous and did an excellent job. Highly recommended for all your pressure washing needs.',
+    author: 'Shevan Weerasinghe',
     location: 'Duluth, MN',
   },
   {
     cat: 'Window Cleaning',
     stars: 5,
-    text: 'Our storefront windows have never looked this clear. Up North was professional, on time, and the results speak for themselves — highly recommend for any Duluth business!',
-    author: 'Local Business Owner',
+    text: 'Great service! My windows are spotless, and the soft wash made my vinyl siding look like new again. Professional, reliable, and affordable. Highly recommend!',
+    author: 'Mr Blue',
+    location: 'Duluth, MN',
+  },
+  {
+    cat: 'Window Cleaning',
+    stars: 5,
+    text: 'Henry is a hardworking young entrepreneur. This guy is dedicated to his craft and doing things the right way. I would trust Up North Pressure washing with any window or soft washing needs!',
+    author: 'Michael Yuretich',
+    location: 'Duluth, MN',
+  },
+  {
+    cat: 'Concrete',
+    stars: 5,
+    text: 'Henry was very nice and did a great job cleaning up the mess the plow left on our sidewalk.',
+    author: 'Linda & Cory Ruloph',
+    location: 'Duluth, MN',
+  },
+  {
+    cat: 'Window Cleaning',
+    stars: 5,
+    text: 'They did a great job cleaning my windows, and doing oxidation removal. Highly recommend!',
+    author: 'Endaldren _',
     location: 'Duluth, MN',
   },
 ];
@@ -213,11 +235,11 @@ function stars(n) {
 
 function buildReviewsPage() {
   const cards = TESTIMONIALS.map(t => `
-  <article class="review-card" data-cat="${t.cat.toLowerCase().replace(/\s+/g, '-')}">
+  <a class="review-card" data-cat="${t.cat.toLowerCase().replace(/\s+/g, '-')}" href="${GBP_PROFILE}" target="_blank" rel="noopener" aria-label="Read ${t.author}'s Google review for Up North Pressure Washing">
     <div class="review-top"><span class="tag">${t.cat}</span><span class="stars" aria-label="${t.stars} out of 5 stars">${stars(t.stars)}</span></div>
     <blockquote>${t.text}</blockquote>
     <footer><strong>${t.author}</strong> · ${t.location}</footer>
-  </article>`).join('');
+  </a>`).join('');
 
   const html = `<!DOCTYPE html>
 <html lang="en">
@@ -241,7 +263,8 @@ ${SHARED_HEAD}
 .filters button{border:1px solid var(--glass-line);background:var(--glass);color:var(--text-dim);padding:9px 18px;border-radius:30px;font:inherit;font-size:.82rem;font-weight:600;cursor:pointer;transition:.2s}
 .filters button.active,.filters button:hover{border-color:var(--ice);color:#fff}
 .review-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:22px;padding-bottom:50px}
-.review-card{background:var(--glass);border:1px solid var(--glass-line);border-radius:18px;padding:28px 26px;display:flex;flex-direction:column;gap:16px}
+.review-card{background:var(--glass);border:1px solid var(--glass-line);border-radius:18px;padding:28px 26px;display:flex;flex-direction:column;gap:16px;color:inherit;text-decoration:none;transition:border-color .2s,transform .2s}
+.review-card:hover{border-color:var(--ice);transform:translateY(-2px)}
 .review-top{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap}
 .review-card .tag{font-size:.68rem;letter-spacing:.12em;text-transform:uppercase;color:var(--gold);border:1px solid rgba(227,181,62,.35);border-radius:30px;padding:4px 11px}
 .review-card .stars{color:var(--gold);letter-spacing:2px;font-size:.95rem}
@@ -286,7 +309,8 @@ ${navHtml()}
 <section class="google-cta wrap">
   <h2>Read &amp; Leave a Review on <span class="ice">Google</span></h2>
   <p>Your feedback helps Northland neighbors find reliable exterior cleaning — and helps us keep improving every job.</p>
-  <a class="btn-gold" href="${GOOGLE_REVIEW}" target="_blank" rel="noopener">★ Review Us on Google</a>
+  <a class="btn-gold" href="${GBP_PROFILE}" target="_blank" rel="noopener">★ Read Reviews on Google</a>
+  <br><a href="${GBP_REVIEW}" class="btn-ghost" target="_blank" rel="noopener">Leave a Google review →</a>
   <br><a href="gallery.html" class="btn-ghost">See our photo gallery →</a>
 </section>
 </main>
