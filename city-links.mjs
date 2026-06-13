@@ -3,6 +3,12 @@ import path from 'path';
 
 export const DOMAIN = 'https://www.upnorthpressurewashing.com';
 
+export function publicUrl(file) {
+  if (file === 'index.html') return `${DOMAIN}/`;
+  if (file.endsWith('.html')) return `${DOMAIN}/${file.slice(0, -5)}`;
+  return `${DOMAIN}/${file}`;
+}
+
 export function loadCities() {
   const site = path.dirname(new URL(import.meta.url).pathname.replace(/^\/([A-Z]:)/, '$1'));
   const code = fs.readFileSync(path.join(site, 'build-site.mjs'), 'utf8');
@@ -106,7 +112,7 @@ export const CLUSTER_CSS = `
 `;
 
 export function classifyPage(file, cities) {
-  const loc = file === 'index.html' ? `${DOMAIN}/` : `${DOMAIN}/${file}`;
+  const loc = publicUrl(file);
   const city = detectCityFromFile(file, cities);
   const slug = city?.slug;
 

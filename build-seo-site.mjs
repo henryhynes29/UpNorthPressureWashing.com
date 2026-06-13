@@ -3,6 +3,7 @@ import path from 'path';
 import { spawnSync } from 'child_process';
 import {
   DOMAIN,
+  publicUrl,
   loadCities,
   detectCityFromFile,
 } from './city-links.mjs';
@@ -27,7 +28,7 @@ const stats = {
 };
 
 function pageUrl(file) {
-  return file === 'index.html' ? `${DOMAIN}/` : `${DOMAIN}/${file}`;
+  return publicUrl(file);
 }
 
 function meta(html, name) {
@@ -390,9 +391,26 @@ function buildBlogPostingSchema(html, file, city) {
   };
 }
 
+function ensureSelfCanonical(html, file) {
+  const url = pageUrl(file);
+  let out = html;
+
+  if (out.includes('rel="canonical"')) {
+    out = out.replace(/<link rel="canonical" href="[^"]*">/, `<link rel="canonical" href="${url}">`);
+  } else {
+    out = insertBeforeHeadClose(out, `<link rel="canonical" href="${url}">`);
+  }
+
+  if (out.includes('property="og:url"')) {
+    out = out.replace(/<meta property="og:url" content="[^"]*">/, `<meta property="og:url" content="${url}">`);
+  }
+
+  return out;
+}
+
 function upgradeBlog(html, file, city) {
   if (!file.startsWith('blog-')) return html;
-  let out = html;
+  let out = ensureSelfCanonical(html, file);
 
   if (!out.includes('property="og:type"')) {
     out = insertBeforeHeadClose(out, '<meta property="og:type" content="article">');
