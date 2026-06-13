@@ -63,6 +63,18 @@ small{color:#9fb6c6}
 .edu-more a{color:var(--ice);font-weight:600;text-decoration:none}
 @media(max-width:760px){.edu-grid{grid-template-columns:1fr}}
 
+
+/* CATEGORY-REVIEW-SLIDER */
+.review-slider{display:grid;grid-auto-flow:column;grid-auto-columns:minmax(280px,420px);gap:18px;max-width:960px;margin:0 auto;overflow-x:auto;overscroll-behavior-inline:contain;scroll-snap-type:inline mandatory;padding:4px 4px 18px;scrollbar-color:rgba(227,181,62,.65) rgba(255,255,255,.08)}
+.review-slide{scroll-snap-align:start;background:var(--glass);border:1px solid var(--glass-line);border-radius:20px;padding:28px 24px;backdrop-filter:blur(8px);color:inherit;text-decoration:none;display:flex;flex-direction:column;gap:12px;min-height:100%;transition:transform .25s,border-color .25s}
+.review-slide:hover{transform:translateY(-4px);border-color:rgba(127,198,232,.65)}
+.review-tag{align-self:flex-start;font-size:.68rem;letter-spacing:.12em;text-transform:uppercase;color:var(--gold);border:1px solid rgba(227,181,62,.35);border-radius:999px;padding:4px 10px}
+.review-slider .quote{margin:0;flex:1}
+.review-slider .who{margin-top:auto}
+.review-slider-note{text-align:center;margin-top:.95rem}
+.review-slider-note a{color:var(--ice);font-weight:700;text-decoration:none}
+.review-slider-note a:hover{text-decoration:underline}
+
 </style>
 <meta name="theme-color" content="#0c1824">
 <link rel="sitemap" type="application/xml" title="Sitemap" href="https://www.upnorthpressurewashing.com/sitemap.xml">
