@@ -3,49 +3,62 @@ import path from 'path';
 
 const SITE = path.dirname(new URL(import.meta.url).pathname.replace(/^\/([A-Z]:)/, '$1'));
 
-const hubs = [
-  ['index.html', 'Duluth', 'index.html'],
-  ['hermantown-mn-pressure-washing.html', 'Hermantown', 'hermantown-mn-pressure-washing.html'],
-  ['proctor-mn-pressure-washing.html', 'Proctor', 'proctor-mn-pressure-washing.html'],
-  ['pressure-washing-cloquet-mn.html', 'Cloquet', 'pressure-washing-cloquet-mn.html'],
-  ['superior-wi-pressure-washing.html', 'Superior', 'superior-wi-pressure-washing.html'],
-  ['two-harbors-mn-pressure-washing.html', 'Two Harbors', 'two-harbors-mn-pressure-washing.html'],
-  ['esko-mn-pressure-washing.html', 'Esko', 'esko-mn-pressure-washing.html'],
-  ['carlton-mn-pressure-washing.html', 'Carlton', 'carlton-mn-pressure-washing.html'],
-  ['scanlon-mn-pressure-washing.html', 'Scanlon', 'scanlon-mn-pressure-washing.html'],
-  ['wrenshall-mn-pressure-washing.html', 'Wrenshall', 'wrenshall-mn-pressure-washing.html'],
-  ['barnum-mn-pressure-washing.html', 'Barnum', 'barnum-mn-pressure-washing.html'],
-  ['moose-lake-mn-pressure-washing.html', 'Moose Lake', 'moose-lake-mn-pressure-washing.html'],
-  ['silver-bay-mn-pressure-washing.html', 'Silver Bay', 'silver-bay-mn-pressure-washing.html'],
-  ['lake-nebagamon-wi-pressure-washing.html', 'Lake Nebagamon', 'lake-nebagamon-wi-pressure-washing.html'],
-  ['hibbing-mn-pressure-washing.html', 'Hibbing', 'hibbing-mn-pressure-washing.html'],
-  ['virginia-mn-pressure-washing.html', 'Virginia', 'virginia-mn-pressure-washing.html'],
-  ['eveleth-mn-pressure-washing.html', 'Eveleth', 'eveleth-mn-pressure-washing.html'],
+const MAIN_MENU = [
+  ['Services', '#soft-washing'],
+  ['Service Area', '/service-area'],
+  ['Learning Center', '/blog-index'],
+  ['Reviews', '/reviews'],
+  ['Gallery', '/gallery'],
+  ['FAQ', '/faq'],
+  ['Contact', '#quote'],
 ];
 
-function navItems(name, hub) {
-  return `    <li><a href="${hub}#window-cleaning">Window Cleaning</a></li>
-    <li><a href="hermantown-mn-pressure-washing.html">Hermantown</a></li>
-    <li><a href="superior-wi-pressure-washing.html">Superior</a></li>
-    <li><a href="pressure-washing-cloquet-mn.html">Cloquet</a></li>
-    <li><a href="two-harbors-mn-pressure-washing.html">Two Harbors</a></li>
-    <li><a href="esko-mn-pressure-washing.html">Esko</a></li>
-    <li><a href="hibbing-mn-pressure-washing.html">Hibbing</a></li>
-    <li><a href="blog-index.html">Learning Center</a></li>
-    <li><a href="${hub}">${name} Home</a></li>
-    <li><a href="faq.html">FAQ</a></li>
-    <li><a href="#quote">Contact</a></li>`;
+const TOP_MENU = [
+  ['Services', '/#soft-washing'],
+  ['Service Area', '/service-area'],
+  ['Learning Center', '/blog-index'],
+  ['Reviews', '/reviews'],
+  ['Gallery', '/gallery'],
+  ['FAQ', '/faq'],
+];
+
+function mainNavItems() {
+  return MAIN_MENU.map(([label, href]) => `    <li><a href="${href}">${label}</a></li>`).join('\n');
 }
 
-for (const [file, name, hub] of hubs) {
+function topNavLinks(html) {
+  const servicesHref = html.includes('id="services"') ? '#services' : '/#soft-washing';
+  const contactHref = html.includes('id="quote"') ? '#quote' : '/#quote';
+
+  return TOP_MENU.map(([label, href]) => {
+    const resolved = label === 'Services' ? servicesHref : href;
+    return `      <a href="${resolved}">${label}</a>`;
+  }).join('\n') + `
+      <a href="tel:+12185768610" class="nav-phone" aria-label="Call Up North Pressure Washing at 218-576-8610">218-576-8610</a>
+      <a href="${contactHref}" class="nav-cta">Free Quote</a>`;
+}
+
+let fixed = 0;
+
+for (const file of fs.readdirSync(SITE).filter((name) => name.endsWith('.html'))) {
   const fp = path.join(SITE, file);
-  let html = fs.readFileSync(fp, 'utf8');
+  const before = fs.readFileSync(fp, 'utf8');
+  let html = before;
+
   html = html.replace(
-    /<nav class="site-nav" aria-label="Main"><ul id="navlist">[\s\S]*?<\/ul><\/nav>/,
-    `<nav class="site-nav" aria-label="Main"><ul id="navlist">\n${navItems(name, hub)}\n  </ul></nav>`
+    /<nav class="site-nav" aria-label="Main"><ul id="navlist">[\s\S]*?<\/ul><\/nav>/g,
+    `<nav class="site-nav" aria-label="Main"><ul id="navlist">\n${mainNavItems()}\n  </ul></nav>`
   );
-  fs.writeFileSync(fp, html);
-  console.log('Nav fixed:', file);
+
+  html = html.replace(
+    /<nav class="nav-links"([^>]*)>[\s\S]*?<\/nav>/g,
+    (_match, attrs) => `<nav class="nav-links"${attrs}>\n${topNavLinks(html)}\n    </nav>`
+  );
+
+  if (html !== before) {
+    fs.writeFileSync(fp, html);
+    fixed++;
+  }
 }
 
 const broken = [];
@@ -56,4 +69,5 @@ for (const f of fs.readdirSync(SITE).filter(x => x.endsWith('.html'))) {
     if (!fs.existsSync(path.join(SITE, t))) broken.push(`${f} → ${t}`);
   }
 }
+console.log(`Navigation cleaned on ${fixed} HTML files.`);
 console.log('Broken links:', broken.length ? broken.join('\n') : 'none');
