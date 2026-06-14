@@ -184,6 +184,11 @@ function stripOldNavJs(html) {
   );
   // siteHeader -> siteNav in remaining scroll handlers
   html = html.replace(/getElementById\('siteHeader'\)/g, "getElementById('siteNav')");
+  // Legacy pricing-page burger handler (id changed to navBurger with unified nav)
+  html = html.replace(
+    /\/\/ Burger menu\s*\n?document\.getElementById\('burger'\)\.addEventListener\('click',function\(\)\{[\s\S]*?\}\);\s*\n/,
+    ''
+  );
   return html;
 }
 

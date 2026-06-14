@@ -156,7 +156,8 @@ footer{padding:60px 0 0;border-top:1px solid var(--line)}
 .reveal.in{opacity:1;transform:none}
 
 /* MOBILE */
-.calc-grid{grid-template-columns:1fr}
+@media(max-width:900px){
+  .calc-grid{grid-template-columns:1fr}
   .foot-grid{grid-template-columns:1fr}
   .foot-links{grid-template-columns:1fr 1fr}
   .trust-row{gap:16px}
@@ -249,7 +250,7 @@ body.nav-open{overflow:hidden}
 <a href="#main" class="skip-link">Skip to content</a>
 <div class="atmosphere"></div>
 <div class="mist"></div>
-<main>
+<main id="main">
 
 <!-- NAV -->
 <header class="nav unified-header" id="siteNav">
@@ -673,11 +674,6 @@ body.nav-open{overflow:hidden}
 </div>
 
 <script>
-// Burger menu
-document.getElementById('burger').addEventListener('click',function(){
-  document.getElementById('navLinks').classList.toggle('open');
-});
-
 // Reveal on scroll
 (function(){
   var els=document.querySelectorAll('.reveal');
