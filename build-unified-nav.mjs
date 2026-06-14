@@ -189,6 +189,12 @@ function stripOldNavJs(html) {
     /\/\/ Burger menu\s*\n?document\.getElementById\('burger'\)\.addEventListener\('click',function\(\)\{[\s\S]*?\}\);\s*\n/,
     ''
   );
+  // Dead service-page mobile menu blocks (unified nav uses navBurger)
+  html = html.replace(
+    /\n\/\/ Mobile menu toggle\s*\nconst burger=document\.getElementById\('burger'\);[\s\S]*?navLinks\.classList\.remove\('open'\);\}\)\);\s*\n\}/g,
+    '\n'
+  );
+  html = html.replace(/\n\/\/ Burger\s*\n+/g, '\n');
   return html;
 }
 

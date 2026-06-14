@@ -453,7 +453,7 @@ body.nav-open{overflow:hidden}
     <button type="button" class="burger" id="navBurger" aria-label="Open menu" aria-expanded="false" aria-controls="navLinks"><span></span><span></span><span></span></button>
   </div>
 </header>
-<div class="nav-backdrop" id="navBackdrop" hidden></div><main>
+<div class="nav-backdrop" id="navBackdrop" hidden></div>
 <main id="main"><section class="hero">
   <img class="bg" src="images/hero-bg.webp" srcset="images/hero-bg-768.webp 768w, images/hero-bg.webp 1024w" sizes="100vw" fetchpriority="high" decoding="async" alt="" role="presentation" width="1024" height="1536">
   <div class="hero__inner">
@@ -895,7 +895,9 @@ body.nav-open{overflow:hidden}
       <li><a href="/concrete-washing-lake-nebagamon">Concrete</a></li>
       <li><a href="/commercial-soft-washing-lake-nebagamon">Commercial</a></li><li><a href="/deck-restoration-lake-nebagamon">Deck Restoration</a></li>
       <li><a href="/blog-soft-washing-home-value-lake-nebagamon">Home Value Guide</a></li>
-      <li><a href="/blog-index">Learning Center</a></li>`n      <li><a href="/gallery">Photo Gallery</a></li>`n      <li><a href="/reviews">Reviews</a></li>
+      <li><a href="/blog-index">Learning Center</a></li>
+      <li><a href="/gallery">Photo Gallery</a></li>
+      <li><a href="/reviews">Reviews</a></li>
       <li><a href="/">Duluth</a></li>
       <li><a href="/lake-nebagamon-wi-pressure-washing">Lake Nebagamon</a></li>
       <li><a href="/superior-wi-pressure-washing">Superior</a></li>
@@ -906,8 +908,6 @@ body.nav-open{overflow:hidden}
   </div>
 </footer></main>
 
-<div class="sticky-cta" id="stickyCta"><a class="btn btn--quote btn--pill" href="#quote">Get Your Free Quote</a><a class="btn btn--pill btn--call" href="tel:+12185768610" aria-label="Call 218-576-8610"><span class="ui-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M6.62 10.79a15.05 15.05 0 006.59 6.59l2.2-2.2a1 1 0 011.01-.24c1.12.41 2.33.63 3.57.63a1 1 0 011 1V21a1 1 0 01-1 1C10.85 22 2 13.15 2 2a1 1 0 011-1h3.5a1 1 0 011 1c0 1.24.22 2.45.63 3.57a1 1 0 01-.25 1.01l-2.26 2.21z"/></svg></span> Call</a></div>
-
 <!-- Lightbox overlay -->
 <div class="lb" id="lightbox" role="dialog" aria-modal="true" aria-label="Enlarged image">
   <button class="lb__close" id="lbClose" aria-label="Close">×</button>
@@ -915,14 +915,6 @@ body.nav-open{overflow:hidden}
 </div>
 
 <script>
-  var sticky=document.getElementById('stickyCta');
-  var applyScroll=function(){var sy=window.scrollY;if(sticky)sticky.classList.toggle('is-visible',sy>420);};
-  var scrollTick=false;
-  window.addEventListener('scroll',function(){
-    if(!scrollTick){scrollTick=true;requestAnimationFrame(function(){applyScroll();scrollTick=false})}
-  },{passive:true});
-  applyScroll();
-
   // Scroll reveal — respects reduced-motion
   if(!window.matchMedia('(prefers-reduced-motion: reduce)').matches && 'IntersectionObserver' in window){
     var io=new IntersectionObserver(function(es){es.forEach(function(en){if(en.isIntersecting){en.target.classList.add('in');io.unobserve(en.target)}})},{threshold:.12});

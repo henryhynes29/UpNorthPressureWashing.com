@@ -1066,9 +1066,6 @@ document.querySelectorAll('.acc-head').forEach(h=>{h.addEventListener('click',()
 const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting)e.target.classList.add('in');}),{threshold:.12});
 document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
 
-// Burger
-
-
 // Price Calculator
 function calcPrice(){
   const sqft=parseInt(document.getElementById('calcSqft').value)||1600;
