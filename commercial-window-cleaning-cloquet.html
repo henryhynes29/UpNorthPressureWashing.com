@@ -459,6 +459,17 @@ body.nav-open{overflow:hidden}
 @media(min-width:961px){
   .unified-header .nav-links .nav-phone,.unified-header .nav-links .nav-cta{margin-left:2px}
 }
+/* NAV-ENHANCE */
+.svc-subnav{position:sticky;top:68px;z-index:53;background:rgba(11,22,34,.9);backdrop-filter:blur(12px);border-bottom:1px solid rgba(150,190,215,.12)}
+.svc-subnav__in{display:flex;align-items:center;gap:6px;padding:10px 0;overflow-x:auto;scrollbar-width:none}
+.svc-subnav__in::-webkit-scrollbar{display:none}
+.svc-subnav a{flex-shrink:0;font-size:.76rem;font-weight:600;color:#b3c4cf;text-decoration:none;padding:7px 12px;border-radius:20px;border:1px solid transparent;white-space:nowrap}
+.svc-subnav a:hover{color:#fff;border-color:rgba(160,200,225,.2)}
+.svc-subnav a.is-active,.svc-subnav a.svc-subnav__home{color:#7fc6e8;border-color:rgba(127,198,232,.28);background:rgba(127,198,232,.08)}
+.crumb.svc-crumb{display:flex;flex-wrap:wrap;align-items:center;gap:6px;font-size:.82rem;color:#b3c4cf;margin:14px auto 0;max-width:1180px;padding:0 clamp(14px,3vw,22px)}
+.crumb.svc-crumb a{color:#7fc6e8;text-decoration:none;font-weight:500}
+.crumb.svc-crumb .sep{opacity:.45}
+
 </style>
 <link rel="canonical" href="https://www.upnorthpressurewashing.com/commercial-window-cleaning-cloquet">
 
@@ -650,6 +661,7 @@ input::placeholder,select::placeholder,textarea::placeholder{color:#5f6b72}
     <nav class="nav-links" id="navLinks" aria-label="Main">
       <a href="#services" class="is-active" aria-current="page">Services</a>
       <a href="/service-area">Service Area</a>
+      <a href="/pricing">Pricing</a>
       <a href="/blog-index">Learning Center</a>
       <a href="/reviews">Reviews</a>
       <a href="/gallery">Gallery</a>
@@ -661,6 +673,21 @@ input::placeholder,select::placeholder,textarea::placeholder{color:#5f6b72}
   </div>
 </header>
 <div class="nav-backdrop" id="navBackdrop" hidden></div>
+<nav class="svc-subnav" aria-label="Cloquet services">
+  <div class="wrap svc-subnav__in">
+    <a href="/pressure-washing-cloquet-mn" class="svc-subnav__home">Cloquet</a>
+    <a href="/residential-window-cleaning-cloquet">Res. Windows</a>
+    <a href="/commercial-window-cleaning-cloquet" class="is-active" aria-current="page">Comm. Windows</a>
+    <a href="/commercial-soft-washing-cloquet">Commercial</a>
+    <a href="/gutter-fascia-cleaning-cloquet">Gutters</a>
+    <a href="/roof-soft-washing-cloquet">Roof</a>
+    <a href="/concrete-washing-cloquet">Concrete</a>
+    <a href="/deck-restoration-cloquet">Deck</a>
+    <a href="/soft-washing-cloquet">Soft Washing</a>
+    <a href="/window-cleaning-cloquet">Windows</a>
+  </div>
+</nav>
+<nav class="crumb svc-crumb" aria-label="Breadcrumb"><a href="/">Home</a><span class="sep">›</span><a href="/pressure-washing-cloquet-mn">Cloquet</a><span class="sep">›</span><span aria-current="page">Comm. Windows</span></nav>
 
 <!-- HERO -->
 <main id="main"><section class="hero wrap" id="top">

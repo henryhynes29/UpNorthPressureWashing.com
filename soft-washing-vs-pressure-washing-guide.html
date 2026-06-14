@@ -167,6 +167,7 @@ body.nav-open{overflow:hidden}
     <nav class="nav-links" id="navLinks" aria-label="Main">
       <a href="/#soft-washing" class="is-active" aria-current="page">Services</a>
       <a href="/service-area">Service Area</a>
+      <a href="/pricing">Pricing</a>
       <a href="/blog-index">Learning Center</a>
       <a href="/reviews">Reviews</a>
       <a href="/gallery">Gallery</a>
@@ -177,8 +178,7 @@ body.nav-open{overflow:hidden}
     <button type="button" class="burger" id="navBurger" aria-label="Open menu" aria-expanded="false" aria-controls="navLinks"><span></span><span></span><span></span></button>
   </div>
 </header>
-<div class="nav-backdrop" id="navBackdrop" hidden></div>
-<div class="wrap" id="main">
+<div class="nav-backdrop" id="navBackdrop" hidden></div><div class="wrap" id="main">
 <h1>Soft Washing vs. Pressure Washing: Which Does Your Home Actually Need?</h1>
   <p class="meta">By the Up North Pressure Washing crew · Duluth, MN · Updated June 2026</p>
 
@@ -278,5 +278,16 @@ document.getElementById('surfacePick').addEventListener('change',function(){
   }
 })();
 </script>
+<style id="mobile-cta-bar">
+.mobile-cta{display:none;position:fixed;bottom:0;left:0;right:0;z-index:90;background:rgba(11,22,34,.94);backdrop-filter:blur(12px);border-top:1px solid rgba(150,190,215,.22);padding:10px 14px calc(10px + env(safe-area-inset-bottom));gap:10px}
+.mobile-cta a{flex:1;text-align:center;padding:13px 10px;border-radius:40px;font-weight:700;font-size:.88rem;text-decoration:none}
+.mobile-cta .call{color:#fff;border:1px solid rgba(160,200,225,.25);background:rgba(255,255,255,.04)}
+.mobile-cta .quote{background:linear-gradient(135deg,#e3b53e,#caa033);color:#1a1305}
+@media(max-width:768px){.mobile-cta{display:flex}body{padding-bottom:72px}}
+</style>
+<div class="mobile-cta" aria-label="Quick contact">
+  <a class="call" href="tel:+12185768610">218-576-8610</a>
+  <a class="quote" href="/pricing">Free Quote</a>
+</div>
 </body>
 </html>

@@ -143,6 +143,7 @@ body.nav-open{overflow:hidden}
     <nav class="nav-links" id="navLinks" aria-label="Main">
       <a href="/#soft-washing">Services</a>
       <a href="/service-area">Service Area</a>
+      <a href="/pricing">Pricing</a>
       <a href="/blog-index">Learning Center</a>
       <a href="/reviews" class="is-active" aria-current="page">Reviews</a>
       <a href="/gallery">Gallery</a>
@@ -153,8 +154,7 @@ body.nav-open{overflow:hidden}
     <button type="button" class="burger" id="navBurger" aria-label="Open menu" aria-expanded="false" aria-controls="navLinks"><span></span><span></span><span></span></button>
   </div>
 </header>
-<div class="nav-backdrop" id="navBackdrop" hidden></div>
-<main id="main">
+<div class="nav-backdrop" id="navBackdrop" hidden></div><main id="main">
 <section class="hero wrap">
   <span class="eyebrow">5-Star Rated · Duluth &amp; Northland</span>
   <h1>Reviews &amp; <span class="gold">Testimonials</span></h1>
@@ -222,17 +222,17 @@ body.nav-open{overflow:hidden}
   <p>Your feedback helps Northland neighbors find reliable exterior cleaning — and helps us keep improving every job.</p>
   <a class="btn-gold" href="https://g.page/r/CSCaz34lDtneEBE" target="_blank" rel="noopener"><span class="ui-icon ui-icon--star" aria-hidden="true"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01z"/></svg></span> Read Reviews on Google</a>
   <br><a href="https://g.page/r/CSCaz34lDtneEBE/review" class="btn-ghost" target="_blank" rel="noopener">Leave a Google review <span class="ui-icon ui-icon--arrow" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></a>
-  <br><a href="gallery.html" class="btn-ghost">See our photo gallery <span class="ui-icon ui-icon--arrow" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></a>
+  <br><a href="/gallery" class="btn-ghost">See our photo gallery <span class="ui-icon ui-icon--arrow" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></a>
 </section>
 </main>
 <footer class="wrap">
   <a class="btn-gold" href="tel:+12185768610">218-576-8610</a>
   <ul class="flinks">
-    <li><a href="index.html">Home</a></li>
-    <li><a href="gallery.html">Photo Gallery</a></li>
-    <li><a href="reviews.html">Reviews</a></li>
-    <li><a href="blog-index.html">Learning Center</a></li>
-    <li><a href="faq.html">FAQ</a></li>
+    <li><a href="/">Home</a></li>
+    <li><a href="/gallery">Photo Gallery</a></li>
+    <li><a href="/reviews">Reviews</a></li>
+    <li><a href="/blog-index">Learning Center</a></li>
+    <li><a href="/faq">FAQ</a></li>
   </ul>
   <p>© 2026 Up North Pressure Washing · Duluth, MN · Fully Insured &amp; 5-Star Rated</p>
 </footer>
@@ -280,5 +280,16 @@ document.querySelectorAll('.filters button').forEach(btn=>{
   }
 })();
 </script>
+<style id="mobile-cta-bar">
+.mobile-cta{display:none;position:fixed;bottom:0;left:0;right:0;z-index:90;background:rgba(11,22,34,.94);backdrop-filter:blur(12px);border-top:1px solid rgba(150,190,215,.22);padding:10px 14px calc(10px + env(safe-area-inset-bottom));gap:10px}
+.mobile-cta a{flex:1;text-align:center;padding:13px 10px;border-radius:40px;font-weight:700;font-size:.88rem;text-decoration:none}
+.mobile-cta .call{color:#fff;border:1px solid rgba(160,200,225,.25);background:rgba(255,255,255,.04)}
+.mobile-cta .quote{background:linear-gradient(135deg,#e3b53e,#caa033);color:#1a1305}
+@media(max-width:768px){.mobile-cta{display:flex}body{padding-bottom:72px}}
+</style>
+<div class="mobile-cta" aria-label="Quick contact">
+  <a class="call" href="tel:+12185768610">218-576-8610</a>
+  <a class="quote" href="/pricing">Free Quote</a>
+</div>
 </body>
 </html>
