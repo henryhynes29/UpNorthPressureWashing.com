@@ -156,6 +156,59 @@ body.nav-open{overflow:hidden}
 @media(min-width:961px){
   .unified-header .nav-links .nav-phone,.unified-header .nav-links .nav-cta{margin-left:2px}
 }
+/* LC-NAV */
+.lc-sticky-panel{position:sticky;top:68px;z-index:55;background:rgba(11,22,34,.96);backdrop-filter:blur(14px);border-bottom:1px solid rgba(150,190,215,.16);padding-bottom:8px;margin-bottom:12px}
+.lc-sticky-panel .lc-toolbar{position:static;background:transparent;border:none;padding:10px 0 2px;margin:0}
+.lc-sticky-panel .lc-jump{margin:0;padding:10px 0 6px;border-bottom:1px solid rgba(150,190,215,.1)}
+.lc-toolbar{padding:14px 0 12px;margin-bottom:8px}
+.lc-toolbar__search{margin-bottom:12px}
+.lc-toolbar__search input{width:100%;padding:12px 16px 12px 42px;border-radius:12px;border:1px solid rgba(160,200,225,.22);background:rgba(255,255,255,.05);color:#e9f1f6;font:inherit;font-size:.92rem;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%237fc6e8' stroke-width='2'%3E%3Ccircle cx='11' cy='11' r='7'/%3E%3Cpath d='M20 20l-3-3'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:14px center;background-size:18px}
+.lc-toolbar__search input::placeholder{color:#8fa8b8}
+.lc-toolbar__search input:focus{outline:2px solid rgba(127,198,232,.45);border-color:rgba(127,198,232,.4)}
+.lc-toolbar__group{margin-bottom:10px}
+.lc-toolbar__label{display:block;font-size:.68rem;letter-spacing:.14em;text-transform:uppercase;color:#7fc6e8;font-weight:700;margin-bottom:6px}
+.lc-pills{display:flex;flex-wrap:wrap;gap:7px}
+.lc-pill{border:1px solid rgba(160,200,225,.2);background:rgba(255,255,255,.04);color:#b3c4cf;padding:7px 14px;border-radius:999px;font:inherit;font-size:.78rem;font-weight:600;cursor:pointer;transition:.2s;white-space:nowrap}
+.lc-pill:hover,.lc-pill.is-active{border-color:#7fc6e8;color:#fff;background:rgba(127,198,232,.12)}
+.lc-pill.is-active{background:rgba(127,198,232,.18);color:#e9f1f6}
+.lc-results{font-size:.78rem;color:#8fa8b8;margin:4px 0 0;min-height:1.2em}
+.lc-jump{display:flex;flex-wrap:nowrap;gap:8px;overflow-x:auto;scrollbar-width:none;-webkit-overflow-scrolling:touch}
+.lc-jump::-webkit-scrollbar{display:none}
+.lc-jump a{flex-shrink:0;font-size:.8rem;color:#b3c4cf;text-decoration:none;padding:6px 12px;border-radius:20px;border:1px solid rgba(160,200,225,.16);transition:.2s}
+.lc-jump a:hover,.lc-jump a.is-active{color:#fff;border-color:#7fc6e8;background:rgba(127,198,232,.1)}
+.lc-subnav{position:sticky;top:68px;z-index:54;background:rgba(11,22,34,.92);backdrop-filter:blur(12px);border-bottom:1px solid rgba(150,190,215,.14)}
+.lc-subnav__in{display:flex;align-items:center;gap:6px;padding:10px 0;overflow-x:auto;scrollbar-width:none;-webkit-overflow-scrolling:touch}
+.lc-subnav__in::-webkit-scrollbar{display:none}
+.lc-subnav a{flex-shrink:0;font-size:.78rem;font-weight:600;color:#b3c4cf;text-decoration:none;padding:7px 12px;border-radius:20px;border:1px solid transparent;transition:.2s;white-space:nowrap}
+.lc-subnav a:hover{color:#fff;border-color:rgba(160,200,225,.2)}
+.lc-subnav a.is-active,.lc-subnav a.lc-subnav__home{color:#7fc6e8;border-color:rgba(127,198,232,.28);background:rgba(127,198,232,.08)}
+.lc-subnav__home{margin-right:4px}
+.crumb{display:flex;flex-wrap:wrap;align-items:center;gap:6px;font-size:.82rem;color:var(--text-dim,#b3c4cf);margin-bottom:22px}
+.crumb a{color:#7fc6e8;text-decoration:none;font-weight:500}
+.crumb a:hover{text-decoration:underline}
+.crumb .sep{opacity:.45}
+.lc-featured{margin-bottom:28px}
+.lc-featured h2{font-family:'Fraunces',serif;color:#e3b53e;margin:0 0 4px;font-size:1.35rem}
+.lc-featured p{margin:0 0 14px;color:#b8c9d6;font-size:.92rem}
+.lc-featured-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:12px}
+.lc-featured-card{display:block;background:rgba(255,255,255,.05);border:1px solid rgba(160,200,225,.16);border-radius:12px;padding:14px 16px;text-decoration:none;color:#e9f1f6;transition:.2s}
+.lc-featured-card:hover{border-color:#7fc6e8;transform:translateY(-2px)}
+.lc-featured-card strong{color:#e3b53e;display:block;margin-bottom:4px;font-size:.92rem}
+.lc-featured-card span{font-size:.84rem;color:#b8c9d6;line-height:1.45}
+.lc-expert{margin-bottom:24px}
+.lc-expert h2{font-family:'Fraunces',serif;color:#e3b53e;margin:0 0 4px}
+.lc-expert h3{color:#7fc6e8;margin:18px 0 8px;font-size:1.02rem}
+.lc-expert-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:10px}
+.lc-expert-link{display:block;background:rgba(255,255,255,.04);border:1px solid rgba(160,200,225,.14);border-radius:10px;padding:11px 14px;text-decoration:none;color:#dce8f0;font-size:.92rem;transition:.2s}
+.lc-expert-link:hover{border-color:#7fc6e8;color:#fff}
+.cluster-section.is-hidden,.topic-row.is-hidden{display:none!important}
+.topic-row.is-dimmed{opacity:.35}
+.post-card.is-hidden{display:none!important}
+.post-card .tag{display:inline-flex;font-size:.64rem;font-weight:700;text-transform:uppercase;letter-spacing:.06em;color:#e3b53e;background:rgba(227,181,62,.1);border:1px solid rgba(227,181,62,.25);border-radius:20px;padding:2px 8px;margin-right:6px}
+.lc-city-guides h2{font-family:'Fraunces',serif;color:#e3b53e;margin:0 0 6px;font-size:1.35rem}
+.lc-city-guides p{margin:0 0 18px;color:#b8c9d6;font-size:.9rem}
+#featured-guides,#expert-answers,#city-guides,.cluster-section{scroll-margin-top:170px}
+@media(max-width:640px){.lc-sticky-panel{top:68px}.lc-pill{padding:6px 11px;font-size:.74rem}}
 </style>
 <meta name="theme-color" content="#0c1824">
 <meta name="format-detection" content="telephone=yes">
@@ -199,9 +252,21 @@ body.nav-open{overflow:hidden}
   </div>
 </header>
 <div class="nav-backdrop" id="navBackdrop" hidden></div>
+<nav class="lc-subnav" aria-label="Learning Center navigation">
+  <div class="wrap lc-subnav__in">
+    <a href="/blog-index" class="lc-subnav__home">All Guides</a>
+    <a href="/blog-index?region=twin-ports#region-twin-ports">Twin Ports</a>
+    <a href="/blog-index?region=carlton#region-carlton" class="is-active" aria-current="true">Carlton County</a>
+    <a href="/blog-index?region=iron-range#region-iron-range">Iron Range</a>
+    <a href="/blog-index?region=north-shore#region-north-shore">North Shore</a>
+    <a href="/blog-index?region=northland#region-northland">Northland</a>
+    <a href="/blog-index#featured-guides">Featured</a>
+    <a href="/blog-index#expert-answers">Expert Answers</a>
+  </div>
+</nav>
 <main id="main">
 <article class="wrap">
-  <div class="crumb"><a href="/barnum-mn-pressure-washing">Home</a> › <a href="/blog-index">Learning Center</a> › Barnum</div>
+  <nav class="crumb" aria-label="Breadcrumb"><a href="/">Home</a><span class="sep">›</span><a href="/blog-index">Learning Center</a><span class="sep">›</span><a href="/blog-index?region=carlton#region-carlton">Barnum</a></nav>
   <span class="eyebrow"><span class="dot"></span>Barnum · Gutters & Fascia</span>
   <h1>Gutter & Fascia Cleaning in Barnum, MN: Stop Overflow Before Damage Starts</h1>
   <div class="meta">By Up North Pressure Washing · Gutters & Fascia · Barnum, MN · Updated May 2026</div>
