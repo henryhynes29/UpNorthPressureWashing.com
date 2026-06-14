@@ -7,7 +7,7 @@ import { fileURLToPath } from 'url';
 
 const dir = path.dirname(fileURLToPath(import.meta.url));
 
-for (const script of ['build-unified-nav.mjs', 'patch-nav-enhancements.mjs', 'patch-learning-center-nav.mjs', 'patch-hub-cleanup.mjs']) {
+for (const script of ['build-unified-nav.mjs', 'patch-nav-enhancements.mjs', 'patch-learning-center-nav.mjs', 'patch-hub-cleanup.mjs', 'patch-elite-city-seo.mjs']) {
   const result = spawnSync(process.execPath, [script], { cwd: dir, stdio: 'inherit' });
   if (result.status !== 0) process.exit(result.status ?? 1);
 }
