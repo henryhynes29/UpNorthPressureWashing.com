@@ -460,6 +460,22 @@ body.nav-open{overflow:hidden}
 @media(min-width:961px){
   .unified-header .nav-links .nav-phone,.unified-header .nav-links .nav-cta{margin-left:2px}
 }
+/* SITE-NAV-PLUS */
+.svc-subnav{position:sticky;top:68px;z-index:53;background:rgba(11,22,34,.9);backdrop-filter:blur(12px);border-bottom:1px solid rgba(150,190,215,.12)}
+.svc-subnav__in{display:flex;align-items:center;gap:6px;padding:10px 0;overflow-x:auto;scrollbar-width:none;-webkit-overflow-scrolling:touch}
+.svc-subnav__in::-webkit-scrollbar{display:none}
+.svc-subnav a{flex-shrink:0;font-size:.76rem;font-weight:600;color:#b3c4cf;text-decoration:none;padding:7px 12px;border-radius:20px;border:1px solid transparent;white-space:nowrap;transition:.2s}
+.svc-subnav a:hover{color:#fff;border-color:rgba(160,200,225,.2)}
+.svc-subnav a.is-active,.svc-subnav a.svc-subnav__home{color:#7fc6e8;border-color:rgba(127,198,232,.28);background:rgba(127,198,232,.08)}
+.svc-subnav__home{margin-right:2px}
+.crumb.svc-crumb{margin:16px auto 0;max-width:1180px;padding:0 clamp(14px,3vw,22px)}
+.foot-grid{display:grid;grid-template-columns:240px 1fr;gap:52px;padding-bottom:40px}
+.foot-links{display:grid;grid-template-columns:repeat(4,1fr);gap:24px}
+.foot-col h4{font-size:.72rem;letter-spacing:.22em;text-transform:uppercase;color:#7fc6e8;margin:0 0 14px;font-weight:600}
+.foot-col a,.foot-col p{display:block;font-size:.82rem;color:#b3c4cf;text-decoration:none;margin-bottom:7px;line-height:1.4}
+.foot-col a:hover{color:#fff}
+.foot-bottom{border-top:1px solid rgba(255,255,255,.07);padding:20px 0 28px;text-align:center;font-size:.78rem;color:#8fa8b8}
+@media(max-width:900px){.foot-grid{grid-template-columns:1fr}.foot-links{grid-template-columns:1fr 1fr}}
 </style>
 <link rel="canonical" href="https://www.upnorthpressurewashing.com/gutter-fascia-cleaning-superior">
 
@@ -551,6 +567,22 @@ input::placeholder,select::placeholder,textarea::placeholder{color:#5f6b72}
   </div>
 </header>
 <div class="nav-backdrop" id="navBackdrop" hidden></div>
+<nav class="svc-subnav" aria-label="Superior services">
+  <div class="wrap svc-subnav__in">
+    <a href="/superior-wi-pressure-washing" class="svc-subnav__home">Superior</a>
+    <a href="/residential-window-cleaning-superior">Res. Windows</a>
+    <a href="/commercial-window-cleaning-superior">Comm. Windows</a>
+    <a href="/commercial-soft-washing-superior">Commercial</a>
+    <a href="/gutter-fascia-cleaning-superior" class="is-active" aria-current="page">Gutters</a>
+    <a href="/roof-soft-washing-superior">Roof</a>
+    <a href="/concrete-washing-superior">Concrete</a>
+    <a href="/deck-restoration-superior">Deck</a>
+    <a href="/soft-washing-superior">Soft Washing</a>
+    <a href="/window-cleaning-superior">Windows</a>
+    <a href="/blog-index">Learning Center</a>
+  </div>
+</nav>
+<nav class="crumb svc-crumb" aria-label="Breadcrumb"><a href="/">Home</a><span class="sep">›</span><a href="/superior-wi-pressure-washing">Superior</a><span class="sep">›</span><span aria-current="page">Gutters</span></nav>
 
 <!-- HERO -->
 <main id="main"><section class="hero wrap" id="top">
@@ -857,7 +889,7 @@ input::placeholder,select::placeholder,textarea::placeholder{color:#5f6b72}
       <a class="edu-card" href="blog-pollen-spring-cleanup-superior.html"><div class="t">Spring Pollen Cleanup</div><div class="d">Local guide for Superior homeowners &amp; businesses</div><div class="go">Read article <span class="ui-icon ui-icon--arrow" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></div></a>
       <a class="edu-card" href="blog-soft-washing-guide-superior.html"><div class="t">Soft Washing Guide</div><div class="d">Local guide for Superior homeowners &amp; businesses</div><div class="go">Read article <span class="ui-icon ui-icon--arrow" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></div></a>
     </div>
-    <p class="edu-more"><a href="blog-index.html">Browse all Learning Center articles <span class="ui-icon ui-icon--arrow" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></a> · <a href="gallery.html">See photo gallery</a> · <a href="reviews.html">Read reviews</a></p>
+    <p class="edu-more"><a href="/blog-index">Browse all Learning Center articles <span class="ui-icon ui-icon--arrow" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></a> · <a href="/gallery">See photo gallery</a> · <a href="/reviews">Read reviews</a></p>
   </div>
 </section>
 
