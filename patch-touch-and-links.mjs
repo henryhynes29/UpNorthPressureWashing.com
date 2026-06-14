@@ -121,7 +121,10 @@ const SERVICE_SLIDER_NEW = `  let dragging=false, locked=false, startX=0, startY
   ba.addEventListener('touchend',up);
   ba.addEventListener('touchcancel',up);`;
 
-const REVIEW_BTN = `<a class="btn btn--pill" href="${GOOGLE_REVIEW}" target="_blank" rel="noopener" style="min-width:0;margin-top:1.4rem">★ Read &amp; Leave a Review on Google</a>`;
+const ICON_STAR = '<span class="ui-icon ui-icon--star" aria-hidden="true"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01z"/></svg></span>';
+const ICON_PHONE = '<span class="ui-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M6.62 10.79a15.05 15.05 0 006.59 6.59l2.2-2.2a1 1 0 011.01-.24c1.12.41 2.33.63 3.57.63a1 1 0 011 1V21a1 1 0 01-1 1C10.85 22 2 13.15 2 2a1 1 0 011-1h3.5a1 1 0 011 1c0 1.24.22 2.45.63 3.57a1 1 0 01-.25 1.01l-2.26 2.21z"/></svg></span>';
+
+const REVIEW_BTN = `<a class="btn btn--pill" href="${GOOGLE_REVIEW}" target="_blank" rel="noopener" style="min-width:0;margin-top:1.4rem">${ICON_STAR} Read &amp; Leave a Review on Google</a>`;
 
 function patchFile(fp) {
   let html = fs.readFileSync(fp, 'utf8');
@@ -167,8 +170,8 @@ function patchFile(fp) {
       changed = true;
     }
     const reviewBlock = `    <div class="svc-cta reveal" style="margin-top:2rem;display:flex;flex-wrap:wrap;gap:.75rem;justify-content:center">
-      <a href="${PHONE_TEL}" class="btn-ghost">📞 218-576-8610</a>
-      <a href="${GOOGLE_REVIEW}" target="_blank" rel="noopener" class="btn-gold">★ Read &amp; Leave a Review on Google</a>
+      <a href="${PHONE_TEL}" class="btn-ghost">${ICON_PHONE} 218-576-8610</a>
+      <a href="${GOOGLE_REVIEW}" target="_blank" rel="noopener" class="btn-gold">${ICON_STAR} Read &amp; Leave a Review on Google</a>
     </div>`;
     if (!html.includes(GOOGLE_REVIEW) && html.includes('id="reviews"')) {
       html = html.replace(
