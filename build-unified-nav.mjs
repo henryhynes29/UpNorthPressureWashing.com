@@ -89,12 +89,11 @@ const GUIDE_RE = /^(exterior-stain-identifier|pressure-washing-psi-chart|soft-wa
 
 function detectActive(filename) {
   if (filename === 'service-area.html') return 'service-area';
-  if (filename === 'pricing.html') return 'pricing';
   if (filename === 'reviews.html') return 'reviews';
   if (filename === 'gallery.html') return 'gallery';
   if (filename === 'faq.html') return 'faq';
   if (filename === 'blog-index.html' || BLOG_RE.test(filename)) return 'learning';
-  if (HUB_RE.test(filename) || SERVICE_RE.test(filename)) return 'services';
+  if (HUB_RE.test(filename) || SERVICE_RE.test(filename) || filename === 'pricing.html') return 'services';
   return '';
 }
 
@@ -116,7 +115,6 @@ function buildNavHtml(html, filename) {
   const items = [
     ['Services', services, 'services'],
     ['Service Area', '/service-area', 'service-area'],
-    ['Pricing', '/pricing', 'pricing'],
     ['Learning Center', '/blog-index', 'learning'],
     ['Reviews', '/reviews', 'reviews'],
     ['Gallery', '/gallery', 'gallery'],
@@ -299,8 +297,6 @@ function patchFile(fp) {
     html = addSkipAndHeader(html, filename);
   } else if (!html.includes('unified-header')) {
     return false;
-  } else {
-    html = replaceHeader(html, filename);
   }
 
   html = injectCss(html);

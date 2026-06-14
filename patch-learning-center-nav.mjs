@@ -480,14 +480,6 @@ function patchGuidePage(html) {
   return html;
 }
 
-function isStandaloneGuide(filename, html) {
-  if (filename.startsWith('blog-')) return false;
-  if (/^(soft-washing|concrete-washing|deck-restoration|gutter-fascia-cleaning|roof-soft-washing|window-cleaning|residential-window-cleaning|commercial-window-cleaning|commercial-soft-washing)-/.test(filename)) return false;
-  if (/^(index|(?:[a-z-]+-(?:mn|wi)-pressure-washing|pressure-washing-cloquet-mn))\.html$/.test(filename)) return false;
-  if (['faq.html', 'gallery.html', 'reviews.html', 'pricing.html', 'service-area.html', 'blog-index.html', 'learning-center-mn.html', '404.html', 'privacy.html', 'thank-you.html'].includes(filename)) return false;
-  return html.includes('unified-header');
-}
-
 let changed = 0;
 for (const name of fs.readdirSync(SITE)) {
   if (!name.endsWith('.html')) continue;
@@ -500,9 +492,17 @@ for (const name of fs.readdirSync(SITE)) {
   } else if (name.startsWith('blog-') && name !== 'blog-index.html') {
     html = patchBlogPost(html, name);
   } else if (
-    isStandaloneGuide(name, html)
+    html.includes('exterior-stain-identifier') ||
+    name.includes('pressure-washing-psi') ||
+    name.includes('soft-wash-chemistry') ||
+    name.includes('how-to-hire') ||
+    name.includes('roof-cleaning') ||
+    name.includes('gutter-tiger') ||
+    name.includes('spring-exterior')
   ) {
-    html = patchGuidePage(html);
+    if (name !== 'blog-index.html' && (html.includes('id="main"') || html.includes('unified-header'))) {
+      html = patchGuidePage(html);
+    }
   }
 
   if (html !== before) {
