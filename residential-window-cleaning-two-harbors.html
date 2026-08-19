@@ -1,6 +1,11 @@
 <!DOCTYPE html>
 <html lang="en-US">
 <head>
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16.png">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="manifest" href="/site.webmanifest">
 <!-- Google tag (gtag.js) — deferred to first interaction or 4s for pagespeed -->
 <script>
   window.dataLayer = window.dataLayer || [];
@@ -1193,7 +1198,7 @@ window.addEventListener('load',refreshBaWidths);
 
 
 // Resolve any <img data-img="TOKEN"> placeholders (e.g. why-img)
-document.querySelectorAll('img[data-img]').forEach(im=>{ if(IMGDATA[im.dataset.img]) im.src = IMGDATA[im.dataset.img]; });
+document.querySelectorAll('img[data-img]').forEach(im=>{ if(IMGDATA[im.dataset.img]) im.src = IMGDATA[im.dataset.img]; if(!im.alt){ im.alt = im.getAttribute('data-alt') || (document.title.split('|')[0].trim()+' - Up North Pressure Washing'); } });
 
 // Accordion
 document.querySelectorAll('.acc-head').forEach(h=>{
