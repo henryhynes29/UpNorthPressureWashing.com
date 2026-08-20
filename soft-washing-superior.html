@@ -484,6 +484,18 @@ body.nav-open{overflow:hidden}
 .crumb.svc-crumb a{color:#7fc6e8;text-decoration:none;font-weight:500}
 .crumb.svc-crumb .sep{opacity:.45}
 
+
+/* --- UX/A11y enhancements (Web Interface Guidelines) --- */
+html{color-scheme:dark}
+h1,h2,h3{text-wrap:balance}
+p,li{text-wrap:pretty}
+a,button,summary,.btn,.btn-ghost{touch-action:manipulation}
+@media (prefers-reduced-motion:reduce){
+  .reveal{opacity:1!important;transform:none!important;transition:none!important}
+  .proc,.proc::before,.proc::after,.proc .pic,.review-slide,.ba-slider,*{
+    animation-duration:.001ms!important;animation-iteration-count:1!important;
+    transition-duration:.001ms!important;scroll-behavior:auto!important}
+}
 </style>
 <link rel="canonical" href="https://www.upnorthpressurewashing.com/soft-washing-superior">
 <meta property="og:type" content="website">

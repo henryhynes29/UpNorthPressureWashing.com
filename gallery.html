@@ -122,6 +122,18 @@ body.nav-open{overflow:hidden}
 @media(min-width:961px){
   .unified-header .nav-links .nav-phone,.unified-header .nav-links .nav-cta{margin-left:2px}
 }
+
+/* --- UX/A11y enhancements (Web Interface Guidelines) --- */
+html{color-scheme:dark}
+h1,h2,h3{text-wrap:balance}
+p,li{text-wrap:pretty}
+a,button,summary,.btn,.btn-ghost{touch-action:manipulation}
+@media (prefers-reduced-motion:reduce){
+  .reveal{opacity:1!important;transform:none!important;transition:none!important}
+  .proc,.proc::before,.proc::after,.proc .pic,.review-slide,.ba-slider,*{
+    animation-duration:.001ms!important;animation-iteration-count:1!important;
+    transition-duration:.001ms!important;scroll-behavior:auto!important}
+}
 </style>
 <meta name="theme-color" content="#0c1824">
 <meta name="format-detection" content="telephone=yes">
