@@ -41,7 +41,7 @@
   --gold-deep:#caa033;
   --cream:#f2ede1;
   --text:#e9f1f6;
-  --text-dim:#b3c4cf;
+  --text-dim:#c7d6e0;
   --line:rgba(150,190,215,.18);
   --glass:rgba(255,255,255,.045);
   --glass-line:rgba(160,200,225,.16);
@@ -75,7 +75,7 @@ body{
 @keyframes drift{from{background-position:0 0}to{background-position:600px 300px}}
 
 .wrap{max-width:1180px;margin:0 auto;padding:0 22px}
-h1,h2,h3{font-family:'Fraunces',serif;font-weight:600;line-height:1.04;letter-spacing:-.01em}
+h1,h2,h3{font-family:'Outfit',system-ui,sans-serif;font-weight:600;line-height:1.04;letter-spacing:-.01em}
 .gold{color:var(--gold)}
 .ice{color:var(--ice)}
 
@@ -84,7 +84,7 @@ header.nav{position:sticky;top:0;z-index:50;
   backdrop-filter:blur(14px);background:rgba(11,22,34,.72);
   border-bottom:1px solid var(--line);}
 .nav-in{display:flex;align-items:center;justify-content:space-between;height:70px}
-.brand{display:flex;align-items:center;gap:11px;font-family:'Fraunces',serif;font-weight:600;font-size:1.18rem;letter-spacing:.02em;color:#fff}
+.brand{display:flex;align-items:center;gap:11px;font-family:'Outfit',system-ui,sans-serif;font-weight:600;font-size:1.18rem;letter-spacing:.02em;color:#fff}
 .brand .mark{width:38px;height:38px;border-radius:10px;display:grid;place-items:center;
   background:linear-gradient(140deg,#1d3a4d,#102330);border:1px solid var(--glass-line);box-shadow:0 4px 18px rgba(0,0,0,.35)}
 .brand .mark svg{width:21px;height:21px}
@@ -435,7 +435,7 @@ body.nav-open{overflow:hidden}
 .unified-header,header.nav.unified-header{position:sticky;top:0;z-index:60;transition:background .3s ease,box-shadow .3s ease,border-color .3s ease;background:rgba(11,22,34,.78);backdrop-filter:blur(16px) saturate(1.15);-webkit-backdrop-filter:blur(16px) saturate(1.15);border-bottom:1px solid rgba(150,190,215,.14)}
 .unified-header.is-scrolled{background:rgba(11,22,34,.95);box-shadow:0 12px 40px rgba(0,0,0,.38);border-bottom-color:rgba(127,198,232,.24)}
 .unified-header .nav-in,.unified-header .wrap.nav-in{max-width:1180px;margin:0 auto;padding:0 clamp(14px,3vw,22px);display:flex;align-items:center;justify-content:space-between;gap:12px;height:68px;position:relative}
-.unified-header .brand{display:flex;align-items:center;gap:11px;font-family:'Fraunces',serif;font-weight:600;font-size:clamp(1rem,2.4vw,1.14rem);color:#fff;text-decoration:none;flex-shrink:0;min-width:0}
+.unified-header .brand{display:flex;align-items:center;gap:11px;font-family:'Outfit',system-ui,sans-serif;font-weight:600;font-size:clamp(1rem,2.4vw,1.14rem);color:#fff;text-decoration:none;flex-shrink:0;min-width:0}
 .unified-header .brand .mark{width:38px;height:38px;border-radius:10px;display:grid;place-items:center;background:linear-gradient(140deg,#1d3a4d,#102330);border:1px solid rgba(160,200,225,.16);box-shadow:0 4px 16px rgba(0,0,0,.25);flex-shrink:0}
 .unified-header .brand small{display:block;font-family:'Outfit',sans-serif;font-weight:500;font-size:.58rem;letter-spacing:.26em;color:#7fc6e8;text-transform:uppercase;margin-top:1px}
 .unified-header .nav-links{display:flex;align-items:center;gap:clamp(8px,1.4vw,20px)}
@@ -487,6 +487,17 @@ a,button,summary,.btn,.btn-ghost{touch-action:manipulation}
     animation-duration:.001ms!important;animation-iteration-count:1!important;
     transition-duration:.001ms!important;scroll-behavior:auto!important}
 }
+
+/* --- Section dividers & trust strip (theme-matched visual breaks) --- */
+.sec-divider{display:flex;align-items:center;justify-content:center;gap:14px;max-width:520px;margin:0 auto;padding:6px 0}
+.sec-divider .ln{height:1px;flex:1;background:linear-gradient(90deg,transparent,var(--glass-line),transparent)}
+.sec-divider .dmk{width:9px;height:9px;transform:rotate(45deg);border:1.5px solid var(--ice);border-radius:2px;background:radial-gradient(circle,rgba(127,198,232,.35),transparent);box-shadow:0 0 12px -2px rgba(127,198,232,.5)}
+.trust-strip{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;max-width:760px;margin:6px auto 0;padding:0 20px}
+.trust-strip .ts{position:relative;text-align:center;padding:22px 16px;border:1px solid var(--glass-line);border-radius:16px;background:var(--glass);overflow:hidden}
+.trust-strip .ts::after{content:"";position:absolute;left:0;right:0;top:0;height:2px;background:linear-gradient(90deg,transparent,rgba(227,181,62,.5),rgba(127,198,232,.5),transparent);opacity:.5}
+.trust-strip .tn{font-family:'Fraunces',serif;font-size:1.9rem;line-height:1;color:var(--gold);margin-bottom:6px}
+.trust-strip .tl{font-size:.82rem;color:var(--text-dim);line-height:1.35}
+@media(max-width:640px){.trust-strip{grid-template-columns:1fr;gap:10px}.trust-strip .ts{padding:16px}}
 </style>
 <link rel="canonical" href="https://www.upnorthpressurewashing.com/residential-window-cleaning-eveleth">
 
@@ -526,7 +537,7 @@ a,button,summary,.btn,.btn-ghost{touch-action:manipulation}
 .split-card{display:block;background:var(--glass);border:1px solid var(--glass-line);border-radius:18px;padding:28px 24px;text-decoration:none;transition:.25s}
 .split-card:hover{border-color:var(--ice);transform:translateY(-4px)}
 .split-card .tag{font-size:.68rem;letter-spacing:.12em;text-transform:uppercase;color:var(--gold);margin-bottom:10px;display:block}
-.split-card h3{font-family:'Fraunces',serif;color:#fff;font-size:1.35rem;margin-bottom:8px}
+.split-card h3{font-family:'Outfit',system-ui,sans-serif;color:#fff;font-size:1.35rem;margin-bottom:8px}
 .split-card p{color:var(--text-dim);font-size:.92rem}
 .split-card .go{color:var(--ice);font-weight:600;font-size:.85rem;margin-top:14px;display:block}
 .seo-area,.seo-price,.seo-compare,.seo-related{padding:64px 0;border-top:1px solid var(--line)}
@@ -786,14 +797,14 @@ input::placeholder,select::placeholder,textarea::placeholder{color:#5f6b72}
       <div class="seo-split-text reveal">
         <span class="eyebrow"><span class="dot"></span>Eveleth&apos;s Unique Challenge</span>
         <h2>Why Eveleth Windows Get <span class="ice">Hazy &amp; Streaked</span></h2>
-        <p>Eveleth window cleaning removes dust, pollen, and hard-water film — streak-free for homes and local businesses on the East Range.</p>
+        <p>Up at Eveleth’s elevation, hard water and Range dust film onto glass while the longest winter in the region tracks grime into frames and sills.</p>
         <ul class="seo-list">
-          <li><b>Range dust on glass.</b> Corridor and township road film.</li>
-          <li><b>Local business storefronts.</b> Grant Avenue and downtown schedules.</li>
-          <li><b>Hard-water spots.</b> Mineral treatment on older panes.</li>
-          <li><b>Interior service.</b> Full home packages available.</li>
+          <li><b>Hard-water spotting.</b> Iron-rich water leaves spots that ordinary cleaners can’t lift cleanly.</li>
+          <li><b>Winter track grime.</b> Eveleth’s long winter packs grime into tracks and sills that we clear fully.</li>
+          <li><b>Ore-dust film.</b> Range dust hazes panes and needs proper squeegee work to remove.</li>
+          <li><b>Interior + exterior.</b> Both sides on one visit after the winter is the common ask.</li>
         </ul>
-        <p>Window cleaning in Eveleth — professional clarity for East Range homes and businesses.</p>
+        <p>Professional window cleaning in Eveleth lifts hard-water spotting and winter grime household tools leave behind.</p>
       </div>
       <div class="seo-stats reveal">
         <div class="stat-card">
@@ -812,6 +823,13 @@ input::placeholder,select::placeholder,textarea::placeholder{color:#5f6b72}
     </div>
   </div>
 </section>
+<div class="sec-divider reveal"><span class="ln"></span><span class="dmk"></span><span class="ln"></span></div>
+<div class="trust-strip reveal">
+  <div class="ts"><div class="tn">$1M</div><div class="tl">Liability insured — every job, inside and out</div></div>
+  <div class="ts"><div class="tn">36+</div><div class="tl">5-star Google reviews across the Northland</div></div>
+  <div class="ts"><div class="tn">100%</div><div class="tl">Streak-free guarantee or we make it right</div></div>
+</div>
+
 <!-- /ELITE-CITY-SEO:window -->
 
 
@@ -863,34 +881,18 @@ input::placeholder,select::placeholder,textarea::placeholder{color:#5f6b72}
   </div>
 </section>
 
-<section>
-  <div class="wrap why">
-    <div class="reveal">
-      <span class="eyebrow"><span class="dot"></span>Why Pro Windows</span>
-      <h2 style="font-size:clamp(1.9rem,4.5vw,2.8rem)">Clear glass. Brighter homes.<br><span class="ice">Built for Eveleth.</span></h2>
-      <ul><li><span class="ck"><svg viewBox="0 0 24 24" fill="none"><path d="M4 12l5 5L20 6" stroke="#7fc6e8" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span><div><b>Streak-free every pane.</b> <span>Professional squeegee and pure-water methods — no haze, no drips, no missed corners on Eveleth homes.</span></div></li><li><span class="ck"><svg viewBox="0 0 24 24" fill="none"><path d="M4 12l5 5L20 6" stroke="#7fc6e8" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span><div><b>Built for Eveleth.</b> <span>Window cleaning for Eveleth Range dust, pollen, and local business glass.</span></div></li><li><span class="ck"><svg viewBox="0 0 24 24" fill="none"><path d="M4 12l5 5L20 6" stroke="#7fc6e8" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span><div><b>Interior, exterior & tracks.</b> <span>Full home window washing including screens and sills — popular before listings and holidays.</span></div></li><li><span class="ck"><svg viewBox="0 0 24 24" fill="none"><path d="M4 12l5 5L20 6" stroke="#7fc6e8" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span><div><b>More light, better views.</b> <span>Clean windows transform how Eveleth properties look inside and out — especially lake-facing glass.</span></div></li>
-      </ul>
-    </div>
-  </div>
-</section>
+
 <section class="included-sec">
   <div class="wrap">
     <div class="sec-head reveal">
       <span class="eyebrow"><span class="dot"></span>What's Included</span>
       <h2>Every Residential Visit in <span class="ice">Eveleth</span></h2>
+      <p class="sec-sub" style="max-width:600px;margin:.8rem auto 0;color:var(--text-dim);text-align:center">Interior, exterior, tracks and screens — a full-home finish that's especially popular before listings and the holidays.</p>
     </div>
     <ul class="included-grid reveal"><li><span class="ck"><span class="ui-icon ui-icon--check" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 13l4 4L19 7"/></svg></span></span>Exterior glass — streak-free squeegee finish</li><li><span class="ck"><span class="ui-icon ui-icon--check" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 13l4 4L19 7"/></svg></span></span>Interior panes (upon request)</li><li><span class="ck"><span class="ui-icon ui-icon--check" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 13l4 4L19 7"/></svg></span></span>Window tracks, sills & frames wiped</li><li><span class="ck"><span class="ui-icon ui-icon--check" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 13l4 4L19 7"/></svg></span></span>Screen cleaning available</li><li><span class="ck"><span class="ui-icon ui-icon--check" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 13l4 4L19 7"/></svg></span></span>Hard-water & salt film treatment</li><li><span class="ck"><span class="ui-icon ui-icon--check" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 13l4 4L19 7"/></svg></span></span>Second-story & lakefront access</li><li><span class="ck"><span class="ui-icon ui-icon--check" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 13l4 4L19 7"/></svg></span></span>Landscape-safe setup</li><li><span class="ck"><span class="ui-icon ui-icon--check" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 13l4 4L19 7"/></svg></span></span>Final walk-through inspection</li></ul>
   </div>
 </section>
-<section class="auth-sec">
-  <div class="wrap auth-grid reveal">
-    <div>
-      <span class="eyebrow"><span class="dot"></span>Local Expertise</span>
-      <h2>Residential Window Cleaning Built for <span class="gold">Eveleth</span></h2>
-    </div>
-    <div class="auth-copy"><p><strong>Eveleth residential windows</strong> face a tougher cycle than inland homes — Iron Range humidity, lake spray, road salt, and heavy pollen leave film that bakes onto glass within weeks. Generic national chains miss those local factors. We clean glass specifically for Eveleth's climate.</p><p>Whether you own a hillside home, a lakefront cabin, or a neighborhood ranch, professional window cleaning restores natural light and curb appeal before guests arrive or before you list. Homeowners across Eveleth, Virginia, Gilbert, and surrounding Minnesota communities trust our streak-free standard.</p><p>We also serve homeowners preparing for seasonal moves, holiday gatherings, and pre-listing photography — when crystal-clear glass makes Eveleth properties photograph larger and brighter online. See our <a href="/blog-window-cleaning-guide-eveleth" style="color:var(--ice)">Eveleth window cleaning guide</a> and <a href="/gallery" style="color:var(--ice)">before/after gallery</a>.</p></div>
-  </div>
-</section>
+
 <section class="seo-price">
   <div class="wrap">
     <div class="sec-head reveal">
@@ -994,6 +996,9 @@ input::placeholder,select::placeholder,textarea::placeholder{color:#5f6b72}
       <details class="faq-item" open>
         <summary>How much does residential window cleaning cost in Eveleth?</summary>
         <p>House window cleaning in Eveleth, MN typically depends on pane count, stories, interior/exterior scope, and hard-water treatment needs. Most Eveleth homes fall in a moderate range — we provide free written quotes after a quick walkthrough or photo review so you know the price before we arrive.</p>
+      </details>
+      <details class="faq-item"><summary>What makes window cleaning different in Eveleth?</summary>
+        <p>Eveleth’s long winter packs grime into tracks and sills, and hard water spots the glass. We clean frames and screens along with the panes so everything looks finished.</p>
       </details>
       <details class="faq-item">
         <summary>How often should I have my windows cleaned in Eveleth?</summary>
@@ -1106,20 +1111,32 @@ input::placeholder,select::placeholder,textarea::placeholder{color:#5f6b72}
 </section>
 
 <!-- EDUCATION-LINKS -->
+<section class="edu-sec" id="related">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="eyebrow" style="display:inline-flex;align-items:center;gap:9px;font-size:.74rem;letter-spacing:.22em;text-transform:uppercase;color:var(--ice);font-weight:600;margin-bottom:14px;border:1px solid var(--glass-line);background:var(--glass);padding:7px 15px;border-radius:40px">More Eveleth Services</span>
+      <h2>Other Ways We Keep <span class="gold">Eveleth</span> Homes Sharp</h2>
+      <p>Bundle and save — most Eveleth homeowners combine services on one visit.</p>
+    </div>
+    <div class="edu-grid">
+            <a class="edu-card" href="soft-washing-eveleth.html"><div class="t">Soft Washing in Eveleth</div><div class="d">Warranty-safe house washing for siding & exteriors</div><div class="go">View service <span class="ui-icon ui-icon--arrow" aria-hidden="true">&rarr;</span></div></a>
+      <a class="edu-card" href="roof-soft-washing-eveleth.html"><div class="t">Roof Cleaning in Eveleth</div><div class="d">Moss & algae removal that protects your shingles</div><div class="go">View service <span class="ui-icon ui-icon--arrow" aria-hidden="true">&rarr;</span></div></a>
+      <a class="edu-card" href="gutter-fascia-cleaning-eveleth.html"><div class="t">Gutter Cleaning in Eveleth</div><div class="d">Full flush & debris removal to protect your foundation</div><div class="go">View service <span class="ui-icon ui-icon--arrow" aria-hidden="true">&rarr;</span></div></a>
+      <a class="edu-card" href="deck-restoration-eveleth.html"><div class="t">Deck & Fence in Eveleth</div><div class="d">Restore weathered wood without harsh pressure</div><div class="go">View service <span class="ui-icon ui-icon--arrow" aria-hidden="true">&rarr;</span></div></a>
+    </div>
+  </div>
+</section>
 <section class="edu-sec" id="guides">
   <div class="wrap">
     <div class="sec-head">
       <span class="eyebrow" style="display:inline-flex;align-items:center;gap:9px;font-size:.74rem;letter-spacing:.22em;text-transform:uppercase;color:var(--ice);font-weight:600;margin-bottom:14px;border:1px solid var(--glass-line);background:var(--glass);padding:7px 15px;border-radius:40px">Learning Center</span>
-      <h2>Residential Window Guides for <span class="gold">Eveleth</span></h2>
-      <p>Educational articles to help you understand residential windows — written specifically for Eveleth properties.</p>
+      <h2>Want to Learn More?</h2>
+      <p>A couple of Eveleth-specific guides if you'd like to understand the process first.</p>
     </div>
     <div class="edu-grid">
-      <a class="edu-card" href="blog-window-cleaning-guide-eveleth.html"><div class="t">Window Cleaning Guide</div><div class="d">Local guide for Eveleth homeowners &amp; businesses</div><div class="go">Read article <span class="ui-icon ui-icon--arrow" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></div></a>
+            <a class="edu-card" href="blog-window-cleaning-guide-eveleth.html"><div class="t">Window Cleaning Guide</div><div class="d">Local guide for Eveleth homeowners &amp; businesses</div><div class="go">Read article <span class="ui-icon ui-icon--arrow" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></div></a>
       <a class="edu-card" href="blog-curb-appeal-checklist-eveleth.html"><div class="t">Curb Appeal Checklist</div><div class="d">Local guide for Eveleth homeowners &amp; businesses</div><div class="go">Read article <span class="ui-icon ui-icon--arrow" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></div></a>
-      <a class="edu-card" href="blog-pollen-spring-cleanup-eveleth.html"><div class="t">Spring Pollen Cleanup</div><div class="d">Local guide for Eveleth homeowners &amp; businesses</div><div class="go">Read article <span class="ui-icon ui-icon--arrow" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></div></a>
-      <a class="edu-card" href="blog-lakefront-exterior-care-eveleth.html"><div class="t">Lakefront Exterior Care</div><div class="d">Local guide for Eveleth homeowners &amp; businesses</div><div class="go">Read article <span class="ui-icon ui-icon--arrow" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></div></a>
     </div>
-    <p class="edu-more"><a href="blog-index.html">Browse all Learning Center articles <span class="ui-icon ui-icon--arrow" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></a> · <a href="gallery.html">See photo gallery</a> · <a href="reviews.html">Read reviews</a></p>
   </div>
 </section>
 
@@ -1257,7 +1274,9 @@ document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
 .mobile-cta{display:none;position:fixed;bottom:0;left:0;right:0;z-index:90;
   background:rgba(11,22,34,.94);backdrop-filter:blur(12px);border-top:1px solid rgba(150,190,215,.22);
   padding:10px 14px calc(10px + env(safe-area-inset-bottom));gap:10px}
-.mobile-cta a{flex:1;text-align:center;padding:13px 10px;border-radius:40px;font-weight:700;font-size:.88rem;text-decoration:none}
+.mobile-cta a{flex:1;display:inline-flex;align-items:center;justify-content:center;gap:.3rem;text-align:center;padding:14px 12px;border-radius:40px;font-weight:700;font-size:.9rem;line-height:1;text-decoration:none;white-space:nowrap}
+.mobile-cta .call{flex:1.15}
+.mobile-cta .quote{flex:1.15}
 .mobile-cta .call{color:#fff;border:1px solid rgba(160,200,225,.25);background:rgba(255,255,255,.04)}
 .mobile-cta .quote{background:linear-gradient(135deg,#e3b53e,#caa033);color:#1a1305}
 @media(max-width:768px){.mobile-cta{display:flex}body{padding-bottom:72px}}

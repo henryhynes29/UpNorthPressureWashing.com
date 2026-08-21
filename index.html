@@ -320,7 +320,7 @@ body.nav-open{overflow:hidden}
 .unified-header,header.nav.unified-header{position:sticky;top:0;z-index:60;transition:background .3s ease,box-shadow .3s ease,border-color .3s ease;background:rgba(11,22,34,.78);backdrop-filter:blur(16px) saturate(1.15);-webkit-backdrop-filter:blur(16px) saturate(1.15);border-bottom:1px solid rgba(150,190,215,.14)}
 .unified-header.is-scrolled{background:rgba(11,22,34,.95);box-shadow:0 12px 40px rgba(0,0,0,.38);border-bottom-color:rgba(127,198,232,.24)}
 .unified-header .nav-in,.unified-header .wrap.nav-in{max-width:1180px;margin:0 auto;padding:0 clamp(14px,3vw,22px);display:flex;align-items:center;justify-content:space-between;gap:12px;height:68px;position:relative}
-.unified-header .brand{display:flex;align-items:center;gap:11px;font-family:'Fraunces',serif;font-weight:600;font-size:clamp(1rem,2.4vw,1.14rem);color:#fff;text-decoration:none;flex-shrink:0;min-width:0}
+.unified-header .brand{display:flex;align-items:center;gap:11px;font-family:'Outfit',system-ui,sans-serif;font-weight:600;font-size:clamp(1rem,2.4vw,1.14rem);color:#fff;text-decoration:none;flex-shrink:0;min-width:0}
 .unified-header .brand .mark{width:38px;height:38px;border-radius:10px;display:grid;place-items:center;background:linear-gradient(140deg,#1d3a4d,#102330);border:1px solid rgba(160,200,225,.16);box-shadow:0 4px 16px rgba(0,0,0,.25);flex-shrink:0}
 .unified-header .brand small{display:block;font-family:'Outfit',sans-serif;font-weight:500;font-size:.58rem;letter-spacing:.26em;color:#7fc6e8;text-transform:uppercase;margin-top:1px}
 .unified-header .nav-links{display:flex;align-items:center;gap:clamp(8px,1.4vw,20px)}
@@ -361,6 +361,19 @@ a,button,summary,.btn,.btn-ghost{touch-action:manipulation}
     animation-duration:.001ms!important;animation-iteration-count:1!important;
     transition-duration:.001ms!important;scroll-behavior:auto!important}
 }
+
+/* --- Hero customers-served badge --- */
+.hero__served{display:inline-flex;align-items:center;gap:.55rem;margin:0 auto var(--space-4);padding:.5rem .95rem .5rem .75rem;
+  background:linear-gradient(135deg,rgba(227,181,62,.14),rgba(127,198,232,.10));
+  border:1px solid rgba(227,181,62,.38);border-radius:999px;
+  box-shadow:0 0 22px -6px rgba(227,181,62,.4),inset 0 1px 0 rgba(255,255,255,.08);
+  backdrop-filter:blur(6px);text-shadow:0 1px 8px rgba(0,0,0,.45)}
+.hero__served .hs-ic{display:inline-flex;width:26px;height:26px;align-items:center;justify-content:center;
+  border-radius:50%;background:rgba(227,181,62,.18);border:1px solid rgba(227,181,62,.4);color:var(--gold)}
+.hero__served .hs-ic svg{width:15px;height:15px}
+.hero__served .hs-n{font-family:'Fraunces',serif;font-weight:700;font-size:1.05rem;color:var(--gold);line-height:1}
+.hero__served .hs-l{font-size:.76rem;font-weight:600;letter-spacing:.4px;color:#eef4f8}
+@media(max-width:520px){.hero__served .hs-l{font-size:.72rem}}
 </style>
 <link rel="preload" as="image" href="images/hero-bg.webp" imagesrcset="images/hero-bg-768.webp 768w, images/hero-bg.webp 1024w" imagesizes="100vw" fetchpriority="high">
 
@@ -476,6 +489,10 @@ a,button,summary,.btn,.btn-ghost{touch-action:manipulation}
     <p class="hero__eyebrow">Duluth&rsquo;s Exterior Cleaning Specialists</p>
     <h1>Soft Washing, Roof Cleaning &amp; Window Cleaning in Duluth, MN</h1>
     <p class="hero__services">Soft Washing &bull; Roof Cleaning &bull; Gutter Cleaning &bull; Window Cleaning</p>
+    <div class="hero__served reveal" aria-label="437 customers served">
+      <span class="hs-ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></span>
+      <span class="hs-n">437</span><span class="hs-l">customers served across the Northland</span>
+    </div>
     <ul class="hero__trust-row" aria-label="Credentials">
       <li>Locally Owned</li>
       <li>Guardsman-Founded</li>
@@ -1101,7 +1118,9 @@ a,button,summary,.btn,.btn-ghost{touch-action:manipulation}
 .mobile-cta{display:none;position:fixed;bottom:0;left:0;right:0;z-index:90;
   background:rgba(11,22,34,.94);backdrop-filter:blur(12px);border-top:1px solid rgba(150,190,215,.22);
   padding:10px 14px calc(10px + env(safe-area-inset-bottom));gap:10px}
-.mobile-cta a{flex:1;text-align:center;padding:13px 10px;border-radius:40px;font-weight:700;font-size:.88rem;text-decoration:none}
+.mobile-cta a{flex:1;display:inline-flex;align-items:center;justify-content:center;gap:.3rem;text-align:center;padding:14px 12px;border-radius:40px;font-weight:700;font-size:.9rem;line-height:1;text-decoration:none;white-space:nowrap}
+.mobile-cta .call{flex:1.15}
+.mobile-cta .quote{flex:1.15}
 .mobile-cta .call{color:#fff;border:1px solid rgba(160,200,225,.25);background:rgba(255,255,255,.04)}
 .mobile-cta .quote{background:linear-gradient(135deg,#e3b53e,#caa033);color:#1a1305}
 @media(max-width:768px){.mobile-cta{display:flex}body{padding-bottom:72px}}

@@ -39,7 +39,7 @@
 :root{
   --navy-900:#0c1824;--navy-800:#10212f;--navy-700:#16303f;--navy-600:#1d3a4d;
   --ice:#7fc6e8;--ice-soft:#a9dcf2;--gold:#e3b53e;--gold-deep:#caa033;
-  --text:#e9f1f6;--text-dim:#b3c4cf;--line:rgba(150,190,215,.18);
+  --text:#e9f1f6;--text-dim:#c7d6e0;--line:rgba(150,190,215,.18);
   --glass:rgba(255,255,255,.045);--glass-line:rgba(160,200,225,.16);
   --radius:14px;--radius-lg:20px;
 }
@@ -50,13 +50,13 @@ body{font-family:'Outfit',sans-serif;background:var(--navy-900);color:var(--text
 .mist{position:fixed;inset:0;z-index:-1;pointer-events:none;opacity:.5;background-image:radial-gradient(2px 2px at 20% 30%,rgba(255,255,255,.18),transparent),radial-gradient(2px 2px at 70% 60%,rgba(255,255,255,.12),transparent),radial-gradient(1.5px 1.5px at 40% 80%,rgba(255,255,255,.14),transparent),radial-gradient(2.5px 2.5px at 85% 20%,rgba(255,255,255,.10),transparent);background-size:600px 600px;animation:drift 40s linear infinite;}
 @keyframes drift{from{background-position:0 0}to{background-position:600px 300px}}
 .wrap{max-width:1180px;margin:0 auto;padding:0 22px}
-h1,h2,h3,h4{font-family:'Fraunces',serif;font-weight:600;line-height:1.08;letter-spacing:-.01em}
+h1,h2,h3,h4{font-family:'Outfit',system-ui,sans-serif;font-weight:600;line-height:1.08;letter-spacing:-.01em}
 .gold{color:var(--gold)}.ice{color:var(--ice)}
 
 /* NAV */
 header.nav{position:sticky;top:0;z-index:50;backdrop-filter:blur(14px);background:rgba(11,22,34,.72);border-bottom:1px solid var(--line);}
 .nav-in{display:flex;align-items:center;justify-content:space-between;height:70px}
-.brand{display:flex;align-items:center;gap:11px;font-family:'Fraunces',serif;font-weight:600;font-size:1.18rem;letter-spacing:.02em;color:#fff;text-decoration:none}
+.brand{display:flex;align-items:center;gap:11px;font-family:'Outfit',system-ui,sans-serif;font-weight:600;font-size:1.18rem;letter-spacing:.02em;color:#fff;text-decoration:none}
 .brand .mark{width:38px;height:38px;border-radius:10px;display:grid;place-items:center;background:linear-gradient(140deg,#1d3a4d,#102330);border:1px solid var(--glass-line);box-shadow:0 4px 18px rgba(0,0,0,.35)}
 .brand small{display:block;font-family:'Outfit';font-weight:400;font-size:.6rem;letter-spacing:.28em;color:var(--ice);text-transform:uppercase;margin-top:1px}
 .nav-links{display:flex;gap:26px;align-items:center}
@@ -179,7 +179,7 @@ body.nav-open{overflow:hidden}
 .unified-header,header.nav.unified-header{position:sticky;top:0;z-index:60;transition:background .3s ease,box-shadow .3s ease,border-color .3s ease;background:rgba(11,22,34,.78);backdrop-filter:blur(16px) saturate(1.15);-webkit-backdrop-filter:blur(16px) saturate(1.15);border-bottom:1px solid rgba(150,190,215,.14)}
 .unified-header.is-scrolled{background:rgba(11,22,34,.95);box-shadow:0 12px 40px rgba(0,0,0,.38);border-bottom-color:rgba(127,198,232,.24)}
 .unified-header .nav-in,.unified-header .wrap.nav-in{max-width:1180px;margin:0 auto;padding:0 clamp(14px,3vw,22px);display:flex;align-items:center;justify-content:space-between;gap:12px;height:68px;position:relative}
-.unified-header .brand{display:flex;align-items:center;gap:11px;font-family:'Fraunces',serif;font-weight:600;font-size:clamp(1rem,2.4vw,1.14rem);color:#fff;text-decoration:none;flex-shrink:0;min-width:0}
+.unified-header .brand{display:flex;align-items:center;gap:11px;font-family:'Outfit',system-ui,sans-serif;font-weight:600;font-size:clamp(1rem,2.4vw,1.14rem);color:#fff;text-decoration:none;flex-shrink:0;min-width:0}
 .unified-header .brand .mark{width:38px;height:38px;border-radius:10px;display:grid;place-items:center;background:linear-gradient(140deg,#1d3a4d,#102330);border:1px solid rgba(160,200,225,.16);box-shadow:0 4px 16px rgba(0,0,0,.25);flex-shrink:0}
 .unified-header .brand small{display:block;font-family:'Outfit',sans-serif;font-weight:500;font-size:.58rem;letter-spacing:.26em;color:#7fc6e8;text-transform:uppercase;margin-top:1px}
 .unified-header .nav-links{display:flex;align-items:center;gap:clamp(8px,1.4vw,20px)}
@@ -420,7 +420,9 @@ a,button,summary,.btn,.btn-ghost{touch-action:manipulation}
 <!-- Mobile CTA bar -->
 <style>
 .mobile-cta{display:none;position:fixed;bottom:0;left:0;right:0;z-index:90;background:rgba(11,22,34,.94);backdrop-filter:blur(12px);border-top:1px solid rgba(150,190,215,.22);padding:10px 14px calc(10px + env(safe-area-inset-bottom));gap:10px}
-.mobile-cta a{flex:1;text-align:center;padding:13px 10px;border-radius:40px;font-weight:700;font-size:.88rem;text-decoration:none}
+.mobile-cta a{flex:1;display:inline-flex;align-items:center;justify-content:center;gap:.3rem;text-align:center;padding:14px 12px;border-radius:40px;font-weight:700;font-size:.9rem;line-height:1;text-decoration:none;white-space:nowrap}
+.mobile-cta .call{flex:1.15}
+.mobile-cta .quote{flex:1.15}
 .mobile-cta .call{color:#fff;border:1px solid rgba(160,200,225,.25);background:rgba(255,255,255,.04)}
 .mobile-cta .quote{background:linear-gradient(135deg,#e3b53e,#caa033);color:#1a1305}
 @media(max-width:768px){.mobile-cta{display:flex}body{padding-bottom:72px}}
@@ -579,7 +581,7 @@ document.querySelectorAll('.reveal').forEach(el => io.observe(el));
 
 <!-- JSON-LD -->
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"LocalBusiness","name":"Up North Pressure Washing","url":"https://www.upnorthpressurewashing.com","telephone":"+12185768610","image":"https://www.upnorthpressurewashing.com/images/hero-bg.webp","address":{"@type":"PostalAddress","addressLocality":"Barnum","addressRegion":"MN","postalCode":"55707","addressCountry":"US"},"geo":{"@type":"GeoCoordinates","latitude":46.50161,"longitude":-92.68879},"areaServed":[{"@type":"City","name":"Duluth, MN"},{"@type":"City","name":"Hermantown, MN"},{"@type":"City","name":"Proctor, MN"},{"@type":"City","name":"Superior, WI"},{"@type":"City","name":"Barnum, MN"},{"@type":"City","name":"Cloquet, MN"},{"@type":"City","name":"Carlton, MN"},{"@type":"City","name":"Esko, MN"},{"@type":"City","name":"Moose Lake, MN"},{"@type":"City","name":"Wrenshall, MN"},{"@type":"City","name":"Scanlon, MN"},{"@type":"City","name":"Hibbing, MN"},{"@type":"City","name":"Virginia, MN"},{"@type":"City","name":"Eveleth, MN"},{"@type":"City","name":"Two Harbors, MN"},{"@type":"City","name":"Silver Bay, MN"},{"@type":"City","name":"Lake Nebagamon, WI"}],"sameAs":["https://g.page/r/CSCaz34lDtneEBE/review"]}
+{"@context":"https://schema.org","@type":"LocalBusiness","name":"Up North Pressure Washing","url":"https://www.upnorthpressurewashing.com","telephone":"+12185768610","image":"https://www.upnorthpressurewashing.com/images/hero-bg.webp","address":{"@type":"PostalAddress","addressLocality":"Duluth","addressRegion":"MN","postalCode":"55802","addressCountry":"US"},"geo":{"@type":"GeoCoordinates","latitude":46.78627,"longitude":-92.10049},"areaServed":[{"@type":"City","name":"Duluth, MN"},{"@type":"City","name":"Hermantown, MN"},{"@type":"City","name":"Proctor, MN"},{"@type":"City","name":"Superior, WI"},{"@type":"City","name":"Barnum, MN"},{"@type":"City","name":"Cloquet, MN"},{"@type":"City","name":"Carlton, MN"},{"@type":"City","name":"Esko, MN"},{"@type":"City","name":"Moose Lake, MN"},{"@type":"City","name":"Wrenshall, MN"},{"@type":"City","name":"Scanlon, MN"},{"@type":"City","name":"Hibbing, MN"},{"@type":"City","name":"Virginia, MN"},{"@type":"City","name":"Eveleth, MN"},{"@type":"City","name":"Two Harbors, MN"},{"@type":"City","name":"Silver Bay, MN"},{"@type":"City","name":"Lake Nebagamon, WI"}],"sameAs":["https://g.page/r/CSCaz34lDtneEBE/review"]}
 </script>
 <script>/* UNIFIED-NAV-JS */
 (function(){
