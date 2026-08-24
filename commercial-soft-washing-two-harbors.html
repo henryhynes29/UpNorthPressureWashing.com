@@ -441,7 +441,7 @@ input::placeholder,select::placeholder,textarea::placeholder{color:#5f6b72}
 @media(max-width:520px){.svc-grid{grid-template-columns:1fr}}
 
 /* CATEGORY-REVIEW-SLIDER */
-.review-slider{display:grid;grid-auto-flow:column;grid-auto-columns:minmax(220px,300px);gap:10px;max-width:760px;margin:0 auto;overflow-x:auto;overscroll-behavior-inline:contain;scroll-snap-type:inline mandatory;padding:0 4px 10px;scrollbar-color:rgba(227,181,62,.65) rgba(255,255,255,.08)}
+.review-slider{display:grid;grid-auto-flow:column;grid-auto-columns:minmax(195px,260px);gap:9px;max-width:760px;margin:0 auto;overflow-x:auto;overscroll-behavior-inline:contain;scroll-snap-type:inline mandatory;padding:0 4px 10px;scrollbar-color:rgba(227,181,62,.65) rgba(255,255,255,.08)}
 .review-slide{scroll-snap-align:start;background:var(--glass);border:1px solid var(--glass-line);border-radius:14px;padding:14px 14px 13px;backdrop-filter:blur(8px);color:inherit;text-decoration:none;display:flex;flex-direction:column;gap:6px;min-height:100%;transition:transform .25s,border-color .25s}
 .review-slide:hover{transform:translateY(-2px);border-color:rgba(127,198,232,.65)}
 .review-tag{align-self:flex-start;font-size:.56rem;letter-spacing:.09em;text-transform:uppercase;color:var(--gold);border:1px solid rgba(227,181,62,.35);border-radius:999px;padding:2px 7px}
@@ -854,7 +854,7 @@ a,button,summary,.btn,.btn-ghost{touch-action:manipulation}
 <section class="quote-sec" id="quote">
   <div class="wrap">
     <div class="qbox reveal">
-      <form id="quoteForm" method="post" action="#" onsubmit="submitForm(event);return false;" novalidate aria-label="Request a free estimate">
+      <form id="quoteForm" method="post" action="#" onsubmit="submitForm(event);return false;" novalidate aria-label="Request a free estimate" enctype="multipart/form-data">
         <input type="hidden" name="page" value="">
         <p hidden><label>Don't fill this out: <input name="bot-field"></label></p>
         <h2>Get a Free Quote</h2>
@@ -865,10 +865,12 @@ a,button,summary,.btn,.btn-ghost{touch-action:manipulation}
         </div>
         <div class="row">
           <div><label for="em">Email <span class="req">*</span></label><input type="email" id="em" name="email" required></div>
-          <div><label for="ph">Phone</label><input type="tel" id="ph" name="phone"></div>
+          <div><label for="ph">Phone <span class="req">*</span></label><input type="tel" id="ph" name="phone" required></div>
         </div>
-        <label for="city">City / Area</label>
-        <select id="city" name="city">
+        <label for="addr">Property Address <span class="req">*</span></label>
+        <input type="text" id="addr" name="address" required autocomplete="street-address" placeholder="Street address of the property to be cleaned">
+        <label for="city">City / Area <span class="req">*</span></label>
+        <select id="city" name="city" required>
           <option>Two Harbors</option><option>Agate Bay</option><option>Burlington Bay</option><option>Duluth</option><option>Surrounding area</option>
         </select>
         <span class="svc-label">Services Interested In <span class="req">*</span></span>
@@ -890,6 +892,8 @@ a,button,summary,.btn,.btn-ghost{touch-action:manipulation}
           <span class="bb-icon">&#127881;</span>
           <span>Bundle discount applied &mdash; <span class="bundle-savings" id="bundleSavings"></span></span>
         </div>
+        <label for="photos">Attach photos <span style="color:var(--text-dim);font-weight:400;font-size:.85em">(optional)</span></label>
+        <input type="file" id="photos" name="photos" accept="image/*" multiple style="width:100%;padding:10px;border:1px dashed var(--glass-line);border-radius:10px;background:var(--glass);color:var(--text-dim);margin-bottom:14px;font-size:.9rem">
         <label for="msg">Tell us about your project</label>
         <textarea id="msg" name="message" placeholder="Type of siding, problem areas, square footage, anything helpful..."></textarea>
         <button type="submit" class="submit">Request My Free Quote <span class="ui-icon ui-icon--arrow" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></button></form><div class="ok" id="okView">
