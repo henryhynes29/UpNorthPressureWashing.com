@@ -1224,7 +1224,11 @@ async function submitForm(e){
   if(e)e.preventDefault();
   const fn=(document.getElementById('fn')?.value||'').trim();
   const em=(document.getElementById('em')?.value||'').trim();
+  const addr=(document.getElementById('addr')?.value||'').trim();
+  const phEarly=(document.getElementById('ph')?.value||'').trim();
   if(!fn||!em){alert('Please enter at least your first name and email.');return false;}
+  if(!phEarly){alert('Please enter your phone number.');return false;}
+  if(!addr){alert('Please enter the property address so we can prepare an accurate quote.');return false;}
   if((document.querySelector('[name="bot-field"]')?.value||'').trim())return false;
   const form=document.getElementById('quoteForm');
   if(!form)return false;
@@ -1279,6 +1283,7 @@ async function submitForm(e){
         name:(fn+' '+ln).trim(),
         email:em,
         phone:ph||'Not provided',
+        address:addr||'Not provided',
         city:city||'Not provided',
         service:svc||'Not specified',
         message:msg||'(No message)',

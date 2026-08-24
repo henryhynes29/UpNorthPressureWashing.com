@@ -505,7 +505,7 @@ a,button,summary,.btn,.btn-ghost{touch-action:manipulation}
   </div>
 </section>
 <section class="story reveal" aria-labelledby="story-h">
-  <img class="story__bg" src="images/duluth-lift-bridge.webp" alt="" aria-hidden="true" loading="lazy" width="1400" height="934" decoding="async">
+  <img class="story__bg" src="images/cities/lake-nebagamon.webp" srcset="images/cities/lake-nebagamon-768.webp 768w, images/cities/lake-nebagamon.webp 900w" sizes="100vw" alt="Aerial view of Lake Nebagamon, Wisconsin" loading="lazy" width="900" height="497" decoding="async">
   <div class="story__scrim" aria-hidden="true"></div>
   <div class="wrap">
     <p class="eyebrow">Locally Owned &amp; Operated</p>
@@ -1069,7 +1069,11 @@ async function submitForm(e){
   if(e)e.preventDefault();
   const fn=(document.getElementById('fn')?.value||'').trim();
   const em=(document.getElementById('em')?.value||'').trim();
+  const addr=(document.getElementById('addr')?.value||'').trim();
+  const phEarly=(document.getElementById('ph')?.value||'').trim();
   if(!fn||!em){alert('Please enter at least your first name and email.');return false;}
+  if(!phEarly){alert('Please enter your phone number.');return false;}
+  if(!addr){alert('Please enter the property address so we can prepare an accurate quote.');return false;}
   if((document.querySelector('[name="bot-field"]')?.value||'').trim())return false;
   const form=document.getElementById('quoteForm');
   if(!form)return false;
@@ -1124,6 +1128,7 @@ async function submitForm(e){
         name:(fn+' '+ln).trim(),
         email:em,
         phone:ph||'Not provided',
+        address:addr||'Not provided',
         city:city||'Not provided',
         service:svc||'Not specified',
         message:msg||'(No message)',
