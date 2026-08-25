@@ -677,8 +677,11 @@ input::placeholder,select::placeholder,textarea::placeholder{color:#5f6b72}
 .seo-split-grid{display:grid;grid-template-columns:1fr 360px;gap:56px;align-items:start}
 .seo-split-text h2{font-size:clamp(1.7rem,4vw,2.4rem);margin-bottom:18px}
 .seo-split-text p{color:var(--text-dim);line-height:1.72;margin-bottom:16px;font-size:.96rem}
-.seo-list{list-style:none;margin:18px 0;display:flex;flex-direction:column;gap:14px}
-.seo-list li{color:var(--text-dim);font-size:.95rem;line-height:1.65;padding-left:0}
+.seo-list{list-style:none;margin:20px 0;display:flex;flex-direction:column;gap:12px}
+.seo-list li{color:var(--text-dim);font-size:.95rem;line-height:1.6;padding:13px 15px 13px 44px;position:relative;background:var(--glass);border:1px solid var(--glass-line);border-radius:12px;transition:border-color .25s,transform .25s}
+.seo-list li:hover{border-color:var(--ice);transform:translateX(3px)}
+.seo-list li::before{content:"";position:absolute;left:14px;top:15px;width:20px;height:20px;background:no-repeat center/contain;background-image:url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="%237fc6e8" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>')}
+.seo-list li b{color:var(--text);display:block;margin-bottom:2px;font-size:.98rem}
 .seo-stats{display:flex;flex-direction:column;gap:14px}
 .stat-card{background:var(--glass);border:1px solid var(--glass-line);border-radius:16px;padding:22px 24px}
 .stat-num{font-family:'Fraunces',serif;font-size:1.8rem;color:var(--gold);margin-bottom:6px}
@@ -798,6 +801,9 @@ input::placeholder,select::placeholder,textarea::placeholder{color:#5f6b72}
         <span class="eyebrow"><span class="dot"></span>Carlton&apos;s Unique Challenge</span>
         <h2>Why Carlton Windows Get <span class="ice">Hazy &amp; Streaked</span></h2>
         <p>Carlton’s wooded, river-gorge setting films glass with pollen and sap, while area well water leaves mineral spotting that squeegee work removes cleanly.</p>
+        <figure class="window-body-img" style="margin:20px 0;border-radius:14px;overflow:hidden;border:1px solid var(--glass-line)">
+          <img src="images/window-res-after.webp" alt="Streak-free residential window cleaning result in Carlton, MN" loading="lazy" width="900" height="600" style="width:100%;height:auto;max-height:300px;object-fit:cover;display:block" decoding="async">
+        </figure>
         <ul class="seo-list">
           <li><b>Forest pollen & sap.</b> Gorge-country trees drop pollen and sap onto Carlton panes.</li>
           <li><b>Well-water minerals.</b> Local well water spots glass in ways DIY tools smear.</li>
@@ -809,7 +815,7 @@ input::placeholder,select::placeholder,textarea::placeholder{color:#5f6b72}
       <div class="seo-stats reveal">
         <div class="stat-card">
           <div class="stat-num">Local</div>
-          <div class="stat-lbl">Copy written for Carlton, MN — Carlton County conditions, not a national template</div>
+          <div class="stat-lbl">Cleaning tuned to Carlton’s Carlton County conditions</div>
         </div>
         <div class="stat-card">
           <div class="stat-num">100%</div>
